@@ -1,7 +1,5 @@
 package com.cookandroid.with;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,7 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     int version = 1;
@@ -37,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         helper = new DatabaseOpenHelper(LoginActivity.this, DatabaseOpenHelper.tableName, null, version);
         database = helper.getWritableDatabase();
 
+        /*
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -106,6 +106,16 @@ public class LoginActivity extends AppCompatActivity {
         });
 
          */
+        btnLogin.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                //회원가입 버튼 클릭
+                Intent intent = new Intent(getApplicationContext(),TmpActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
         btnRegister.setOnClickListener(new View.OnClickListener(){
 
             @Override
