@@ -1,7 +1,5 @@
 package com.cookandroid.with;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,7 +10,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     int version = 1;
@@ -37,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         helper = new DatabaseOpenHelper(LoginActivity.this, DatabaseOpenHelper.tableName, null, version);
         database = helper.getWritableDatabase();
 
+        /*
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -80,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                 cursor.close();
             }
         });
+        /*
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -103,23 +104,33 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-        /*
-        btnRegister.setOnClickListener(new View.OnClickListener(){
+
+         */
+        btnLogin.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view) {
                 //회원가입 버튼 클릭
-                Toast toast = Toast.makeText(LoginActivity.this, "회원가입 화면으로 이동", Toast.LENGTH_SHORT);
-                toast.show();
+                Intent intent = new Intent(getApplicationContext(),TmpActivity.class);
+                startActivity(intent);
+                //finish();
+            }
+        });
+        btnRegister.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                //회원가입 버튼 클릭
                 Intent intent = new Intent(getApplicationContext(),RegisterActivity.class);
                 startActivity(intent);
                 //finish();
             }
-        });*/
+        });
     }
 }
 class DatabaseOpenHelper extends SQLiteOpenHelper{
 
-    public static final String tableName = "Users";
+    public static final String tableName = "TestDB";
 
     public DatabaseOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -136,7 +147,7 @@ class DatabaseOpenHelper extends SQLiteOpenHelper{
     }
 
     public void createTable(SQLiteDatabase db){
-        String sql = "CREATE TABLE " + tableName + "(id text, pw text)";
+        String sql = "CREATE TABLE " + tableName + "(id text, pw text, name text, phone text, region text, address text, gender text, birth datetime )";
         try {
             db.execSQL(sql);
         }catch (Exception e){
