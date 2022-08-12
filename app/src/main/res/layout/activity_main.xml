@@ -21,10 +21,10 @@
 
     <ImageButton
         android:id="@+id/alarm"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="300dp"
-        android:layout_marginLeft="300dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="330dp"
+        android:layout_marginLeft="330dp"
         android:layout_marginTop="30dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -38,8 +38,8 @@
 
     <ImageButton
         android:id="@+id/profile"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginStart="14dp"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="30dp"
@@ -63,9 +63,9 @@
         android:insetBottom="0dp"
         android:paddingTop="20dp"
         android:gravity="left"
-        android:text="선착순 마감 도움 리스트"
-
-        android:textSize="20dp"
+        android:text="선착순 마감 도움 리스트\n\n시니어 분들이 올리신 도움들 중\n선착순으로 마감되는 도움들 입니다."
+        android:bufferType="spannable"
+        android:textSize="22dp"
         android:textColor="#000000"
         android:textStyle = "bold"
         app:backgroundTint="#FFFFFF"
@@ -75,22 +75,6 @@
         app:strokeColor="#000000"
         app:strokeWidth="1dp"
         />
-
-    <TextView
-        android:id="@+id/button2text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="155dp"
-        android:text="시니어 분들이 올리신 도움들 중
-선착순으로 마감되는 도움들 입니다. "
-        android:textColor="#000000"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
 
     <Button
         android:id="@+id/button3"
@@ -103,8 +87,9 @@
         android:insetBottom="0dp"
         android:paddingTop="20dp"
         android:gravity="left"
-        android:text="선택 마감 도움 리스트"
-        android:textSize="20dp"
+        android:text="선택 마감 도움 리스트\n\n시니어 분들이 올리신 도움들 중 지원을 하면\n시니어 분들의 수락 후에 확정되는 도움들 입니다."
+        android:bufferType="spannable"
+        android:textSize="22dp"
         android:textColor="#000000"
         android:textStyle = "bold"
         app:backgroundTint="#FFFFFF"
@@ -125,8 +110,9 @@
         android:insetBottom="0dp"
         android:paddingTop="20dp"
         android:gravity="left"
-        android:text="매칭 리스트"
-        android:textSize="20dp"
+        android:text="매칭 리스트\n\n지금까지의 매칭 내역과 현재 매칭된 내역입니다."
+        android:bufferType="spannable"
+        android:textSize="22dp"
         android:textColor="#000000"
         android:textStyle = "bold"
         app:backgroundTint="#FFFFFF"

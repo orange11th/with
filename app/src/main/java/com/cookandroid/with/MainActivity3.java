@@ -2,6 +2,7 @@ package com.cookandroid.with;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -30,6 +31,9 @@ public class MainActivity3 extends AppCompatActivity {
         tag.setText(intent.getStringExtra("tag"));
         TextView contents = (TextView) findViewById(R.id.ContentsText);
         contents.setText(intent.getStringExtra("contents"));
+
+        //contents scroll
+        contents.setMovementMethod(new ScrollingMovementMethod());
     }
     //toolbar
     @Override

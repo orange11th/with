@@ -58,15 +58,31 @@
 
     <TextView
         android:id="@+id/ContentsText"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_width="361dp"
+        android:layout_height="400dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="12dp"
+        android:lineSpacingExtra="7dp"
+        android:scrollbars="vertical"
         android:text="내용"
         android:textColor="#000000"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TagText"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/confirmbutton"
+        android:layout_width="361dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:text="신청하기"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ContentsText" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
