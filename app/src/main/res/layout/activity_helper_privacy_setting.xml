@@ -15,6 +15,7 @@
         android:orientation="horizontal">
         <!--뒤로가기 버튼-->
         <ImageView
+            android:id="@+id/back_btn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
@@ -73,24 +74,31 @@
             android:layout_marginLeft="50dp"
             android:text="비밀번호"/>
         <TextView
+            android:id="@+id/textview_id1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="**********"/>
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edittext_input1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호 "/>
 
         <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
         <TextView
-            android:id="@+id/revise_password"
+            android:onClick="btn_Click"
+            android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:text="비밀번호 변경"/>
-
     </LinearLayout>
 
     <!--휴대전화-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,25 +107,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="휴대전화"
-            />
+            android:text="전화번호"/>
         <TextView
+            android:id="@+id/textview_id2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="010-0123-4567"/>
-        <!--id를 부여해서 '전화번호 변경' 버튼을 핸들링한다.-->
-        <TextView
-            android:id="@+id/revise_phone"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edittext_input2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:hint="010-0000-0000 "/>
+
+        <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
+        <TextView
+            android:onClick="btn_Click"
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
             android:text="전화번호 변경"/>
     </LinearLayout>
 
     <!--아메일-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -126,20 +142,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="이메일" />
+            android:text="이메일"/>
         <TextView
+            android:id="@+id/textview_id3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="Abcd@gmail.com"/>
-
-        <!--id를 부여해서 '이메일 변경'버튼을 핸들링한다.-->
-        <TextView
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edittext_input3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:hint="Abcd@gmail.com "/>
+
+        <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
+        <TextView
+            android:onClick="btn_Click"
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
             android:text="이메일 변경"/>
     </LinearLayout>
 

@@ -25,13 +25,13 @@ public class HelperProfileActivity extends AppCompatActivity {
         //btn_revise를 id로 가지는 ImageView를 변수 image1에 넣는다.
         ImageView image1 = findViewById(R.id.btn_revise);
 
-        //image1이 눌렸을 때
+        //image1(수정 버튼)이 눌렸을 때
         image1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //인텐트를 사용해서 프로필 수정 화면으로 전환한다.
-                Intent intent = new Intent(getApplicationContext(), HelperProfileReviseActivity.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(getApplicationContext(), HelperProfileReviseActivity.class);
+                startActivity(intent1);
             }
         });
 
@@ -39,25 +39,27 @@ public class HelperProfileActivity extends AppCompatActivity {
         //btn_setting를 id로 가지는 ImageView를 변수 image2에 넣는다.
         ImageView image2 = findViewById(R.id.btn_setting);
 
-        //image2이 눌렸을 때
+        //image2(설정 버튼) 이 눌렸을 때
         image2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //인텐트를 사용해서 프로필 수정 화면으로 전환한다.
-                Intent intent = new Intent(getApplicationContext(), HelperPrivacySettingActivity.class);
-                startActivity(intent);
+                //인텐트를 사용해서 프로필 세팅 화면으로 전환한다.
+                Intent intent2 = new Intent(getApplicationContext(), HelperPrivacySettingActivity.class);
+                startActivity(intent2);
             }
         });
 
         /*3. <뒤로가기 버튼> 클릭시 액티비티 전환하는 코드입니다.*/
         ImageView image3 = findViewById(R.id.btn_back);
 
+        /*미완성*/
+
         //image3이 눌렸을 때
         image3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //인텐트를 사용해서 프로필 수정 화면으로 전환한다.
-                Intent intent = new Intent(getApplicationContext(), HelperPrivacySettingActivity.class);//홈 액티비티로 바꿔줘야합니다.
+                //인텐트를 사용해서 홈 화면으로 전환한다.
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);//홈 액티비티로 바꿔줘야합니다.
                 startActivity(intent);
             }
         });
