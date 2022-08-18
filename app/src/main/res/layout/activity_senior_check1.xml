@@ -221,6 +221,7 @@
                 android:text="변경하기" />
         </LinearLayout>
 
+
         <!--버튼 2개 - 이동 보조, 산책 동반-->
         <LinearLayout
             android:layout_width="match_parent"
