@@ -13,6 +13,9 @@
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MatchingList"
+            android:exported="false" />
+        <activity
             android:name=".SeniorCheck3Activity"
             android:exported="false" />
         <activity
@@ -29,19 +32,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".HelperProfileActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".HelperPrivacySettingActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ConfirmActivity"
             android:exported="false" />
@@ -62,10 +59,7 @@
         <activity android:name=".MainActivity3" />
         <activity
             android:name=".LoadingActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity android:name=".MainActivity" />
     </application>
 

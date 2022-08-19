@@ -19,8 +19,8 @@
         />
 
 
-    <ImageButton
-        android:id="@+id/alarm"
+    <ImageView
+        android:id="@+id/alarmbtn"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="330dp"
@@ -36,11 +36,10 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <ImageButton
-        android:id="@+id/profile"
+    <ImageView
+        android:id="@+id/profilebtn"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginStart="14dp"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="30dp"
         android:insetTop="0dp"
@@ -49,7 +48,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/profileimg"
         app:backgroundTint="#d9d9d9"
-        app:layout_constraintStart_toEndOf="@+id/alarm"
+        app:layout_constraintStart_toEndOf="@+id/alarmbtn"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button

@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity3 extends AppCompatActivity {
+
+    private Button confirmbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,16 @@ public class MainActivity3 extends AppCompatActivity {
 
         //contents scroll
         contents.setMovementMethod(new ScrollingMovementMethod());
+
+        //click 신청하기
+        confirmbutton = findViewById(R.id.confirmbutton);
+        confirmbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity3.this, MatchingList.class);
+                startActivity(intent);
+            }
+        });
     }
     //toolbar
     @Override
