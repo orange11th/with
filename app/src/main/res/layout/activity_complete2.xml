@@ -13,13 +13,13 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textAlignment="center"/>
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/button9"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#CDCDCD"
         android:text="확 인"
         android:textStyle="bold"

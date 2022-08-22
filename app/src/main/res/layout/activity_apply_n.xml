@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="도움 게시글 작성"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="제목"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="10dp"
+                android:text="제목을 입력해주세요."
+                android:textSize="19dp"
+                android:textColor="#959595"
+                android:background="@drawable/edit_edge"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="주소"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="330dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="10dp"
+                android:text="주소 검색 기능 추가"
+                android:textSize="19dp"
+                android:textColor="#959595"
+                android:background="@drawable/edit_edge"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="도움 종류"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#병원동행"
+                    android:textColor="#4C4C4C"
+                    android:button="@null"
+                    android:background="@drawable/hashtagbackground2"
+                    android:gravity="center"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="#이동보조"
+                    android:textColor="#4C4C4C"
+                    android:button="@null"
+                    android:background="@drawable/hashtagbackground2"
+                    android:gravity="center"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="#산책동반"
+                    android:textColor="#4C4C4C"
+                    android:button="@null"
+                    android:background="@drawable/hashtagbackground2"
+                    android:gravity="center"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="#기타"
+                    android:textColor="#4C4C4C"
+                    android:button="@null"
+                    android:background="@drawable/hashtagbackground2"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="30dp"
+                    android:text="도움 시간"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="10dp"
+                    android:background="@drawable/date_select"
+                    android:text="날짜 선택"
+                    android:textAlignment="viewEnd"
+                    android:gravity="end"
+                    android:textSize="16dp"
+                    android:textColor="#131313"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center"
+                    android:text="2022년 8월 11일"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Spinner
+                    android:id="@+id/hour_spinner"
+                    android:layout_width="180dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:elevation="5dp"
+                    android:background="@drawable/spinner_back"
+                    android:entries="@array/hour_value" />
+
+                <Spinner
+                    android:id="@+id/minute_spinner"
+                    android:layout_width="180dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="5dp"
+                    android:elevation="5dp"
+                    android:background="@drawable/spinner_back"
+                    android:entries="@array/minute_value" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:text="구인 방법"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/r_btn1"
+                        android:layout_width="180dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:button="@null"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:text="선착순"
+                        android:background="@drawable/radio_btn"
+                        android:elevation="3dp"/>
+
+                    <RadioButton
+                        android:id="@+id/r_btn2"
+                        android:layout_width="180dp"
+                        android:layout_height="70dp"
+                        android:layout_margin="5dp"
+                        android:button="@null"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:text="지원한 돌보미 중 \n선택"
+                        android:background="@drawable/radio_btn"
+                        android:elevation="3dp"/>
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:text="도움 내용"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:layout_width="380dp"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="구체적인 내용을 적어주세요."
+                android:textSize="16dp"
+                android:background="@drawable/edit_text_edge"/>
+
+            <Button
+                android:id="@+id/enroll_btn"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#CDCDCD"
+                android:text="등 록"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:elevation="4dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
