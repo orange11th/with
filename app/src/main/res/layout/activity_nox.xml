@@ -53,7 +53,7 @@
                 android:layout_height="35dp"
                 android:layout_marginLeft="5dp"
                 android:paddingLeft="10dp"
-                android:text="제목을 입력해주세요."
+                android:hint="제목을 입력해주세요."
                 android:textSize="19dp"
                 android:textColor="#959595"
                 android:background="@drawable/edit_edge"/>
@@ -168,10 +168,10 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/date_btn"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="21dp"
                     android:layout_marginBottom="5dp"
                     android:padding="10dp"
                     android:background="@drawable/date_select"
@@ -182,11 +182,13 @@
                     android:textColor="#131313"/>
 
                 <TextView
+                    android:id="@+id/date_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
                     android:layout_marginLeft="20dp"
                     android:layout_gravity="center"
-                    android:text="2022년 8월 11일"
+                    android:text="날짜를 선택해주세요."
                     android:textSize="18dp"
                     android:textColor="@color/black"/>
 

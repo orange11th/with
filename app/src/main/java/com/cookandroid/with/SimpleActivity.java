@@ -104,13 +104,15 @@ public class SimpleActivity extends AppCompatActivity {
             }
         });
 
-        dateText = findViewById(R.id.date_textView);
-        datePickerBtn = findViewById(R.id.date_btn);
+
+        //calendar 버튼 설정
+        dateText = (TextView) findViewById(R.id.date_textView);
+        datePickerBtn = (Button) findViewById(R.id.date_btn);
 
         //날짜 제한 변수
         Calendar minDate = Calendar.getInstance();
 
-        //버튼 클릭 캘린더
+        //버튼 클릭 이벤트
         datePickerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
