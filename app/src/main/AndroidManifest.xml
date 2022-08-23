@@ -13,9 +13,6 @@
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".MatchingList"
-            android:exported="false" />
-        <activity
             android:name=".SeniorCheck3Activity"
             android:exported="false" />
         <activity
@@ -27,40 +24,62 @@
         <activity
             android:name=".HelperProfileReviseActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".HelperProfileActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".HelperPrivacySettingActivity"
+            android:exported="true" >
+
+        </activity>
+
+
+        <activity android:name=".Complete1Activity">
+
+        </activity>
+        <activity
+            android:name=".ConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SimpleActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".HelperProfileActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".HelperPrivacySettingActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".ConfirmActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SubActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity_yerim"
-            android:exported="false" />
+        <activity android:name=".SeniorHomeActivity">
+
+        </activity>
+        <activity android:name=".NoxConfirmActivity">
+
+        </activity>
+        <activity android:name=".NoxActivity">
+
+        </activity>
+
+
         <activity
             android:name=".TmpActivity"
             android:exported="false" />
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
+        <activity android:name=".MainActivity3" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity3" />
         <activity
             android:name=".LoadingActivity"
-            android:exported="true"></activity>
-        <activity android:name=".MainActivity" />
+            android:exported="true">
+
+        </activity>
+
     </application>
 
 </manifest>

@@ -14,8 +14,8 @@
 
         <androidx.appcompat.widget.Toolbar
             app:titleTextColor="#000000"
-            android:background="#d9d9d9"
-            android:id="@+id/toolbar_main3"
+            android:background="#FAFAFA"
+            android:id="@+id/toolbar_simple"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             tools:ignore="MissingConstraints"
@@ -53,6 +53,7 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:text="병원 동행\n\n병원에 함께 갈 사람을 찾으신다면 선택해주세요."
                 android:textColor="#000000"
@@ -60,6 +61,7 @@
                 android:textStyle="bold"
                 android:bufferType="spannable"
                 android:background="@drawable/button_border"
+                android:textAlignment="viewStart"
                 android:gravity="start" />
 
             <Button
@@ -67,6 +69,7 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:text="이동 보조\n\n이동할 때 도와줄 사람을 찾으신다면 선택해주세요."
                 android:textColor="#000000"
@@ -81,6 +84,7 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:text="산책 동반\n\n산책할 때 함께 가거나 거동을 도와줄 사람을 \n찾으신다면 선택해주세요."
                 android:textColor="#000000"
@@ -96,6 +100,7 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:text="기타\n\n원하시는 서비스가 없다면 직접 입력해주세요."
                 android:textColor="#000000"

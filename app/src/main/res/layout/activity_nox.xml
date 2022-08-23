@@ -14,6 +14,15 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            app:titleTextColor="#000000"
+            android:background="#FAFAFA"
+            android:id="@+id/toolbar_simple"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            tools:ignore="MissingConstraints"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

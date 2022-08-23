@@ -3,7 +3,6 @@ package com.cookandroid.with;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -15,18 +14,17 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class MainActivity_yerim extends AppCompatActivity {
+public class SimpleActivity extends AppCompatActivity {
     private Button btn1, btn2, btn3, btn4;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_yerim);
+        setContentView(R.layout.activity_simple);
 
         //toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar_main3);
+        Toolbar toolbar = findViewById(R.id.toolbar_simple);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(" ");
@@ -94,7 +92,7 @@ public class MainActivity_yerim extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SubActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ConfirmActivity.class);
                 startActivity(intent);
             }
         });
@@ -106,7 +104,7 @@ public class MainActivity_yerim extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case android.R.id.home:{
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
                 startActivity(intent);
                 finish();
                 return true;
@@ -114,7 +112,5 @@ public class MainActivity_yerim extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 
 }
