@@ -13,8 +13,6 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity3 extends AppCompatActivity {
 
-    private Button confirmbutton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +38,11 @@ public class MainActivity3 extends AppCompatActivity {
         contents.setMovementMethod(new ScrollingMovementMethod());
 
         //click 신청하기
-        confirmbutton = findViewById(R.id.confirmbutton);
+        Button confirmbutton = (Button) findViewById(R.id.confirmbutton);
         confirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity3.this, MatchingList.class);
+                Intent intent = new Intent(getApplicationContext(), MatchingList.class);
                 startActivity(intent);
             }
         });
@@ -54,8 +52,7 @@ public class MainActivity3 extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case android.R.id.home:{
-                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                //startActivity(intent);
+
                 finish();
                 return true;
             }
