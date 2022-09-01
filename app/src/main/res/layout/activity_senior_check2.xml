@@ -29,7 +29,7 @@
                 android:layout_height="35dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/back_select"
+
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
@@ -314,6 +314,7 @@
                     android:textSize="20sp" />
 
                 <TextView
+                    android:id="@+id/readMore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="자세히 보기>" />

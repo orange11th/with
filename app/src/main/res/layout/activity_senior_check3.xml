@@ -30,7 +30,7 @@
                 android:layout_height="35dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/back_select"
+
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
