@@ -1,25 +1,25 @@
 package com.cookandroid.with;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class SubActivity extends Activity{
+import androidx.appcompat.app.AppCompatActivity;
 
+public class Complete1Activity extends AppCompatActivity {
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm);
+        setContentView(R.layout.activity_complete1);
 
-        //confirm 확인 버튼 activity
+        //complete1 확인 버튼 activity
         Button confirm_btn = (Button) findViewById(R.id.confirm_btn);
         confirm_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ConfirmActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
                 startActivity(intent);
             }
         });

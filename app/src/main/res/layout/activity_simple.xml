@@ -14,8 +14,8 @@
 
         <androidx.appcompat.widget.Toolbar
             app:titleTextColor="#000000"
-            android:background="#d9d9d9"
-            android:id="@+id/toolbar_main3"
+            android:background="#FAFAFA"
+            android:id="@+id/toolbar_simple"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             tools:ignore="MissingConstraints"
@@ -53,6 +53,7 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:text="병원 동행\n\n병원에 함께 갈 사람을 찾으신다면 선택해주세요."
                 android:textColor="#000000"
@@ -60,6 +61,7 @@
                 android:textStyle="bold"
                 android:bufferType="spannable"
                 android:background="@drawable/button_border"
+                android:textAlignment="viewStart"
                 android:gravity="start" />
 
             <Button
@@ -67,6 +69,7 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:text="이동 보조\n\n이동할 때 도와줄 사람을 찾으신다면 선택해주세요."
                 android:textColor="#000000"
@@ -81,6 +84,7 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:paddingTop="15dp"
                 android:paddingLeft="20dp"
                 android:text="산책 동반\n\n산책할 때 함께 가거나 거동을 도와줄 사람을 \n찾으신다면 선택해주세요."
                 android:textColor="#000000"
@@ -96,14 +100,15 @@
                 android:layout_width="387dp"
                 android:layout_height="138dp"
                 android:layout_margin="5dp"
+                android:background="@drawable/button_border"
+                android:bufferType="spannable"
+                android:gravity="start"
                 android:paddingLeft="20dp"
+                android:paddingTop="15dp"
                 android:text="기타\n\n원하시는 서비스가 없다면 직접 입력해주세요."
                 android:textColor="#000000"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:gravity="start"
-                android:bufferType="spannable"
-                android:background="@drawable/button_border" />
+                android:textStyle="bold" />
 
             <View
                 android:layout_width="330dp"
@@ -220,11 +225,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.110000014" />
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/date_btn"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="21dp"
                 android:padding="10dp"
                 android:background="@drawable/date_select"
                 android:text="날짜 선택"
@@ -232,9 +246,17 @@
                 android:textSize="20dp"
                 android:textColor="#131313"/>
 
-            <CalendarView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/date_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="20dp"
+                android:text="날짜를 선택해주세요."
+                android:textSize="20dp"
+                android:textColor="#131313"
+                android:gravity="center"
+                android:layout_gravity="center"/>
 
         </LinearLayout>
 
@@ -351,6 +373,7 @@
                 android:elevation="4dp"/>
 
         </LinearLayout>
+
 
     </LinearLayout>
 

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity3">
+    tools:context=".MatchingListContents">
     <androidx.appcompat.widget.Toolbar
         app:titleTextColor="#000000"
         android:background="#d9d9d9"
@@ -21,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginTop="78dp"
         android:text="제목."
         android:textSize="18dp"
         android:textColor="#000000"
@@ -31,31 +30,17 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/PostDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="12dp"
-        android:text="2022년 6월 18일 18:37    1시간 전"
-        android:textColor="#6d6d6d"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleText"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/RegionText"
+        android:id="@+id/DetailAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="8dp"
-        android:text="지역"
-        android:textColor="#6d6d6d"
+        android:text="세부 주소"
+        android:textColor="#000000"
         android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PostDate"
+        app:layout_constraintTop_toBottomOf="@+id/TitleText"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -66,24 +51,66 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="8dp"
         android:text="도움 날짜 및 시간 : 2022년 7월 1일 14시"
-        android:textColor="#6d6d6d"
+        android:textColor="#000000"
         android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RegionText"
+        app:layout_constraintTop_toBottomOf="@+id/DetailAddress"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/SeniorInfo"
+        android:id="@+id/SeniorInformationtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="8dp"
         android:text="시니어 정보 : 여 / 80 / 거동불편"
-        android:textColor="#6d6d6d"
+        android:textColor="#000000"
         android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/HhelpTime"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/SeniorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:text="성함 : "
+        android:textColor="#000000"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SeniorInformationtext"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/SeniorGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:text="성별 / 연세 : "
+        android:textColor="#000000"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SeniorName"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/SeniorDisease"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="8dp"
+        android:text="지병 : "
+        android:textColor="#000000"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SeniorGender"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -97,13 +124,13 @@
         android:gravity="center"
         android:text="#태그"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SeniorInfo" />
+        app:layout_constraintTop_toBottomOf="@+id/SeniorDisease" />
 
 
     <TextView
         android:id="@+id/ContentsText"
         android:layout_width="361dp"
-        android:layout_height="330dp"
+        android:layout_height="290dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="12dp"
@@ -117,16 +144,27 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/confirmbutton"
-        android:layout_width="361dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/cancelbutton"
+        android:layout_width="87dp"
+        android:layout_height="52dp"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="13dp"
-        android:text="신 청"
+        android:text="취소"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ContentsText" />
 
+    <Button
+        android:id="@+id/okaybutton"
+        android:layout_width="267dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="13dp"
+        android:text="확 인"
+        android:textSize="16dp"
+        android:backgroundTint="#A3A3A3"
+        app:layout_constraintLeft_toRightOf="@id/cancelbutton"
+        app:layout_constraintStart_toEndOf="@+id/cancelbutton"
+        app:layout_constraintTop_toBottomOf="@+id/ContentsText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,13 +14,22 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            app:titleTextColor="#000000"
+            android:background="#FAFAFA"
+            android:id="@+id/toolbar_simple"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            tools:ignore="MissingConstraints"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:gravity="center"
             android:text="도움 게시글 작성"
-            android:textSize="26dp"
+            android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
 
@@ -35,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="제목"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
@@ -44,8 +53,8 @@
                 android:layout_height="35dp"
                 android:layout_marginLeft="5dp"
                 android:paddingLeft="10dp"
-                android:text="제목을 입력해주세요."
-                android:textSize="19dp"
+                android:hint="제목을 입력해주세요."
+                android:textSize="19sp"
                 android:textColor="#959595"
                 android:background="@drawable/edit_edge"/>
 
@@ -63,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:text="주소"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
@@ -73,7 +82,7 @@
                 android:layout_marginLeft="5dp"
                 android:paddingLeft="10dp"
                 android:text="주소 검색 기능 추가"
-                android:textSize="19dp"
+                android:textSize="19sp"
                 android:textColor="#959595"
                 android:background="@drawable/edit_edge"/>
 
@@ -88,9 +97,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:text="도움 종류"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
@@ -103,7 +113,18 @@
                 <CheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="#병원동행"
+                    android:text="병원동행"
+                    android:textColor="#4C4C4C"
+                    android:button="@null"
+                    android:background="@drawable/hashtagbackground2"
+                    android:gravity="center"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="이동보조"
                     android:textColor="#4C4C4C"
                     android:button="@null"
                     android:background="@drawable/hashtagbackground2"
@@ -113,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="#이동보조"
+                    android:text="산책동반"
                     android:textColor="#4C4C4C"
                     android:button="@null"
                     android:background="@drawable/hashtagbackground2"
@@ -123,17 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="#산책동반"
-                    android:textColor="#4C4C4C"
-                    android:button="@null"
-                    android:background="@drawable/hashtagbackground2"
-                    android:gravity="center"/>
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="#기타"
+                    android:text="기타"
                     android:textColor="#4C4C4C"
                     android:button="@null"
                     android:background="@drawable/hashtagbackground2"
@@ -147,7 +158,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="30dp"
                     android:text="도움 시간"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"/>
 
@@ -159,26 +170,27 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/date_btn"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="21dp"
                     android:layout_marginBottom="5dp"
                     android:padding="10dp"
                     android:background="@drawable/date_select"
                     android:text="날짜 선택"
                     android:textAlignment="viewEnd"
                     android:gravity="end"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:textColor="#131313"/>
 
                 <TextView
+                    android:id="@+id/date_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_gravity="center"
-                    android:text="2022년 8월 11일"
-                    android:textSize="18dp"
+                    android:hint="날짜를 선택해주세요."
+                    android:textSize="18sp"
                     android:textColor="@color/black"/>
 
             </LinearLayout>
@@ -193,7 +205,7 @@
                     android:layout_width="180dp"
                     android:layout_height="35dp"
                     android:layout_margin="5dp"
-                    android:elevation="5dp"
+                    android:elevation="5sp"
                     android:background="@drawable/spinner_back"
                     android:entries="@array/hour_value" />
 
@@ -202,7 +214,7 @@
                     android:layout_width="180dp"
                     android:layout_height="35dp"
                     android:layout_margin="5dp"
-                    android:elevation="5dp"
+                    android:elevation="5sp"
                     android:background="@drawable/spinner_back"
                     android:entries="@array/minute_value" />
 
@@ -214,7 +226,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="30dp"
                 android:text="구인 방법"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
@@ -267,7 +279,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="30dp"
                 android:text="도움 내용"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
 
@@ -277,21 +289,22 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                android:text="구체적인 내용을 적어주세요."
-                android:textSize="16dp"
+                android:hint="  구체적인 내용을 적어주세요."
+                android:textSize="16sp"
                 android:background="@drawable/edit_text_edge"/>
 
             <Button
                 android:id="@+id/enroll_btn"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_margin="5dp"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
                 android:backgroundTint="#CDCDCD"
-                android:text="등 록"
+                android:text="등록하기"
+                android:textSize="19sp"
                 android:textStyle="bold"
-                android:textSize="18sp"
-                android:elevation="4dp"/>
+                android:elevation="4sp"/>
 
         </LinearLayout>
 
