@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="#000000"
+        android:background="@color/white"
+        android:id="@+id/toolbar_history"
+        android:layout_height="58dp"
+        android:layout_width="match_parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+      <TextView
+          android:layout_width="136.5dp"
+          android:layout_height="70dp"
+          android:layout_marginBottom="5dp"
+          android:text="접수 내역\n0"
+          android:textSize="16dp"
+          android:gravity="center"
+          android:background="@color/white"
+          android:elevation="5dp"/>
+
+      <View
+          android:layout_width="1dp"
+          android:layout_height="50dp"
+          android:background="@color/gray"
+          android:layout_gravity="center_vertical"/>
+
+      <TextView
+          android:layout_width="136.5dp"
+          android:layout_height="70dp"
+          android:text="완료 내역\n2"
+          android:textSize="16dp"
+          android:gravity="center"
+          android:background="@color/white"
+          android:elevation="5dp"/>
+
+      <View
+          android:layout_width="1dp"
+          android:layout_height="50dp"
+          android:background="@color/gray"
+          android:layout_gravity="center_vertical"/>
+
+      <TextView
+          android:layout_width="136.5dp"
+          android:layout_height="70dp"
+          android:text="취소 내역\n1"
+          android:textSize="16dp"
+          android:gravity="center"
+          android:background="@color/white"
+          android:elevation="5dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/date_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="2022.08"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:background="@drawable/history_date_background"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/history_btn1"
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/simple_checkbox_back"
+        android:text="2022.08.25\n병원 동행 · 이동 보조"
+        android:textSize="20dp"
+        android:bufferType="spannable"
+        android:gravity="center_vertical"/>
+
+    <Button
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/simple_checkbox_back"
+        android:text="2022.08.16\n산책 동반"
+        android:textSize="20dp"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:text="2022.07"
+        android:textSize="14dp"
+        android:textColor="@color/white"
+        android:background="@drawable/history_date_background"
+        android:gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/simple_checkbox_back"
+        android:text="2022.08.25\n병원 동행"
+        android:textSize="20dp"
+        android:gravity="center_vertical"/>
+
+  </LinearLayout>
+
+</ScrollView>

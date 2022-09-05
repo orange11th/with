@@ -8,22 +8,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="90dp"
         android:text="돌보미가 구해지면 알려드겠습니다.\n(문장 수정 필요해보임)"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:textAlignment="center"/>
+        android:gravity="center"/>
 
-        <Button
-            android:id="@+id/button9"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="#CDCDCD"
-            android:text="확 인"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:elevation="4dp"/>
-    돌보미가 지원시 알림으로 알려드리겠습니다. 지원한 돌보미들을 확인 후 그중 한 분을 골라주세요.
+    <Button
+        android:id="@+id/confirm_btn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="확인"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:background="@drawable/color_edge"
+        android:outlineProvider="none"/>
+
 </LinearLayout>

@@ -19,6 +19,7 @@
         android:orientation="horizontal">
         <!--뒤로가기 버튼-->
         <ImageView
+            android:id="@+id/back_btn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
@@ -168,29 +169,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
-                android:text="ㅁㅁㅁ 자격증"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:text="ㅇㅇㅇ 자격증"/>
 
             <!--자격증 추가 버튼-->
             <TextView
+                android:id="@+id/addview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:textSize="17sp"
                 android:text=" + 자격증 추가"/>
+
+            <!--자격증이 추가되면 들어가는 위치의 레이아웃입니다.-->
+            <LinearLayout
+                android:id="@+id/con"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_layout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </LinearLayout>
         </LinearLayout>
 
         <!--자격증 삭제 버튼-->

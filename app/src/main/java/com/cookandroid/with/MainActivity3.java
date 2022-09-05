@@ -2,7 +2,10 @@ package com.cookandroid.with;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,14 +33,26 @@ public class MainActivity3 extends AppCompatActivity {
         tag.setText(intent.getStringExtra("tag"));
         TextView contents = (TextView) findViewById(R.id.ContentsText);
         contents.setText(intent.getStringExtra("contents"));
+
+        //contents scroll
+        contents.setMovementMethod(new ScrollingMovementMethod());
+
+        //click 신청하기
+        Button confirmbutton = (Button) findViewById(R.id.confirmbutton);
+        confirmbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MatchingList.class);
+                startActivity(intent);
+            }
+        });
     }
     //toolbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case android.R.id.home:{
-                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                //startActivity(intent);
+
                 finish();
                 return true;
             }

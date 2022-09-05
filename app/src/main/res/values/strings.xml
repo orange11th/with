@@ -9,4 +9,12 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    
+    <!--병훈 : 돌보미 도움 종류 목록-->
+    <string-array name="kindOfHelp">
+        <item>이동 보조</item>
+        <item>산책 동반</item>
+        <item>말 동무</item>
+        <item>식사 보조</item>
+    </string-array>
 </resources>
