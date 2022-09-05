@@ -7,18 +7,27 @@ import android.view.View;
 import android.widget.Button;
 
 public class ConfirmActivity extends Activity{
+    private Button modify_btn, confirm_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
 
-        //confirm 확인 버튼 activity
-        Button confirm_btn = (Button) findViewById(R.id.confirm_btn);
-        confirm_btn.setOnClickListener(new View.OnClickListener() {
-
+        modify_btn = (Button) findViewById(R.id.modify_btn);
+        modify_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NoxActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //선착순, 지원에 따라 완료 화면 다르게 뜨도록 수정 필요
+        confirm_btn = (Button) findViewById(R.id.confirm_btn);
+        confirm_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Complete1Activity.class);
                 startActivity(intent);
             }

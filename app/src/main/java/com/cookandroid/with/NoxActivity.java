@@ -15,7 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import java.util.Calendar;
 
 public class NoxActivity extends AppCompatActivity {
-    private Button datePickerBtn;
+    private Button enroll_btn, datePickerBtn;
 
     TextView dateText;
     DatePickerDialog datePickerDialog;
@@ -31,9 +31,9 @@ public class NoxActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(" ");
 
-        //confirm 확인 버튼 activity
-        Button confirm_btn = (Button) findViewById(R.id.enroll_btn);
-        confirm_btn.setOnClickListener(new View.OnClickListener() {
+        //등록 버튼 activity
+        enroll_btn = (Button) findViewById(R.id.enroll_btn);
+        enroll_btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
