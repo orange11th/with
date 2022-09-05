@@ -1,24 +1,26 @@
 package com.cookandroid.with;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
-    int version = 1;
-    DatabaseOpenHelper helper;
-    SQLiteDatabase database;
-    String sql;
-    Cursor cursor;
 
     EditText edtUsername,edtPassword;
     Button btnLogin,btnRegister;
@@ -33,91 +35,44 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin=(Button)findViewById(R.id.login);
         btnRegister=(Button)findViewById(R.id.register);
 
-        helper = new DatabaseOpenHelper(LoginActivity.this, DatabaseOpenHelper.tableName, null, version);
-        database = helper.getWritableDatabase();
-
-        /*
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                String id = edtUsername.getText().toString();
-                String pw = edtPassword.getText().toString();
+                String userID = edtUsername.getText().toString();
+                String userPassword = edtPassword.getText().toString();
+                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONObject jsonResponse = new JSONObject(response);
+                            boolean success = jsonResponse.getBoolean("success");
+                            if(success){
+                                Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
 
-                if(id.length() == 0 || pw.length() == 0) {
-                    //아이디와 비밀번호는 필수 입력사항입니다.
-                    Toast toast = Toast.makeText(LoginActivity.this, "아이디와 비밀번호는 필수 입력사항입니다.", Toast.LENGTH_SHORT);
-                    toast.show();
-                    return;
-                }
+                                String userID = jsonResponse.getString("userID");
+                                String userPassword = jsonResponse.getString("userPassword");
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                // 로그인 하면서 사용자 정보 넘기기
+                                intent.putExtra("userID", userID);
+                                intent.putExtra("userPassword", userPassword);
+                                startActivity(intent);
 
-                sql = "SELECT id FROM "+ helper.tableName + " WHERE id = '" + id + "'";
-                cursor = database.rawQuery(sql, null);
-
-                if(cursor.getCount() != 1){
-                    //아이디가 틀렸습니다.
-                    Toast toast = Toast.makeText(LoginActivity.this, "존재하지 않는 아이디입니다.", Toast.LENGTH_SHORT);
-                    toast.show();
-                    return;
-                }
-
-                sql = "SELECT pw FROM "+ helper.tableName + " WHERE id = '" + id + "'";
-                cursor = database.rawQuery(sql, null);
-
-                cursor.moveToNext();
-                if(!pw.equals(cursor.getString(0))){
-                    //비밀번호가 틀렸습니다.
-                    Toast toast = Toast.makeText(LoginActivity.this, "비밀번호가 틀렸습니다.", Toast.LENGTH_SHORT);
-                    toast.show();
-                }else{
-                    //로그인성공
-                    Toast toast = Toast.makeText(LoginActivity.this, "로그인성공", Toast.LENGTH_SHORT);
-                    toast.show();
-                    //인텐트 생성 및 호출
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-                cursor.close();
-            }
-        });
-        /*
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String id = edtUsername.getText().toString();
-                String pw = edtPassword.getText().toString();
-
-                if (id.length() == 0 || pw.length() == 0) {
-                    //아이디와 비밀번호는 필수 입력사항입니다.
-                    Toast toast = Toast.makeText(LoginActivity.this, "아이디와 비밀번호는 필수 입력사항입니다.", Toast.LENGTH_SHORT);
-                    toast.show();
-                    return;
-                }
-                database.beginTransaction();
-                try {
-                    sql = "INSERT INTO " + helper.tableName + "(id, pw)" + "values('" + id + "', '" + pw + "')";
-                    database.execSQL(sql);
-                    database.setTransactionSuccessful();
-                }catch (Exception e){e.printStackTrace();}
-                finally {
-                    database.endTransaction();
-                }
+                            } else {
+                                Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                        } catch(Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
+                RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                queue.add(loginRequest);
             }
         });
 
-         */
-        btnLogin.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View view) {
-                //회원가입 버튼 클릭
-                Intent intent = new Intent(getApplicationContext(),TmpActivity.class);
-                startActivity(intent);
-                //finish();
-            }
-        });
         btnRegister.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
                 //회원가입 버튼 클릭
@@ -127,44 +82,23 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-}
-class DatabaseOpenHelper extends SQLiteOpenHelper{
+    public class LoginRequest extends StringRequest {
+        final static private String URL = "http://3.36.66.178/login.php"; // "http:// 퍼블릭 DSN 주소/Login.php";
+        private Map<String, String> parameters;
 
-    public static final String tableName = "TestDB";
+        public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
+            super(Method.POST, URL, listener, null);
 
-    public DatabaseOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-        Log.i("tag","db 생성_db가 없을때만 최초로 실행함");
-        createTable(db);
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVer, int newVer) {
-    }
-
-    public void createTable(SQLiteDatabase db){
-        String sql = "CREATE TABLE " + tableName + "(id text, pw text, name text, phone text, region text, address text, gender text, birth datetime )";
-        try {
-            db.execSQL(sql);
-        }catch (Exception e){
+            parameters = new HashMap<>();
+            parameters.put("userID", userID);
+            parameters.put("userPassword", userPassword);
         }
-    }
 
-    public void insertUser(SQLiteDatabase db, String id, String pw){
-        Log.i("tag","회원가입을 했을때 실행함");
-        db.beginTransaction();
-        try {
-            String sql = "INSERT INTO " + tableName + "(id, pw)" + "values('"+ id +"', '"+pw+"')";
-            db.execSQL(sql);
-            db.setTransactionSuccessful();
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            db.endTransaction();
+        @Override
+        protected Map<String, String> getParams() throws AuthFailureError{
+            return parameters;
         }
     }
 }
+
+
