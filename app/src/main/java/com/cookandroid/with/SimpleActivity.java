@@ -5,13 +5,18 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.Spanned;
 import android.text.style.AbsoluteSizeSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
@@ -19,7 +24,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class SimpleActivity extends AppCompatActivity {
-    private Button btn1, btn2, btn3, btn4, datePickerBtn;
+    private Button datePickerBtn;
+    private CheckBox ch1, ch2, ch3, ch4;
 
     TextView dateText;
     DatePickerDialog datePickerDialog;
@@ -37,60 +43,72 @@ public class SimpleActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(" ");
 
 
-        //버튼 글자 크기 다르게
-        ArrayList<Button> btnLIst=new ArrayList<Button>();
+        //병원 동행 버튼
+        ch1 = (CheckBox) findViewById(R.id.checkbox1);
 
-        btn1 = (Button) findViewById(R.id.button1);
-        btn2 = (Button) findViewById(R.id.button2);
-        btn3 = (Button) findViewById(R.id.button3);
-        btn4 = (Button) findViewById(R.id.button4);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                btn1.setSelected(true);
-            }
-        });
-
-        Spannable span1 = (Spannable) btn1.getText();
-        span1.setSpan(new AbsoluteSizeSpan(43), 6,33, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Spannable span1 = (Spannable) ch1.getText();
+        //글자 크기 다르게
+        span1.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //색 다르게
+        span1.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //스타일 다르게
+        span1.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
-        btn2.setOnClickListener(new View.OnClickListener() {
+        //이동 보조 버튼
+        ch2 = (CheckBox) findViewById(R.id.checkbox2);
+        ch2.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                btn2.setSelected(true);
+
             }
         });
 
-        Spannable span2 = (Spannable) btn2.getText();
-        span2.setSpan(new AbsoluteSizeSpan(43), 6,34, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Spannable span2 = (Spannable) ch2.getText();
+        //글자 크기 다르게
+        span2.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //색 다르게
+        span2.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //스타일 다르게
+        span2.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
-        btn3.setOnClickListener(new View.OnClickListener() {
+        //산책 동반 버튼
+        ch3 = (CheckBox) findViewById(R.id.checkbox3);
+        ch3.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                btn3.setSelected(true);
+
             }
         });
 
-        Spannable span3 = (Spannable) btn3.getText();
-        span3.setSpan(new AbsoluteSizeSpan(44), 6,46, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Spannable span3 = (Spannable) ch3.getText();
+        //글자 크기 다르게
+        span3.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //색 다르게
+        span3.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //스타일 다르게
+        span3.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
-        btn4.setOnClickListener(new View.OnClickListener() {
+        //기타 버튼
+        ch4 = (CheckBox) findViewById(R.id.checkbox4);
+        ch4.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                btn4.setSelected(true);
+
             }
         });
 
-        Spannable span4 = (Spannable) btn4.getText();
-        span4.setSpan(new AbsoluteSizeSpan(44), 3,28, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Spannable span4 = (Spannable) ch4.getText();
+        span4.setSpan(new AbsoluteSizeSpan(80), 0,2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //색 다르게
+        span4.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        //스타일 다르게
+        span4.setSpan(new StyleSpan(Typeface.BOLD), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
         //main 등록 버튼 activity

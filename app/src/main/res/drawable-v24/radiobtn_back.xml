@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 눌렀을 때 -->
     <item android:state_checked="true">
         <shape>
-            <solid android:color="#EAEAEA" />
+            <solid android:color="#F2F8D6" />
             <corners
-                android:radius="20dp" />
+                android:radius="10dp" />
         </shape>
     </item>
+
     <item android:state_checked="false">
         <shape>
             <!-- 배경 -->
             <solid android:color="#FFFFFF" />
             <!-- 모서리 -->
             <corners
-                android:radius="20dp" />
+                android:radius="10dp" />
         </shape>
     </item>
 </selector>
