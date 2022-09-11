@@ -53,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //click 선택 마감 도움 리스트
+        button3 = findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SelectMatchList.class);
+                startActivity(intent);
+            }
+        });
+
 
         //click 매칭 리스트
         button4 = findViewById(R.id.button4);
