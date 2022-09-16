@@ -167,11 +167,13 @@ public class SeniorCheck1Activity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
+////////////////장우성 교수님께 여쭤본 부분/////////////////////////////////
+
                 //리니어레이아웃을 가져와서 textview를 추가하는 방법을 상용한다.
                 LinearLayout ll = findViewById(R.id.linearlayout1);
                 ll.removeAllViews();
 
-                //장우성 교수님께 도움을 받았음.
+
 
                 for(String item : mSelectedItems){
                     //이 부분이 문제였음 - 리스트 mSelectedItems 에서 값을 하나씩 꺼내와야하는데, 같은 값을 변수에 넣었으니 그렇게 된 것임
@@ -194,6 +196,8 @@ public class SeniorCheck1Activity extends AppCompatActivity {
                    //생성및 설정된 텍스트뷰 레이아웃에 적용하기
                     ll.addView(tv);
                 }
+////////////////////////여기까지/////////////////////////////////
+
                 //여기서 잠시 멈춤 : 확인 버튼을 누르면 값을 어떻게 보여줄지 결정해야함.
                 TextView text1 = findViewById(R.id.type1);
                 TextView text2 = findViewById(R.id.type2);
@@ -219,6 +223,9 @@ public class SeniorCheck1Activity extends AppCompatActivity {
                 y = year;
                 m = month + 1;
                 d = dayOdMonth;
+                //이제 입력값에 따라 text를 바꿔주자
+                text_date.setText(y + "년 " + m + "월 " + d + "일");
+
             }
         }, 2022, 8, 22);//다이얼로그가 켜졌을 때 첫 세팅된 날짜를 의미한다.
         ////업그레이드 : 오늘 날짜로 자동으로 변경하는 법 찾아보기
@@ -228,8 +235,6 @@ public class SeniorCheck1Activity extends AppCompatActivity {
 
         datePickerDialog.show();//다이얼로그 띄우기
 
-        //이제 입력값에 따라 text를 바꿔주자
-        text_date.setText(y + "년 " + m + "월 " + d + "일");
 
 
     }
@@ -241,16 +246,17 @@ public class SeniorCheck1Activity extends AppCompatActivity {
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h = hourOfDay;
                 mi = minute;
+
+                //이제 입력값에 따라 text를 바꿔주자
+                //문제 발생 : 다이얼로그에서 값을 입력하고 창을 닫으면, settext가 되어야하는데, 한발 늦게 되고 있다.
+                //해결책 : 여기에 넣고 해결함
+                text_time.setText(h + "시 " + mi + "분");
+
             }
         }, 18, 30, true); //다이얼로그가 켜졌을 때, 첫 세팅된 시간을 의미한다.
         timePickerDialog.setMessage("시간을 선택하세요.");
 
         timePickerDialog.show();//다이얼로그 띄우기
-
-        //이제 입력값에 따라 text를 바꿔주자
-        text_time.setText(h + "시 " + mi + "분");
-        //문제 발생 : 다이얼로그에서 값을 입력하고 창을 닫으면, settext가 되어야하는데, 한발 늦게 되고 있다.
-        //해결법 : 리스너를 공부할 것
 
     }
 
