@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+/*written by 병훈*/
+
 public class HelperProfileActivity extends AppCompatActivity {
 
     @Override

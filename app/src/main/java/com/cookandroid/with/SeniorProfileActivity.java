@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+/*written by 병훈*/
+
 public class SeniorProfileActivity extends AppCompatActivity {
 
     @Override

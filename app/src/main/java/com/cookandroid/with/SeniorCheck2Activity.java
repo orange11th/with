@@ -1,6 +1,6 @@
 package com.cookandroid.with;
 
-/*made by 병훈*/
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+/*written by 병훈*/
 
 public class SeniorCheck2Activity extends AppCompatActivity {
 

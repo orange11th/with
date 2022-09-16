@@ -1,15 +1,17 @@
 package com.cookandroid.with;
 
-/*Made by 병훈*/
+
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -22,6 +24,8 @@ import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+/*written by 병훈*/
 
 public class SeniorCheck1Activity extends AppCompatActivity {
 
@@ -82,7 +86,7 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         btn1_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog1();
+                showDialog1(); //showDialog1()를 호출한다.
 
             }
         });
@@ -137,12 +141,13 @@ public class SeniorCheck1Activity extends AppCompatActivity {
     /*메소드 - 도움 종류 변경하는 기능 - 노션에 정리해두었습니다.
     * 1. 체크 박스 다이얼로그 띄우기로 구현했습니다.*/
     void showDialog1(){
+
         //리스트를 만들고
         mSelectedItems = new ArrayList<>();
         builder = new AlertDialog.Builder(SeniorCheck1Activity.this);
         builder.setTitle("도움 종류를 선택해주세요.");
 
-        //string.xml에 만들어둔 kinOfHelp를 가져와서 체크박스로 만듭니다.
+        //string.xml에 만들어둔 kindOfHelp를 가져와서 체크박스로 만듭니다.
         builder.setMultiChoiceItems(R.array.kindOfHelp, null, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which, boolean isChecked) {
@@ -156,26 +161,42 @@ public class SeniorCheck1Activity extends AppCompatActivity {
                 }
             }
         });
+
         //확인을 누르면, 리스트에 있는 데이터가 버튼으로 만들어지게 만듭니다.
         builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //문제 : 체크박스에서 선택을 했을 때, 어떻게 보여줄 것인가?..
-                String final_selection1 ="";
-                String final_selection2 ="";
+
+                //리니어레이아웃을 가져와서 textview를 추가하는 방법을 상용한다.
+                LinearLayout ll = findViewById(R.id.linearlayout1);
+                ll.removeAllViews();
+
+                //장우성 교수님께 도움을 받았음.
 
                 for(String item : mSelectedItems){
-                    final_selection1 = item;
-                    final_selection2 = item;
+                    //이 부분이 문제였음 - 리스트 mSelectedItems 에서 값을 하나씩 꺼내와야하는데, 같은 값을 변수에 넣었으니 그렇게 된 것임
+
+                    //텍스트뷰를 2개로 고정하지 말자
+//                    리스트의 사이즈만큼 textview를 생성해야한다. 따라서
+                    TextView tv = new TextView(getApplicationContext());//이부분하기 - textview를 어떻게 생성하지?
+
+                    tv.setText(item);// 배열값을 가져와서 텍스트로 보이게하기
+                    tv.setTextSize(20);
+
+                    //레이아웃 설정
+                    LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                    param.leftMargin = 30;
+                    tv.setLayoutParams(param);
+
+                    //텍스트뷰 백그라운드 색상 설정하기기
+                   tv.setBackgroundColor(Color.rgb(184,236,184));
+
+                   //생성및 설정된 텍스트뷰 레이아웃에 적용하기
+                    ll.addView(tv);
                 }
                 //여기서 잠시 멈춤 : 확인 버튼을 누르면 값을 어떻게 보여줄지 결정해야함.
                 TextView text1 = findViewById(R.id.type1);
                 TextView text2 = findViewById(R.id.type2);
-
-                text1.setText(final_selection1);
-                text2.setText(final_selection2);
-
-                Toast.makeText(getApplicationContext(),"선택된 아이템은"+final_selection1,Toast.LENGTH_SHORT).show();
             }
         });
         //취소 이벤트

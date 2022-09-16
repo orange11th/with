@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/*written by 병훈*/
+
 /*ProfileReviseActivity에 필요한 기능 정리해보자
  * 1. 프로필 사진 변경
  * 2. 저장 버튼 기능
