@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -217,6 +218,12 @@ public class SeniorCheck1Activity extends AppCompatActivity {
 
     /*날짜 보여주는 메소드*/
     void showDate() {
+
+        //선택 가능한 날짜의 최소값을 저장하는 객체입니다.
+        Calendar minDate = Calendar.getInstance();
+
+        ///여기까지
+
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOdMonth) {
@@ -224,6 +231,10 @@ public class SeniorCheck1Activity extends AppCompatActivity {
                 m = month + 1;
                 d = dayOdMonth;
                 //이제 입력값에 따라 text를 바꿔주자
+
+                //이전날짜 선택불가하게 만들기
+
+
                 text_date.setText(y + "년 " + m + "월 " + d + "일");
 
             }
@@ -231,6 +242,10 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         ////업그레이드 : 오늘 날짜로 자동으로 변경하는 법 찾아보기
 
         datePickerDialog.setMessage("날짜를 선택하세요");//다이얼로그 제목
+
+//        minDate.set(2022,9-1,19);
+        //오늘 날짜 이전 날짜는 선택 불가능하게 만드는 코드입니다.
+        datePickerDialog.getDatePicker().setMinDate(minDate.getTimeInMillis());
 
 
         datePickerDialog.show();//다이얼로그 띄우기
