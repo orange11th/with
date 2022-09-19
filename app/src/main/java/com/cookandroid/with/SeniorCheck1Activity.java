@@ -55,18 +55,19 @@ public class SeniorCheck1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-//        Toolbar toolbar = findViewById(R.id.toolbar_main3);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setTitle(" ");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_senior_check1);
+
+        //toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar_senior1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(" ");
 
 
         /*id 매핑*/
         //버튼
-        btn_back = (Button) findViewById(R.id.back_btn);
+//        btn_back = (Button) findViewById(R.id.back_btn);
         btn1_change = (Button) findViewById(R.id.change_btn1);
         btn2_change = (Button) findViewById(R.id.change_btn2);
         btn3_change = (Button) findViewById(R.id.change_btn3);
@@ -303,18 +304,19 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         }).setCancelable(false).show();//setCancelable 메소드 - 백버튼을 사용하지 못하게 만든다.
     }
 
-//    //toolbar
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        switch(item.getItemId()){
-//            case android.R.id.home:{
-//                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-//                //startActivity(intent);
-//                finish();
-//                return true;
-//            }
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+
+    //toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:{
+                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                //startActivity(intent);
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

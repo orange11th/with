@@ -11,26 +11,27 @@
     android:orientation="vertical"
     tools:context=".SeniorCheck1Activity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/back_btn"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
+            <!--toolbar : id 지정해줘야함-->
+            <androidx.appcompat.widget.Toolbar
+                app:titleTextColor="#000000"
+                android:background="#FFFFFF"
+                android:id="@+id/toolbar_senior2"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                tools:ignore="MissingConstraints"
+                />
 
-                tools:ignore="SpeakableTextPresentCheck" />
+
 
             <TextView
                 android:id="@+id/confirm_text"

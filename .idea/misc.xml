@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_alarm.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete1.xml" value="0.2115036231884058" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete2.xml" value="0.264" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_confirm.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_privacy_setting.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile.xml" value="0.24947916666666667" />
@@ -12,13 +13,17 @@
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_history.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_loading.xml" value="0.2115036231884058" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_login.xml" value="0.2115036231884058" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_main.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_main2.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_main3.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_matching_list.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_matching_list_contents.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_nox.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_nox_confirm.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_register.xml" value="0.2463768115942029" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check1.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check2.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check3.xml" value="0.12952898550724637" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check2.xml" value="0.25" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check3.xml" value="0.264" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_home.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile.xml" value="0.11018518518518519" />
         <entry key="..\:/Users/USER-PC/AndroidStudioProjects/Withp/app/src/main/res/layout/activity_confirm.xml" value="0.17806484295845998" />
