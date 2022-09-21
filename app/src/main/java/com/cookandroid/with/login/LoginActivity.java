@@ -1,4 +1,4 @@
-package com.cookandroid.with;
+package com.cookandroid.with.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,22 +9,20 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.cookandroid.with.MainActivity;
+import com.cookandroid.with.R;
 
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class LoginActivity extends AppCompatActivity {
-
     EditText edtUsername,edtPassword;
     Button btnLogin,btnRegister;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         edtPassword=(EditText)findViewById(R.id.password);
         btnLogin=(Button)findViewById(R.id.login);
         btnRegister=(Button)findViewById(R.id.register);
+        Cookie cookie=Cookie.getCookie();
 
         btnLogin.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -51,12 +50,17 @@ public class LoginActivity extends AppCompatActivity {
 
                                 String userID = jsonResponse.getString("userID");
                                 String userPassword = jsonResponse.getString("userPassword");
+                                Cookie cookie=Cookie.getCookie();
+                                SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+                                String date=sdf.format(new Date(System.currentTimeMillis()));
+                                cookie.writeCookie(userID,userPassword,date);
+
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 // 로그인 하면서 사용자 정보 넘기기
-                                intent.putExtra("userID", userID);
-                                intent.putExtra("userPassword", userPassword);
+                                //intent.putExtra("userID", userID);
+                                //intent.putExtra("userPassword", userPassword);
                                 startActivity(intent);
-
+                                finish();
                             } else {
                                 Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();
                                 return;
@@ -76,28 +80,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //회원가입 버튼 클릭
-                Intent intent = new Intent(getApplicationContext(),RegisterActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
-                //finish();
+                finish();
             }
         });
-    }
-    public class LoginRequest extends StringRequest {
-        final static private String URL = "http://3.36.66.178/login.php"; // "http:// 퍼블릭 DSN 주소/Login.php";
-        private Map<String, String> parameters;
-
-        public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
-            super(Method.POST, URL, listener, null);
-
-            parameters = new HashMap<>();
-            parameters.put("userID", userID);
-            parameters.put("userPassword", userPassword);
-        }
-
-        @Override
-        protected Map<String, String> getParams() throws AuthFailureError{
-            return parameters;
-        }
     }
 }
 
