@@ -3,7 +3,6 @@
     package="com.cookandroid.with">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
@@ -19,7 +18,7 @@
             android:exported="false">
         </activity>
         <activity
-            android:name=".LoadingActivity"
+            android:name=".login.LoadingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,8 +58,8 @@
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.RegisterActivity" />
         <activity android:name=".MainActivity3" />
         <activity android:name=".MainActivity" />
     </application>
