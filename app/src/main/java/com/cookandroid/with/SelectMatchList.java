@@ -1,5 +1,8 @@
 package com.cookandroid.with;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,26 +16,23 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import java.util.ArrayList;
 
-public class MainActivity2 extends AppCompatActivity {
+public class SelectMatchList extends AppCompatActivity {
+
     private String TAG = MainActivity2.class.getSimpleName();
     private ListView listview = null;
     private ListViewAdapter adapter = null;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_select_match_list);
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_list);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("선착순 마감 도움 리스트");
+        getSupportActionBar().setTitle("선택 마감 도움 리스트");
 
         //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_TEST) ;
 
@@ -80,7 +80,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
     //List View Adapter
-    public class ListViewAdapter extends BaseAdapter{
+    public class ListViewAdapter extends BaseAdapter {
         ArrayList<TestList> items = new ArrayList<TestList>();
 
         @Override
@@ -133,7 +133,7 @@ public class MainActivity2 extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     //Toast.makeText(context, testList.getTitle() + "제목", Toast.LENGTH_LONG).show( );
-                    Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                    Intent intent = new Intent(SelectMatchList.this, SelectMatchListContents.class);
                     intent.putExtra("title", testList.getTitle());
                     intent.putExtra("tag", testList.getTag());
                     intent.putExtra("region", testList.getRegion());
@@ -146,7 +146,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     }
 
-    //toolbar
+    //toolbar Click
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){

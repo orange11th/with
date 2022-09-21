@@ -2,7 +2,7 @@
 
 <!--설명 : 이 화면은 시니어가 올린 글을 확인하는 화면입니다.-->
 
-<!--스크롤뷰를 최상단에 두어서 스크롤을 만들었다.-->
+<!--스크롤뷰-->
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,14 +24,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/back_btn"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-
-                tools:ignore="SpeakableTextPresentCheck" />
+            <androidx.appcompat.widget.Toolbar
+                app:titleTextColor="#111111"
+                android:background="@color/white"
+                android:id="@+id/toolbar_senior3"
+                android:layout_height="58dp"
+                android:layout_width="match_parent"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/confirm_text"

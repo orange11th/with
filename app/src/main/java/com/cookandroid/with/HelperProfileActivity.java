@@ -1,11 +1,15 @@
 package com.cookandroid.with;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+/*written by 병훈*/
 
 public class HelperProfileActivity extends AppCompatActivity {
 
@@ -13,6 +17,12 @@ public class HelperProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_helper_profile);
+
+        //toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar_helperProfile);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(" ");
 
         /* ProfileActivity에서 필요한 기능 정리를 해보자
          * 이 액티비티에는 3개의 버튼이 있다.
@@ -49,20 +59,21 @@ public class HelperProfileActivity extends AppCompatActivity {
             }
         });
 
-        /*3. <뒤로가기 버튼> 클릭시 액티비티 전환하는 코드입니다.*/
-        ImageView image3 = findViewById(R.id.btn_back);
 
-        /*미완성*/
 
-        //image3이 눌렸을 때
-        image3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //인텐트를 사용해서 홈 화면으로 전환한다.
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);//홈 액티비티로 바꿔줘야합니다.
-                startActivity(intent);
+    }
+
+    //toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:{
+                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                //startActivity(intent);
+                finish();
+                return true;
             }
-        });
-
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

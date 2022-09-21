@@ -1,15 +1,17 @@
 package com.cookandroid.with;
 
-/*Made by 병훈*/
+
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -20,8 +22,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+/*written by 병훈*/
 
 public class SeniorCheck1Activity extends AppCompatActivity {
 
@@ -50,18 +55,19 @@ public class SeniorCheck1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-//        Toolbar toolbar = findViewById(R.id.toolbar_main3);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setTitle(" ");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_senior_check1);
+
+        //toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar_senior1);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(" ");
 
 
         /*id 매핑*/
         //버튼
-        btn_back = (Button) findViewById(R.id.back_btn);
+//        btn_back = (Button) findViewById(R.id.back_btn);
         btn1_change = (Button) findViewById(R.id.change_btn1);
         btn2_change = (Button) findViewById(R.id.change_btn2);
         btn3_change = (Button) findViewById(R.id.change_btn3);
@@ -82,7 +88,7 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         btn1_change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog1();
+                showDialog1(); //showDialog1()를 호출한다.
 
             }
         });
@@ -137,12 +143,13 @@ public class SeniorCheck1Activity extends AppCompatActivity {
     /*메소드 - 도움 종류 변경하는 기능 - 노션에 정리해두었습니다.
     * 1. 체크 박스 다이얼로그 띄우기로 구현했습니다.*/
     void showDialog1(){
+
         //리스트를 만들고
         mSelectedItems = new ArrayList<>();
         builder = new AlertDialog.Builder(SeniorCheck1Activity.this);
         builder.setTitle("도움 종류를 선택해주세요.");
 
-        //string.xml에 만들어둔 kinOfHelp를 가져와서 체크박스로 만듭니다.
+        //string.xml에 만들어둔 kindOfHelp를 가져와서 체크박스로 만듭니다.
         builder.setMultiChoiceItems(R.array.kindOfHelp, null, new DialogInterface.OnMultiChoiceClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int which, boolean isChecked) {
@@ -156,26 +163,46 @@ public class SeniorCheck1Activity extends AppCompatActivity {
                 }
             }
         });
+
         //확인을 누르면, 리스트에 있는 데이터가 버튼으로 만들어지게 만듭니다.
         builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                //문제 : 체크박스에서 선택을 했을 때, 어떻게 보여줄 것인가?..
-                String final_selection1 ="";
-                String final_selection2 ="";
+
+////////////////장우성 교수님께 여쭤본 부분/////////////////////////////////
+
+                //리니어레이아웃을 가져와서 textview를 추가하는 방법을 상용한다.
+                LinearLayout ll = findViewById(R.id.linearlayout1);
+                ll.removeAllViews();
+
+
 
                 for(String item : mSelectedItems){
-                    final_selection1 = item;
-                    final_selection2 = item;
+                    //이 부분이 문제였음 - 리스트 mSelectedItems 에서 값을 하나씩 꺼내와야하는데, 같은 값을 변수에 넣었으니 그렇게 된 것임
+
+                    //텍스트뷰를 2개로 고정하지 말자
+//                    리스트의 사이즈만큼 textview를 생성해야한다. 따라서
+                    TextView tv = new TextView(getApplicationContext());//이부분하기 - textview를 어떻게 생성하지?
+
+                    tv.setText(item);// 배열값을 가져와서 텍스트로 보이게하기
+                    tv.setTextSize(20);
+
+                    //레이아웃 설정
+                    LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                    param.leftMargin = 30;
+                    tv.setLayoutParams(param);
+
+                    //텍스트뷰 백그라운드 색상 설정하기기
+                   tv.setBackgroundColor(Color.rgb(184,236,184));
+
+                   //생성및 설정된 텍스트뷰 레이아웃에 적용하기
+                    ll.addView(tv);
                 }
+////////////////////////여기까지/////////////////////////////////
+
                 //여기서 잠시 멈춤 : 확인 버튼을 누르면 값을 어떻게 보여줄지 결정해야함.
                 TextView text1 = findViewById(R.id.type1);
                 TextView text2 = findViewById(R.id.type2);
-
-                text1.setText(final_selection1);
-                text2.setText(final_selection2);
-
-                Toast.makeText(getApplicationContext(),"선택된 아이템은"+final_selection1,Toast.LENGTH_SHORT).show();
             }
         });
         //취소 이벤트
@@ -192,23 +219,38 @@ public class SeniorCheck1Activity extends AppCompatActivity {
 
     /*날짜 보여주는 메소드*/
     void showDate() {
+
+        //선택 가능한 날짜의 최소값을 저장하는 객체입니다.
+        Calendar minDate = Calendar.getInstance();
+
+        ///여기까지
+
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOdMonth) {
                 y = year;
                 m = month + 1;
                 d = dayOdMonth;
+                //이제 입력값에 따라 text를 바꿔주자
+
+                //이전날짜 선택불가하게 만들기
+
+
+                text_date.setText(y + "년 " + m + "월 " + d + "일");
+
             }
         }, 2022, 8, 22);//다이얼로그가 켜졌을 때 첫 세팅된 날짜를 의미한다.
         ////업그레이드 : 오늘 날짜로 자동으로 변경하는 법 찾아보기
 
         datePickerDialog.setMessage("날짜를 선택하세요");//다이얼로그 제목
 
+//        minDate.set(2022,9-1,19);
+        //오늘 날짜 이전 날짜는 선택 불가능하게 만드는 코드입니다.
+        datePickerDialog.getDatePicker().setMinDate(minDate.getTimeInMillis());
+
 
         datePickerDialog.show();//다이얼로그 띄우기
 
-        //이제 입력값에 따라 text를 바꿔주자
-        text_date.setText(y + "년 " + m + "월 " + d + "일");
 
 
     }
@@ -220,16 +262,17 @@ public class SeniorCheck1Activity extends AppCompatActivity {
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 h = hourOfDay;
                 mi = minute;
+
+                //이제 입력값에 따라 text를 바꿔주자
+                //문제 발생 : 다이얼로그에서 값을 입력하고 창을 닫으면, settext가 되어야하는데, 한발 늦게 되고 있다.
+                //해결책 : 여기에 넣고 해결함
+                text_time.setText(h + "시 " + mi + "분");
+
             }
         }, 18, 30, true); //다이얼로그가 켜졌을 때, 첫 세팅된 시간을 의미한다.
         timePickerDialog.setMessage("시간을 선택하세요.");
 
         timePickerDialog.show();//다이얼로그 띄우기
-
-        //이제 입력값에 따라 text를 바꿔주자
-        text_time.setText(h + "시 " + mi + "분");
-        //문제 발생 : 다이얼로그에서 값을 입력하고 창을 닫으면, settext가 되어야하는데, 한발 늦게 되고 있다.
-        //해결법 : 리스너를 공부할 것
 
     }
 
@@ -261,18 +304,19 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         }).setCancelable(false).show();//setCancelable 메소드 - 백버튼을 사용하지 못하게 만든다.
     }
 
-//    //toolbar
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item){
-//        switch(item.getItemId()){
-//            case android.R.id.home:{
-//                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-//                //startActivity(intent);
-//                finish();
-//                return true;
-//            }
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+
+    //toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:{
+                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                //startActivity(intent);
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }

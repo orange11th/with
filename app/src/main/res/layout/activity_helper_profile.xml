@@ -11,32 +11,23 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!--뒤로가기. 프로필, 수정 버튼, 설정 버튼-->
+    <!--toolbar : id 지정해줘야함-->
+    <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="#000000"
+        android:background="#FFFFFF"
+        android:id="@+id/toolbar_helperProfile"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        tools:ignore="MissingConstraints"
+        />
+
+    <!--수정 버튼, 설정 버튼-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:gravity="right"
         android:orientation="horizontal">
-        <!--뒤로가기 버튼-->
-        <!--핸들링하기 위해서 id : btn_back 를 부여한다.-->
-
-        <ImageView
-            android:id="@+id/btn_back"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:src="@drawable/back_icon"/>
-
-        <!--텍스트-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginLeft="5dp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:text="프로필"/>
 
         <!--수정 버튼-->
         <!--핸들링하기 위해서 id : btn_revise 를 부여한다.-->
@@ -45,8 +36,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/revise_icon"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginRight="10dp"/>
         <!--설정 버튼-->
         <!--핸들링하기 위해서 id: btn_setting 을 부여한다.-->
         <ImageView
@@ -54,8 +44,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/setting_icon"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginRight="20dp"/>
 
     </LinearLayout>
 

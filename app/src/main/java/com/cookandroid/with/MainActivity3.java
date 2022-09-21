@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity3 extends AppCompatActivity {
+    private Button confirmbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +39,17 @@ public class MainActivity3 extends AppCompatActivity {
         contents.setMovementMethod(new ScrollingMovementMethod());
 
         //click 신청하기
-        Button confirmbutton = (Button) findViewById(R.id.confirmbutton);
+
+        confirmbutton = findViewById(R.id.confirmbutton);
         confirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MatchingList.class);
+                Intent intent = new Intent(MainActivity3.this, MatchingList.class);
                 startActivity(intent);
             }
         });
     }
+
     //toolbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item){

@@ -7,6 +7,7 @@
     android:overScrollMode="never"
     android:scrollbars="none"
     android:fillViewport="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +21,7 @@
             <androidx.appcompat.widget.Toolbar
                 app:titleTextColor="#111111"
                 android:background="@color/white"
-                android:id="@+id/toolbar_main3"
+                android:id="@+id/toolbar_senior1"
                 android:layout_height="58dp"
                 android:layout_width="match_parent"
                 tools:ignore="MissingConstraints" />
@@ -77,6 +78,7 @@
 
             <!-- 도움 종류 가로 정렬 -->
             <LinearLayout
+                android:id = "@+id/linearlayout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"

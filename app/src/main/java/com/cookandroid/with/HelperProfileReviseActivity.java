@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+/*written by 병훈*/
 
 /*ProfileReviseActivity에 필요한 기능 정리해보자
  * 1. 프로필 사진 변경
@@ -33,6 +37,12 @@ public class HelperProfileReviseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_helper_profile_revise);
 
+        //toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar_helperProfileRevise);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(" ");
+
         /*1. 프로필 사진 변경 기능*/
         ImageView imageView = findViewById(R.id.btn_profile_revise);
         imageView.setOnClickListener(new View.OnClickListener(){
@@ -47,15 +57,15 @@ public class HelperProfileReviseActivity extends AppCompatActivity {
         });
 
 
-        /*뒤로가기 버튼 구현하기*/
-        ImageView backBtn = (ImageView) findViewById(R.id.back_btn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),HelperProfileActivity.class);
-                startActivity(intent);//액티비티 띄우기
-            }
-        });
+//        /*뒤로가기 버튼 구현하기*/
+//        ImageView backBtn = (ImageView) findViewById(R.id.back_btn);
+//        backBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(),HelperProfileActivity.class);
+//                startActivity(intent);//액티비티 띄우기
+//            }
+//        });
 
         /*2. 자격증 추가 버튼 코드입니다.*/
         /*다시 만들어볼 예정입니다.*/
@@ -70,5 +80,19 @@ public class HelperProfileReviseActivity extends AppCompatActivity {
             Uri selectedImageUri = data.getData();
             imageview.setImageURI(selectedImageUri);
         }
+    }
+
+    //toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:{
+                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+                //startActivity(intent);
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

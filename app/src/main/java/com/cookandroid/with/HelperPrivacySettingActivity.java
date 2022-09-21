@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+/*written by 병훈*/
+
 /*HelperPrivacySettingActivity 에서 필요한 기능을 정리해보자
  * 1. 저장 버튼
  * 2. 비밀번호 변경 버튼 기능
