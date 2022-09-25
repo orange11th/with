@@ -3,9 +3,7 @@
     package="com.cookandroid.with">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".board.BoardInsert"
+            android:exported="false" />
         <activity
             android:name=".SelectMatchNotice"
             android:exported="false" />
@@ -32,29 +33,19 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".SeniorCheck3Activity"
-            android:exported="true">
-
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".SeniorCheck2Activity"
-            android:exported="true">
-
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".SeniorCheck1Activity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".HelperProfileReviseActivity"
             android:exported="true">
@@ -66,28 +57,23 @@
         </activity>
         <activity
             android:name=".HelperProfileActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".HelperPrivacySettingActivity"
             android:exported="false" />
         <activity
             android:name=".ConfirmActivity"
             android:exported="false" />
-
         <activity
             android:name=".TmpActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
-
             android:exported="false" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.RegisterActivity" />
         <activity android:name=".MainActivity3" />
         <activity android:name=".MainActivity" />
-
     </application>
 
 </manifest>
