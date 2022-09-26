@@ -63,7 +63,6 @@ public class BoardInsert extends AppCompatActivity {
                 InsertRequest insertRequest = new InsertRequest(userID, subject, content, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(BoardInsert.this);
                 queue.add(insertRequest);
-
             }
         });
     }
