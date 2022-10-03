@@ -14,6 +14,9 @@
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".topic.GetTopic"
+            android:exported="false" />
+        <activity
             android:name=".board.BoardInsert"
             android:exported="false" />
         <activity
@@ -39,13 +42,13 @@
         </activity>
         <activity
             android:name=".SeniorCheck3Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SeniorCheck2Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SeniorCheck1Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HelperProfileReviseActivity"
             android:exported="true">
@@ -57,7 +60,7 @@
         </activity>
         <activity
             android:name=".HelperProfileActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HelperPrivacySettingActivity"
             android:exported="false" />

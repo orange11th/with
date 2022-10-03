@@ -13,6 +13,7 @@ import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.MainActivity;
 import com.cookandroid.with.R;
 import com.cookandroid.with.board.BoardInsert;
+import com.cookandroid.with.topic.GetTopic;
 
 import org.json.JSONObject;
 
@@ -42,7 +43,7 @@ public class LoadingActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), GetTopic.class);
                                 startActivity(intent);
                                 finish();
                             } else {
