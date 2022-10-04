@@ -3,7 +3,7 @@
     <!-- 눌렀을 때 -->
     <item android:state_checked="true">
         <shape>
-            <solid android:color="#F2F8D6" />
+            <solid android:color="#E3F4D2" />
             <corners
                 android:radius="10dp" />
         </shape>

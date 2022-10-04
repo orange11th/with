@@ -20,12 +20,15 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.cookandroid.with.databinding.ActivityNoxBinding;
+import com.cookandroid.with.databinding.ActivitySimpleBinding;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
 public class SimpleActivity extends AppCompatActivity {
+    ActivitySimpleBinding binding;
     private Button datePickerBtn;
-    private CheckBox ch1, ch2, ch3, ch4;
 
     TextView dateText;
     DatePickerDialog datePickerDialog;
@@ -34,7 +37,8 @@ public class SimpleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple);
+        binding = ActivitySimpleBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_simple);
@@ -44,9 +48,15 @@ public class SimpleActivity extends AppCompatActivity {
 
 
         //병원 동행 버튼
-        ch1 = (CheckBox) findViewById(R.id.checkbox1);
+        binding.checkbox1.setOnClickListener(new View.OnClickListener() {
 
-        Spannable span1 = (Spannable) ch1.getText();
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        Spannable span1 = (Spannable) binding.checkbox1.getText();
         //글자 크기 다르게
         span1.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //색 다르게
@@ -56,16 +66,14 @@ public class SimpleActivity extends AppCompatActivity {
 
 
         //이동 보조 버튼
-        ch2 = (CheckBox) findViewById(R.id.checkbox2);
-        ch2.setOnClickListener(new View.OnClickListener() {
-
+        binding.checkbox2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        Spannable span2 = (Spannable) ch2.getText();
+        Spannable span2 = (Spannable) binding.checkbox2.getText();
         //글자 크기 다르게
         span2.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //색 다르게
@@ -75,16 +83,14 @@ public class SimpleActivity extends AppCompatActivity {
 
 
         //산책 동반 버튼
-        ch3 = (CheckBox) findViewById(R.id.checkbox3);
-        ch3.setOnClickListener(new View.OnClickListener() {
-
+        binding.checkbox3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        Spannable span3 = (Spannable) ch3.getText();
+        Spannable span3 = (Spannable) binding.checkbox3.getText();
         //글자 크기 다르게
         span3.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //색 다르게
@@ -94,16 +100,14 @@ public class SimpleActivity extends AppCompatActivity {
 
 
         //기타 버튼
-        ch4 = (CheckBox) findViewById(R.id.checkbox4);
-        ch4.setOnClickListener(new View.OnClickListener() {
-
+        binding.checkbox4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
 
-        Spannable span4 = (Spannable) ch4.getText();
+        Spannable span4 = (Spannable) binding.checkbox4.getText();
         span4.setSpan(new AbsoluteSizeSpan(80), 0,2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //색 다르게
         span4.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -111,10 +115,22 @@ public class SimpleActivity extends AppCompatActivity {
         span4.setSpan(new StyleSpan(Typeface.BOLD), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
-        //main 등록 버튼 activity
-        Button enroll_btn = (Button) findViewById(R.id.enroll_btn);
-        enroll_btn.setOnClickListener(new View.OnClickListener(){
+        // 주소지 설정
+        //기존 주소지 버튼을 누르면 existingLayout만 보이도록 설정
+        binding.existingBtn.setOnClickListener( v -> {
+            binding.existingLayout.setVisibility(View.VISIBLE);
+            binding.newLayout.setVisibility(View.GONE);
+        });
 
+        //신규 주소지 버튼을 누르면 newLayout만 보이도록 설정
+        binding.newBtn.setOnClickListener( v -> {
+            binding.existingLayout.setVisibility(View.GONE);
+            binding.newLayout.setVisibility(View.VISIBLE);
+        });
+
+
+        //main 등록 버튼 activity
+        binding.enrollBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ConfirmActivity.class);
@@ -164,13 +180,11 @@ public class SimpleActivity extends AppCompatActivity {
     //toolbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-            case android.R.id.home:{
-                Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
-                startActivity(intent);
-                finish();
-                return true;
-            }
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

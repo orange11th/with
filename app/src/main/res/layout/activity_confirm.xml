@@ -326,22 +326,8 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/modify_btn"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/confirm_change_background"
-                android:text="수정"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#111111"
-                android:elevation="4dp"/>
-
-            <Button
                 android:id="@+id/confirm_btn"
-                android:layout_width="250dp"
+                android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"

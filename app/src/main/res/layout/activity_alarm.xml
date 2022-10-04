@@ -4,12 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AlarmActivity">
+    tools:context=".AlarmActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_alarm"
+        app:titleTextColor="#000000"
+        android:background="#FFFFFF"
         android:layout_height="wrap_content"
-        android:text="알람 페이지"
-        android:textSize="30sp"/>
+        android:layout_width="match_parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#E7F4DA">
+
+        <TextView
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="25dp"
+            android:paddingRight="15dp"
+            android:text="내일 오전 11시에 돌보미와의 약속이 있어요!\n일정과 장소를 확인해보세요 >"
+            android:textSize="16dp"
+            android:textColor="#222222"/>
+
+        <TextView
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:text="10분 전"
+            android:textColor="#888888"
+            android:gravity="end"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="380dp"
+        android:layout_height="0.8dp"
+        android:background="#DADADA"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="25dp"
+            android:paddingRight="15dp"
+            android:text="9월 30일 돌보미가 확정되었어요!\n일정과 장소를 확인해보세요 >"
+            android:textSize="16dp"
+            android:textColor="#222222"/>
+
+        <TextView
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:text="8월 29일"
+            android:textColor="#888888"
+            android:gravity="end"/>
+
+    </LinearLayout>
 
 </LinearLayout>

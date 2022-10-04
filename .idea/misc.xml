@@ -34,7 +34,29 @@
         <entry key="..\:/Users/USER-PC/AndroidStudioProjects/Withp/app/src/main/res/layout/activity_main2.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/USER-PC/AndroidStudioProjects/Withp/app/src/main/res/layout/activity_main3.xml" value="0.33" />
         <entry key="..\:/Users/USER-PC/AndroidStudioProjects/Withp/app/src/main/res/layout/activity_matching_list.xml" value="0.33" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/color_edge.xml" value="0.3325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/radiobtn_back.xml" value="0.3325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/simple_checkbox_back.xml" value="0.3325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/hashtagbackground2.xml" value="0.3325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/nox_confirm_background.xml" value="0.3325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_alarm.xml" value="0.33" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete1.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete2.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_confirm.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_history.xml" value="0.33" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_login.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_main2.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_main3.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_matching_list.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_nox.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_nox_confirm.xml" value="0.33" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_register.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_select_match_list.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check1.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check2.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check3.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_simple.xml" value="0.33" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/drawable-v24/back_select.xml" value="0.348" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/drawable-v24/bar.xml" value="0.217" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/drawable-v24/bg_custom_button.xml" value="0.3315" />
@@ -48,7 +70,6 @@
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete1.xml" value="0.509375" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete2.xml" value="0.509375" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_confirm2.xml" value="0.509375" />
-        <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_get_topic.xml" value="0.33" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_privacy_setting.xml" value="0.3808876811594203" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile.xml" value="0.3808876811594203" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile_revise.xml" value="0.3808876811594203" />
@@ -57,7 +78,7 @@
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_main2.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_main3.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_main_yerim.xml" value="0.509375" />
-        <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_register.xml" value="0.48143115942028986" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check1.xml" value="0.3808876811594203" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check2.xml" value="0.3697916666666667" />
         <entry key="..\:/Users/orang/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check3.xml" value="0.4875" />
@@ -70,7 +91,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
