@@ -18,8 +18,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -27,7 +29,7 @@ import java.util.ArrayList;
 
 public class SeniorCheck2Activity extends AppCompatActivity {
 
-    ArrayList<MyDessert> arDessert; //돌보미 선택 기능에 필요
+    ArrayList<HelperData> arrHelper; //돌보미 선택 기능에 필요
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,34 +37,41 @@ public class SeniorCheck2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_senior_check2);
 
         //toolbar
+        /*
         Toolbar toolbar = findViewById(R.id.toolbar_senior2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(" ");
-
+        */
 
         //MyDessert 클래스 형태의 데이터 준비
-        arDessert = new ArrayList<>();
+        arrHelper = new ArrayList<>();
 
 //        for(int i=0;i<10;i++){
 //            MyDessert mydessert1 = new MyDessert(R.drawable.profile,"홍길동"+i,"자세히 보기"+i);
 //            arDessert.add(mydessert1);
 //        }
 
-        MyDessert mydessert;
+        //데이터 객체
+        HelperData mydata;
 
-        mydessert = new MyDessert(R.drawable.profile,"홍길동1","자세히 보기1");
-        arDessert.add(mydessert);
-        mydessert = new MyDessert(R.drawable.profile,"홍길동2","자세히 보기2");
-        arDessert.add(mydessert);
-        mydessert = new MyDessert(R.drawable.profile,"홍길동3","자세히 보기3");
-        arDessert.add(mydessert);
+        //배열에 데이터 추가
+        mydata = new HelperData(R.drawable.profile,"홍길동1","자세히 보기1");
+        arrHelper.add(mydata);
+        mydata = new HelperData(R.drawable.profile,"홍길동2","자세히 보기2");
+        arrHelper.add(mydata);
+        mydata = new HelperData(R.drawable.profile,"홍길동3","자세히 보기3");
+        arrHelper.add(mydata);
 
-        MyDessertAdapter adapter = new MyDessertAdapter(this,R.layout.listview_senior_item,arDessert);
+        //어댑터 생성 - arrHelper 배열과 연결
+        HelperAdapter adapter = new HelperAdapter(arrHelper);
 
-        ListView list;
-        list = (ListView) findViewById(R.id.list);
-        list.setAdapter(adapter);
+        //리사이클러뷰 생성
+        RecyclerView recyclerView;
+        recyclerView = (RecyclerView) findViewById(R.id.rv);
+
+        //리사이클러뷰와 어댑터 연결
+        recyclerView.setAdapter(adapter);
 
 
 
@@ -79,12 +88,10 @@ public class SeniorCheck2Activity extends AppCompatActivity {
 //        });
 
         /*확인 버튼 기능입니다.
-        * 버튼을 누르면 선택한 돌보미의 데이터와 함께 화면을 전환압니다.
-        * 생각해볼 것 : 어느 화면으로 전환해야하지?*/
+         * 버튼을 누르면 선택한 돌보미의 데이터와 함께 화면을 전환압니다.
+         * 생각해볼 것 : 어느 화면으로 전환해야하지?*/
 
 
-        /*돌보미 선택 버튼 기능입니다.
-        * 버튼을 누르면 해당 돌보미가 선택되도록 합니다.*/
     }
 
     //toolbar
@@ -101,85 +108,147 @@ public class SeniorCheck2Activity extends AppCompatActivity {
     }
 }
 
-//돌보미 선택 기능 구현
-//리스트 뷰에 출력할 항목 리스트
-class MyDessert{
-    int Icon;
-    String Name;
-    String Detail;
 
-    MyDessert(int aIcon, String aName,String adetail){
-        Icon = aIcon;
-        Name = aName;
-        Detail = adetail;
+//돌보미 지원자 데이터 클래스 - 리스트 뷰에 출력할 항목 리스트
+class HelperData{
+    int profile;
+    String name;
+    String detail;
+
+    //생성자
+    HelperData(int profile, String name,String detail){
+        this.profile = profile;
+        this.name = name;
+        this.detail = detail;
     }
+    //setter getter
+
+    public int getIv_profile() {
+        return profile;
+    }
+
+    public void setIv_profile(int profile) {
+        this.profile = profile;
+    }
+
+    public String getTv_name() {
+        return name;
+    }
+
+    public void setTv_name(String name) {
+        this.name = name;
+    }
+
+    public String getTv_detail() {
+        return detail;
+    }
+
+    public void setTv_content(String detail) {
+        this.detail = detail;
+    }
+
 }
 
 //어댑터 클래스
-class MyDessertAdapter extends BaseAdapter {
 
-    Context con;
-    LayoutInflater inflacter;
-    ArrayList<MyDessert> arD;
-    int layout;
+class HelperAdapter extends RecyclerView.Adapter<HelperAdapter.CustomViewHolder> {
 
-    public MyDessertAdapter(Context context, int alayout, ArrayList<MyDessert> aarD){
-        con = context;
-        inflacter = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        arD = aarD;
-        layout = alayout;
+    //배열 선언
+    private ArrayList<HelperData> arrayList;
 
-//        Log.d("woosung1", "MyDessertAdapter:"+arD.get(1).Name);
+    //ArrayList를 파라미터로 가진 생성자로 만들어준다.
+    public HelperAdapter(ArrayList<HelperData> arrayList) {
+        this.arrayList = arrayList;
     }
 
-    //어댑터에 몇 개의 항목이 있는지 조사
+    @NonNull
     @Override
-    public int getCount() {
-        Log.d("woosung1", "getCount:"+arD.size());
-        return arD.size();
+    public HelperAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        //이부분 이해가 안됌 - LayoutInflater가 데이터를 넣는 틀(레이아웃)을 선언하는 건가?(예상)
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listview_senior_item,parent,false);
+
+        //그 틀(레이아웃)을 홀딩하나봐
+        CustomViewHolder holder = new CustomViewHolder(view);//이게 커스텀 어댑터라서 그런가보다.
+
+        //holder 리턴
+        return holder;
     }
 
+    //실제 추가될 때에 대한 생명주기
     @Override
-    public Object getItem(int position) {
-        Log.d("woosung1", "getItem:"+arD.get(position).Name);
-        return arD.get(position).Name;
-    }
-    //position 위치의 항목 ID반환
-    @Override
-    public long getItemId(int position) {
-        Log.d("woosung1", "getItemId:"+position);
-        return position;
-    }
+    public void onBindViewHolder(@NonNull HelperAdapter.CustomViewHolder holder, int position) {
+        //다음과 같이 적어준다.
+        //그 틀(레이아웃)에 이미지를 가져와서 설정한다.
+        holder.profile.setImageResource(arrayList.get(position).getIv_profile()); //arrayList로부터 position의 위치에서 getIv_profile을 갖고 와라
+        //그 틀(레이아웃)에 텍스트를 가져와서 설정한다.
+        holder.name.setText(arrayList.get(position).getTv_name());
+        //그 틀(레이아웃)에 텍스트를 가져와서 설정한다.
+        holder.content.setText(arrayList.get(position).getTv_detail());
 
-    //각 항목의 뷰 생성 후 반환한다.
-    @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
-        Log.d("woosung1", "getView position1: "+position);
 
-        if(convertView == null){
-            convertView = inflacter.inflate(layout,parent,false);
-        }
+        //리스트뷰가 클릭됐을 떄, 또는 논클릭이 됐을 떄 구현할 수 있다. - 이건 없어도 됌
+        holder.itemView.setTag(position);//포지션을 가져와 준다.
 
-        ImageView img = (ImageView) convertView.findViewById(R.id.img);
-        img.setImageResource(arD.get(position).Icon);
-
-        TextView txt1 = (TextView) convertView.findViewById(R.id.txt1);
-        txt1.setText(arD.get(position).Name);
-
-        TextView txt2 = (TextView) convertView.findViewById(R.id.txt2);
-        txt2.setText(arD.get(position).Detail);//test
-
-        Log.d("woosung1", "getView position2: "+position);
-
-        Button btn = (Button) convertView.findViewById(R.id.btn);
-        btn.setOnClickListener(new Button.OnClickListener(){
-
+        //리스트뷰의 아이템이 클릭되면 발생하는 클릭이벤트 - 이건 없어도 됌
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str = arD.get(position).Name + "를 주문합니다.";
-                Toast.makeText(con,str,Toast.LENGTH_SHORT).show();
+
+                //이름을 토스트 메세지로 출력한다.
+                String curName = holder.name.getText().toString();
+                Toast.makeText(view.getContext(),curName, Toast.LENGTH_SHORT).show();
             }
         });
-        return convertView;
+
+        //Long 클릭 이벤트를 구현하겠다. - 롱클릭을 하면 삭제하도록 만들겠음
+//        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View view) {
+//                //
+//                remove(holder.getAbsoluteAdapterPosition());
+//
+//                //리턴 false -> true 변경
+//                return false;
+//            }
+//        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return (null != arrayList ? arrayList.size() : 0);
+    }
+
+    //리스트뷰 삭제하는 메소드
+    public void remove(int position){
+        try{
+            //리스트뷰를 지운다.
+            arrayList.remove(position);
+
+            //새로고침을 한다.
+            notifyItemRemoved(position);
+        }catch (IndexOutOfBoundsException ex){
+            ex.printStackTrace();
+        }
+    }
+
+
+    public class CustomViewHolder extends RecyclerView.ViewHolder {
+
+        //item_list.xml 에 있는 위젯을 선언한다.
+        protected ImageView profile;
+        protected TextView name;
+        protected TextView content;
+
+
+        public CustomViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            //이 부분이 뭐지?
+            this.profile = (ImageView) itemView.findViewById(R.id.profile);
+            this.name = (TextView) itemView.findViewById(R.id.name);
+            this.content = (TextView) itemView.findViewById(R.id.content);
+
+        }
     }
 }
