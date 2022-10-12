@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SeniorProfileSettingActivity">
+
+    <!--뒤로가기. 프로필, 수정 버튼, 설정 버튼-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+        <!--뒤로가기 버튼-->
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/back_icon"/>
+
+        <!--텍스트-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:text="개인정보 설정"/>
+
+        <!--저장 버튼-->
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="170dp"
+            android:textColor="@color/white"
+            android:text="저장"/>
+
+
+    </LinearLayout>
+
+    <!--아이디-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="아이디"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="Abcd"/>
+
+    </LinearLayout>
+
+    <!--비밀번호-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="비밀번호"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호 "/>
+
+        <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
+        <TextView
+            android:onClick="btn_Click"
+            android:id="@+id/btn_password_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="비밀번호 변경"/>
+    </LinearLayout>
+
+    <!--휴대전화-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="전화번호"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edittext_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="010-0000-0000 "/>
+
+        <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
+        <TextView
+            android:onClick="btn_Click"
+            android:id="@+id/btn_change_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="전화번호 변경"/>
+    </LinearLayout>
+
+    <!--아메일-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="이메일"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edittext_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Abcd@gmail.com "/>
+
+        <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
+        <TextView
+            android:onClick="btn_Click"
+            android:id="@+id/btn_email_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="이메일 변경"/>
+    </LinearLayout>
+
+    <!--주소-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="주소"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="집"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="ㅇㅇ시 ㅇㅇ구 ㅇㅇ동 ㅇㅇㅇㅇ"/>
+
+
+        <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
+        <TextView
+            android:onClick="btn_Click"
+            android:id="@+id/btn_address_change1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="주소 변경"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="병원"/>
+        <TextView
+            android:id="@+id/textview_id3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/edittext_input3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="ㅇㅇ시 ㅇㅇ구 ㅇㅇ동 ㅇㅇㅇ"/>
+
+
+        <!--id를 부여해서 비밀번호 변경 버튼을 핸들링한다.-->
+        <!--onClick으로 btn_Click이 실행된다.-->
+        <TextView
+            android:onClick="btn_Click"
+            android:id="@+id/btn_address_change2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="주소 변경"/>
+    </LinearLayout>
+    <!--주소 추가-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="+ 주소 추가"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginLeft="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="장소이름"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/memo_border"
+                android:ems="5"
+                android:paddingLeft="5dp"
+                android:textSize="17sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="장소이름"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/memo_border"
+                android:ems="5"
+                android:paddingLeft="5dp"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

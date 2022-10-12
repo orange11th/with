@@ -11,7 +11,7 @@ import android.widget.ImageView;
 /*written by 병훈*/
 
 /* 필요 기능
-* 1. 결제 버튼
+* 1. 결제 버튼(완료)
 * 2. 수정 버튼
 * 3. 설정 버튼*/
 
@@ -35,6 +35,24 @@ public class SeniorProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CashHistoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //화면전환 - 수정 버튼 누르면 시니어 프로필 수정 화면으로 이동
+        btn_revise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SeniorProfileReviseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //화면전환 - 세팅 버튼 누르면 세팅 화면으로 이동
+        btn_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SeniorProfileSettingActivity.class);//변경 예정
                 startActivity(intent);
             }
         });

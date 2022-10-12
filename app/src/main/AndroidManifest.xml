@@ -14,6 +14,12 @@
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SeniorProfileSettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeniorProfileReviseActivity"
+            android:exported="false" />
+        <activity
             android:name=".CashHistoryActivity"
             android:exported="false" />
         <activity
@@ -33,19 +39,19 @@
             android:exported="false" />
         <activity
             android:name=".SeniorCheck3Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SeniorCheck2Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SeniorCheck1Activity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HelperProfileReviseActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HelperProfileActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".HelperPrivacySettingActivity"
             android:exported="false" />
@@ -63,15 +69,15 @@
         </activity>
         <activity
             android:name=".NoxActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".NoxConfirmActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".Complete1Activity" />
         <activity android:name=".Complete2Activity" />
         <activity
             android:name=".SeniorHomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".SeniorProfileActivity" />
         <activity android:name=".SeniorAlarmActivity" />
         <activity android:name=".HistoryActivity" />
@@ -80,22 +86,22 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity3"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".MatchingList" />
         <activity android:name=".MatchingListContents" />
         <activity android:name=".login.LoadingActivity" />
         <activity
             android:name=".login.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".login.RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
