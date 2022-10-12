@@ -2,23 +2,20 @@ package com.cookandroid.with;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.Spanned;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.cookandroid.with.databinding.ActivitySeniorHomeBinding;
+
 public class SeniorHomeActivity extends AppCompatActivity {
-    private Button btn2, btn3, btn4;
-    private ImageView alarmbtn, profilebtn;
+    private ActivitySeniorHomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,28 +28,20 @@ public class SeniorHomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("  홈");
 
-        //click alarm
-        alarmbtn = findViewById(R.id.alarmbtn);
-        alarmbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SeniorHomeActivity.this, AlarmActivity.class);
-                startActivity(intent);
-            }
+        //알림 아이콘 버튼
+        binding.alarmbtn.setOnClickListener( v -> {
+            Intent intent = new Intent(SeniorHomeActivity.this, SeniorAlarmActivity.class);
+            startActivity(intent);
         });
-        //click profile
-        profilebtn = findViewById(R.id.profilebtn);
-        profilebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SeniorHomeActivity.this, SeniorProfileActivity.class);
-                startActivity(intent);
-            }
+
+        //프로필 아이콘 버튼
+        binding.profilebtn.setOnClickListener( v -> {
+            Intent intent = new Intent(SeniorHomeActivity.this, SeniorProfileActivity.class);
+            startActivity(intent);
         });
 
         //간편 도움 신청 버튼
-        btn2 = (Button) findViewById(R.id.button2);
-        btn2.setOnClickListener(new View.OnClickListener() {
+        binding.button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SimpleActivity.class);
@@ -60,7 +49,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
             }
         });
 
-        Spannable span2 = (Spannable) btn2.getText();
+        Spannable span2 = (Spannable) binding.button2.getText();
         //글자 크기 다르게
         span2.setSpan(new AbsoluteSizeSpan(47), 11,40, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //글자 색 다르게
@@ -68,8 +57,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
 
 
         //보호자 도움 신청 버튼
-        btn3 = (Button) findViewById(R.id.button3);
-        btn3.setOnClickListener(new View.OnClickListener() {
+        binding.button3.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -78,7 +66,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
             }
         });
 
-        Spannable span3 = (Spannable) btn3.getText();
+        Spannable span3 = (Spannable) binding.button3.getText();
         //글자 크기 다르게
         span3.setSpan(new AbsoluteSizeSpan(47), 13,45, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //글자 색 다르게
@@ -86,8 +74,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
 
 
         //도움 내역 버튼
-        btn4 = (Button) findViewById(R.id.button4);
-        btn4.setOnClickListener(new View.OnClickListener() {
+        binding.button4.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -96,7 +83,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
             }
         });
 
-        Spannable span4 = (Spannable) btn4.getText();
+        Spannable span4 = (Spannable) binding.button4.getText();
         //글자 크기 다르게
         span4.setSpan(new AbsoluteSizeSpan(47), 6,25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //글자 색 다르게

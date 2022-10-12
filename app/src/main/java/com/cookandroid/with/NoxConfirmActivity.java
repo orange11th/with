@@ -3,10 +3,12 @@ package com.cookandroid.with;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 
 import com.cookandroid.with.databinding.ActivityNoxConfirmBinding;
 
@@ -14,7 +16,7 @@ import java.util.Objects;
 
 public class NoxConfirmActivity extends AppCompatActivity {
     public ActivityResultLauncher<Intent> launcher;
-    ActivityNoxConfirmBinding binding;
+    private ActivityNoxConfirmBinding binding;
     public static String howBtn;
 
     @Override
@@ -23,10 +25,16 @@ public class NoxConfirmActivity extends AppCompatActivity {
         binding = ActivityNoxConfirmBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        //toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar_simple);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(" ");
+
         //수정 버튼 activity
         binding.modifyBtn.setOnClickListener(v -> {
-                Intent intent = new Intent(getApplicationContext(), NoxActivity.class);
-                startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), NoxActivity.class);
+            startActivity(intent);
         });
 
         launcher();
@@ -56,5 +64,15 @@ public class NoxConfirmActivity extends AppCompatActivity {
             }
         });
     }
-
+    //toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

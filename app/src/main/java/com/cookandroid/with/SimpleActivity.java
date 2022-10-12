@@ -3,42 +3,31 @@ package com.cookandroid.with;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.Spanned;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
-import android.widget.TextView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
-import com.cookandroid.with.databinding.ActivityNoxBinding;
 import com.cookandroid.with.databinding.ActivitySimpleBinding;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 
-public class SimpleActivity extends AppCompatActivity {
-    ActivitySimpleBinding binding;
-    private Button datePickerBtn;
-
-    TextView dateText;
+public class SimpleActivity extends AppCompatActivity implements View.OnClickListener {
+    private ActivitySimpleBinding bd;
+    private RadioGroup radioGroup1, radioGroup2, radioGroup3;
     DatePickerDialog datePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        binding = ActivitySimpleBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        bd = ActivitySimpleBinding.inflate(getLayoutInflater());
+        setContentView(bd.getRoot());
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_simple);
@@ -47,107 +36,105 @@ public class SimpleActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(" ");
 
 
-        //병원 동행 버튼
-        binding.checkbox1.setOnClickListener(new View.OnClickListener() {
+        /* 라디오 버튼 처리 */
+        radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup1);
+        //radioGroup1의 버튼 체크 상태를 풂
+        radioGroup1.clearCheck();
+        //라디오버튼의 상태가 변할 때 listener1 실행
+        radioGroup1.setOnCheckedChangeListener(listener1);
 
-            @Override
-            public void onClick(View v) {
+        radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup2);
+        radioGroup2.clearCheck();
+        radioGroup2.setOnCheckedChangeListener(listener2);
 
-            }
+        radioGroup3 = (RadioGroup) findViewById(R.id.radioGroup3);
+        radioGroup3.clearCheck();
+        radioGroup3.setOnCheckedChangeListener(listener3);
+
+
+        /* 누르는 도움 종류에 따라 위치 레이아웃 다르게 보이도록 설정 */
+
+        //출발지, 목적지 레이아웃만
+        //병원동행
+        bd.radioBtn1.setOnClickListener( v -> {
+            bd.hobbyLayout.setVisibility(View.GONE);
+            bd.ectLayout.setVisibility(View.GONE);
+            bd.destLayout.setVisibility((View.VISIBLE));
+            bd.locationLayout.setVisibility(View.GONE);
         });
 
-        Spannable span1 = (Spannable) binding.checkbox1.getText();
-        //글자 크기 다르게
-        span1.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //색 다르게
-        span1.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //스타일 다르게
-        span1.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-
-        //이동 보조 버튼
-        binding.checkbox2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
+        //이동보조
+        bd.radioBtn2.setOnClickListener( v -> {
+            bd.hobbyLayout.setVisibility(View.GONE);
+            bd.ectLayout.setVisibility(View.GONE);
+            bd.destLayout.setVisibility((View.VISIBLE));
+            bd.locationLayout.setVisibility(View.GONE);
         });
 
-        Spannable span2 = (Spannable) binding.checkbox2.getText();
-        //글자 크기 다르게
-        span2.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //색 다르게
-        span2.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //스타일 다르게
-        span2.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-
-        //산책 동반 버튼
-        binding.checkbox3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        Spannable span3 = (Spannable) binding.checkbox3.getText();
-        //글자 크기 다르게
-        span3.setSpan(new AbsoluteSizeSpan(80), 0,5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //색 다르게
-        span3.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //스타일 다르게
-        span3.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-
-        //기타 버튼
-        binding.checkbox4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        Spannable span4 = (Spannable) binding.checkbox4.getText();
-        span4.setSpan(new AbsoluteSizeSpan(80), 0,2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //색 다르게
-        span4.setSpan(new ForegroundColorSpan(Color.rgb(17,17,17)), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //스타일 다르게
-        span4.setSpan(new StyleSpan(Typeface.BOLD), 0, 2, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-
-        // 주소지 설정
         //기존 주소지 버튼을 누르면 existingLayout만 보이도록 설정
-        binding.existingBtn.setOnClickListener( v -> {
-            binding.existingLayout.setVisibility(View.VISIBLE);
-            binding.newLayout.setVisibility(View.GONE);
+        bd.existingBtn.setOnClickListener( v -> {
+            bd.existingLayout.setVisibility(View.VISIBLE);
+            bd.newLayout.setVisibility(View.GONE);
         });
 
         //신규 주소지 버튼을 누르면 newLayout만 보이도록 설정
-        binding.newBtn.setOnClickListener( v -> {
-            binding.existingLayout.setVisibility(View.GONE);
-            binding.newLayout.setVisibility(View.VISIBLE);
+        bd.newBtn.setOnClickListener( v -> {
+            bd.existingLayout.setVisibility(View.GONE);
+            bd.newLayout.setVisibility(View.VISIBLE);
         });
 
 
-        //main 등록 버튼 activity
-        binding.enrollBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ConfirmActivity.class);
-                startActivity(intent);
-            }
+        //장소 레이아웃만
+        //가사돌봄
+        bd.radioBtn3.setOnClickListener( v -> {
+            bd.hobbyLayout.setVisibility(View.GONE);
+            bd.ectLayout.setVisibility(View.GONE);
+            bd.destLayout.setVisibility((View.GONE));
+            bd.locationLayout.setVisibility(View.VISIBLE);
         });
 
+        //말동무
+        bd.radioBtn4.setOnClickListener( v -> {
+            bd.hobbyLayout.setVisibility(View.GONE);
+            bd.ectLayout.setVisibility(View.GONE);
+            bd.destLayout.setVisibility((View.GONE));
+            bd.locationLayout.setVisibility(View.VISIBLE);
+        });
 
-        //calendar 버튼 설정
-        dateText = (TextView) findViewById(R.id.date_textView);
-        datePickerBtn = (Button) findViewById(R.id.date_btn);
+        //취미
+        bd.radioBtn5.setOnClickListener( v -> {
+            bd.hobbyLayout.setVisibility(View.VISIBLE);
+            bd.ectLayout.setVisibility(View.GONE);
+            bd.destLayout.setVisibility((View.GONE));
+            bd.locationLayout.setVisibility(View.VISIBLE);
+        });
+
+        //기타
+        bd.radioBtn6.setOnClickListener( v -> {
+            bd.hobbyLayout.setVisibility(View.GONE);
+            bd.ectLayout.setVisibility(View.VISIBLE);
+            bd.destLayout.setVisibility((View.GONE));
+            bd.locationLayout.setVisibility(View.VISIBLE);
+        });
+
+        //기존 주소지 버튼을 누르면 existingLayout2만 보이도록 설정
+        bd.existingBtn2.setOnClickListener( v-> {
+            bd.existingLayout2.setVisibility(View.VISIBLE);
+            bd.newLayout2.setVisibility(View.GONE);
+        });
+
+        //신규 주소지 버튼을 누르면 newLayout2만 보이도록 설정
+        bd.newBtn2.setOnClickListener( v -> {
+            bd.existingLayout2.setVisibility(View.GONE);
+            bd.newLayout2.setVisibility(View.VISIBLE);
+        });
+
 
         //날짜 제한 변수
         Calendar minDate = Calendar.getInstance();
 
         //버튼 클릭 이벤트
-        datePickerBtn.setOnClickListener(new View.OnClickListener() {
+        bd.dateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -158,15 +145,14 @@ public class SimpleActivity extends AppCompatActivity {
 
                 datePickerDialog = new DatePickerDialog(SimpleActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                            @Override
+                            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                                month = month + 1;
+                                String date = year + "년 " + month + "월 " + day + "일";
 
-                        month = month + 1;
-                        String date = year + "년 " + month + "월 " + day + "일";
-
-                        dateText.setText(date);
-                    }
-                    }, Year, Month, Day);
+                                bd.dateTextView.setText(date);
+                            }
+                        }, Year, Month, Day);
 
                 //시작 날짜 제한
                 minDate.set(Year,Month,Day);
@@ -175,18 +161,94 @@ public class SimpleActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+
+        //등록 버튼
+        bd.enrollBtn.setOnClickListener( v-> {
+            Intent intent = new Intent(getApplicationContext(), ConfirmActivity.class);
+            startActivity(intent);
+        });
+
+    }
+
+    private RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            if (checkedId != -1) {
+                radioGroup2.setOnCheckedChangeListener(null);
+                radioGroup2.clearCheck();
+                radioGroup2.setOnCheckedChangeListener(listener2);
+
+                radioGroup3.setOnCheckedChangeListener(null);
+                radioGroup3.clearCheck();
+                radioGroup3.setOnCheckedChangeListener(listener3);
+            }
+        }
+    };
+
+    private RadioGroup.OnCheckedChangeListener listener2 = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            if (checkedId != -1) {
+                radioGroup1.setOnCheckedChangeListener(null);
+                radioGroup1.clearCheck();
+                radioGroup1.setOnCheckedChangeListener(listener1);
+
+                radioGroup3.setOnCheckedChangeListener(null);
+                radioGroup3.clearCheck();
+                radioGroup3.setOnCheckedChangeListener(listener3);
+            }
+        }
+    };
+
+    private RadioGroup.OnCheckedChangeListener listener3 = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            if (checkedId != -1) {
+                radioGroup1.setOnCheckedChangeListener(null);
+                radioGroup1.clearCheck();
+                radioGroup1.setOnCheckedChangeListener(listener1);
+
+                radioGroup2.setOnCheckedChangeListener(null);
+                radioGroup2.clearCheck();
+                radioGroup2.setOnCheckedChangeListener(listener2);
+            }
+        }
+    };
+
+    @SuppressLint("ResourceType")
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.enrollBtn) {
+
+            //이해x
+            if (radioGroup1.getCheckedRadioButtonId() > 0) {
+                View radioButton = radioGroup1.findViewById(radioGroup1.getCheckedRadioButtonId());
+                int radioId = radioGroup1.indexOfChild(radioButton);
+                RadioButton btn = (RadioButton) radioGroup1.getChildAt(radioId);
+            } else if (radioGroup2.getCheckedRadioButtonId() > 0) {
+                View radioButton = radioGroup2.findViewById(radioGroup2.getCheckedRadioButtonId());
+                int radioId = radioGroup2.indexOfChild(radioButton);
+                RadioButton btn = (RadioButton) radioGroup2.getChildAt(radioId);
+            } else if (radioGroup3.getCheckedRadioButtonId() > 0) {
+                View radioButton = radioGroup3.findViewById(radioGroup3.getCheckedRadioButtonId());
+                int radioId = radioGroup3.indexOfChild(radioButton);
+                RadioButton btn = (RadioButton) radioGroup3.getChildAt(radioId);
+            }
+        }
     }
 
     //toolbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        if (item.getItemId() == android.R.id.home) {
-            Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
-            startActivity(intent);
-            finish();
-            return true;
+        switch(item.getItemId()){
+            case android.R.id.home:{
+                Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

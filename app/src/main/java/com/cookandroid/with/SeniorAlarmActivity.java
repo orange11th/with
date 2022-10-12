@@ -7,12 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class AlarmActivity extends AppCompatActivity {
+public class SeniorAlarmActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alarm);
+        setContentView(R.layout.activity_senoir_alarm);
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_alarm);

@@ -68,8 +68,8 @@ public class HelperProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case android.R.id.home:{
-                //Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                //startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 finish();
                 return true;
             }

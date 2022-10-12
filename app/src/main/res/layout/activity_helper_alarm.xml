@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AlarmActivity"
+    tools:context=".HelperAlarmActivity"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="25dp"
             android:paddingRight="15dp"
-            android:text="내일 오전 11시에 돌보미와의 약속이 있어요!\n일정과 장소를 확인해보세요 >"
+            android:text="내일 오전 11시에 시니어와의 약속이 있어요!\n일정과 장소를 확인해보세요 >"
             android:textSize="16dp"
             android:textColor="#222222"/>
 
@@ -56,15 +56,14 @@
         android:paddingTop="25dp"
         android:paddingBottom="25dp"
         android:orientation="horizontal"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <TextView
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:paddingLeft="25dp"
             android:paddingRight="15dp"
-            android:text="9월 30일 돌보미가 확정되었어요!\n일정과 장소를 확인해보세요 >"
+            android:text="시니어가 후기를 남겼어요!\n별점과 내용을 확인해보세요 >"
             android:textSize="16dp"
             android:textColor="#222222"/>
 
