@@ -21,7 +21,8 @@ public class SeniorHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_senior_home);
+        binding = ActivitySeniorHomeBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_senior_home);

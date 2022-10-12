@@ -14,8 +14,7 @@
         android:id="@+id/toolbar_senior_home"
         android:layout_height="84dp"
         android:layout_width="match_parent"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
 
     <ImageView
