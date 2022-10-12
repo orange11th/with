@@ -1,15 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--written by 병훈-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SeniorProfileActivity">
 
-    <TextView
+    <!--toolbar : id 지정해줘야함-->
+    <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="#000000"
+        android:background="#FFFFFF"
+        android:id="@+id/toolbar_helperProfile"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        tools:ignore="MissingConstraints"
+        />
+
+    <!--수정 버튼, 설정 버튼-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="시니어 프로필 페이지"
-        android:textSize="30dp"/>
+        android:layout_marginTop="15dp"
+        android:gravity="right"
+        android:orientation="horizontal">
 
+        <!--결제 버튼-->
+        <ImageView
+            android:id="@+id/btn_cash"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/cash"
+            android:layout_marginRight="10dp"/>
+
+        <!--수정 버튼-->
+        <ImageView
+            android:id="@+id/btn_revise"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/revise_icon"
+            android:layout_marginRight="10dp"/>
+
+        <!--설정 버튼-->
+        <ImageView
+            android:id="@+id/btn_setting"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/setting_icon"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+
+    <!--프로필 사진-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left">
+        <!--프로필 사진-->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/profile"/>
+    </LinearLayout>
+
+    <!--이름-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="이름"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:text="시니어 이름"/>
+
+    </LinearLayout>
+
+    <!--성별, 나이-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="성별"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:text="남"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="나이"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:text="68세"/>
+    </LinearLayout>
+
+    <!--지역-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="지역"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:text="서울"/>
+    </LinearLayout>
+
+    <!--자격증-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="특이사항"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="관절이 좋지 않음"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--원하는 도움 종류-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="원하는 도움 종류"/>
+    </LinearLayout>
+    <!--원하는 도움 종류 코드-->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:background="@drawable/bg_custom_button"
+            android:layout_marginLeft="60dp"
+            android:text="#병원동행"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="2dp"
+            android:background="@drawable/bg_custom_button"
+            android:layout_marginLeft="10dp"
+            android:text="#이동보조"/>
+
+    </LinearLayout>
 </LinearLayout>
