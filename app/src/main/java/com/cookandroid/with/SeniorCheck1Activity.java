@@ -193,7 +193,8 @@ public class SeniorCheck1Activity extends AppCompatActivity {
                     tv.setLayoutParams(param);
 
                     //텍스트뷰 백그라운드 색상 설정하기기
-                   tv.setBackgroundColor(Color.rgb(184,236,184));
+                   tv.setBackgroundColor(Color.rgb(242,248,214));
+                   tv.setTextColor(Color.rgb(34,34,34));
 
                    //생성및 설정된 텍스트뷰 레이아웃에 적용하기
                     ll.addView(tv);

@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- 3-2-1-1. 도움 게시글 내용 확인 (시니어용) -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,33 +13,26 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- 툴바, 타이틀 -->
-        <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_confirm"
+            app:titleTextColor="#111111"
+            android:background="@color/white"
+            android:layout_height="58dp"
+            android:layout_width="match_parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/confirm_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="신청하신 내용을 확인해주세요."
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
-            <androidx.appcompat.widget.Toolbar
-                app:titleTextColor="#111111"
-                android:background="@color/white"
-                android:id="@+id/toolbar_main3"
-                android:layout_height="58dp"
-                android:layout_width="match_parent"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/confirm_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:text="신청하신 내용을 확인해주세요."
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-        </LinearLayout>
 
         <!-- 도움 종류 레이아웃 -->
         <LinearLayout
@@ -70,7 +61,7 @@
                     android:textColor="#111111"/>
 
                 <Button
-                    android:id="@+id/change_btn1"
+                    android:id="@+id/changeBtn1"
                     android:layout_width="90dp"
                     android:layout_height="34dp"
                     android:text="변경하기"
@@ -144,7 +135,7 @@
                     android:textColor="#111111"/>
 
                 <Button
-                    android:id="@+id/change_btn2"
+                    android:id="@+id/changeBtn2"
                     android:layout_width="90dp"
                     android:layout_height="34dp"
                     android:text="변경하기"
@@ -214,7 +205,7 @@
                     android:textStyle="bold" />
 
                 <Button
-                    android:id="@+id/change_btn3"
+                    android:id="@+id/changeBtn3"
                     android:layout_width="90dp"
                     android:layout_height="34dp"
                     android:text="변경하기"
@@ -284,7 +275,7 @@
                     android:textColor="#111111"/>
 
                 <Button
-                    android:id="@+id/change_btn4"
+                    android:id="@+id/changeBtn4"
                     android:layout_width="90dp"
                     android:layout_height="34dp"
                     android:text="변경하기"
@@ -326,22 +317,8 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/modify_btn"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="5dp"
-                android:background="@drawable/confirm_change_background"
-                android:text="수정"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#111111"
-                android:elevation="4dp"/>
-
-            <Button
-                android:id="@+id/confirm_btn"
-                android:layout_width="250dp"
+                android:id="@+id/confirmBtn"
+                android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"

@@ -15,7 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageView profilebtn;
+    private ImageView profilebtn, alarmbtn;
     private Button button2;
     private Button button3;
     private Button button4;
@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("  홈");
 
         //click alarm
+        alarmbtn = findViewById(R.id.alarmbtn);
+        alarmbtn.setOnClickListener(v ->{
+            Intent intent = new Intent(MainActivity.this, HelperAlarmActivity.class);
+            startActivity(intent);
+        });
 
         //click profile
         profilebtn = findViewById(R.id.profilebtn);
