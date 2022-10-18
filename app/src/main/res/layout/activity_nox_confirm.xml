@@ -187,7 +187,7 @@
                 android:background="@drawable/confirm_change_background"
                 android:text="수정"
                 android:textSize="17sp"
-                android:textColor="#111111"
+                android:textColor="#222222"
                 android:elevation="4dp"/>
 
             <Button
@@ -199,7 +199,7 @@
                 android:layout_marginLeft="5dp"
                 android:text="확인"
                 android:textSize="17sp"
-                android:textColor="#111111"
+                android:textColor="@color/white"
                 android:outlineProvider="none"
                 android:background="@drawable/color_edge"/>
 

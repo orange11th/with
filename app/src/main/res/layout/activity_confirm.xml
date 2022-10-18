@@ -16,7 +16,6 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_confirm"
             app:titleTextColor="#111111"
-            android:background="@color/white"
             android:layout_height="58dp"
             android:layout_width="match_parent"
             tools:ignore="MissingConstraints" />
@@ -73,16 +72,17 @@
 
             <!-- 도움 종류 가로 정렬 -->
             <LinearLayout
+                android:id="@+id/linearLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center">
+                android:layout_marginLeft="25dp">
 
                 <TextView
                     android:id="@+id/type1"
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:text="이동 보조"
                     android:textSize="20dp"
@@ -90,18 +90,6 @@
                     android:textAlignment="center"
                     android:gravity="center"
                     android:background="@drawable/confirm_btn_background" />
-
-                <TextView
-                    android:id="@+id/type2"
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:layout_marginLeft="5dp"
-                    android:text="산책 동반"
-                    android:textSize="20dp"
-                    android:textColor="#222222"
-                    android:textAlignment="center"
-                    android:gravity="center"
-                    android:background="@drawable/confirm_btn_background"/>
 
             </LinearLayout>
 
@@ -155,7 +143,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/start_text"
+                    android:id="@+id/addressText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -164,14 +152,6 @@
                     android:textSize="20dp"
                     android:textColor="#222222" />
 
-                <TextView
-                    android:id="@+id/dest_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:text="목적지 "
-                    android:textSize="20dp"
-                    android:textColor="#222222" />
 
             </LinearLayout>
 
@@ -225,7 +205,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/date_text"
+                    android:id="@+id/dateText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -235,7 +215,7 @@
                     android:textColor="#222222" />
 
                 <TextView
-                    android:id="@+id/time_text"
+                    android:id="@+id/timeText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -295,7 +275,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/how_text"
+                    android:id="@+id/howText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -324,9 +304,8 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="5dp"
                 android:text="확인"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#111111"
+                android:textSize="19dp"
+                android:textColor="@color/white"
                 android:outlineProvider="none"
                 android:background="@drawable/color_edge"/>
 

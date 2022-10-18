@@ -12,9 +12,11 @@
 
     <!--병훈 : 돌보미 도움 종류 목록-->
     <string-array name="kindOfHelp">
+        <item>병원 동행</item>
         <item>이동 보조</item>
-        <item>산책 동반</item>
+        <item>가사 돌봄</item>
         <item>말 동무</item>
-        <item>식사 보조</item>
+        <item>취미/여가</item>
+        <item>기타</item>
     </string-array>
 </resources>
