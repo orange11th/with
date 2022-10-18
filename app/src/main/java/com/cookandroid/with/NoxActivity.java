@@ -157,8 +157,6 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 howBtn = ((RadioButton) findViewById(checkedId)).toString();
-
-                //Log.d("Tag", "data:" + howBtn);
             }
         });
 

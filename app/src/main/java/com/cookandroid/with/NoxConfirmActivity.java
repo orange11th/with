@@ -45,16 +45,18 @@ public class NoxConfirmActivity extends AppCompatActivity {
         launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == RESULT_OK) {
                 Intent intent = result.getData(); //Nox에서 넘어온 값 받아옴
-                typeBtn = intent.getStringExtra("TYPE");
+                //typeBtn = intent.getStringExtra("TYPE");
                 titleValue = intent.getStringExtra("TITLE");
-                howBtn = intent.getStringExtra("HOW");
+                //howBtn = intent.getStringExtra("HOW");
 
-                binding.titleText.setText(titleValue);
+                //binding.titleText.setText(titleValue);
+
+                //Log.d("Tag", "data:" + typeBtn);
+                Log.d("Tag", "data:" + howBtn);
+                //Log.d("Tag", "data:" + titleValue);
             }
 
-            Log.d("Tag", "data:" + typeBtn);
-            Log.d("Tag", "data:" + howBtn);
-            //Log.d("Tag", "data:" + titleValue);
+
         });
 
         //등록 버튼을 눌렀을 때
