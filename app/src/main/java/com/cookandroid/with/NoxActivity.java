@@ -27,6 +27,7 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+
         bd = ActivityNoxBinding.inflate(getLayoutInflater());
         setContentView(bd.getRoot());
 
@@ -152,13 +153,16 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // 선택한 항목에 따라 다른 값 입력 받도록 설정
                 btnValue = ((RadioButton) findViewById(checkedId)).toString();
+                Log.d("Tag123test", "data:" + btnValue);
+
             }
         });
+
 
         //등록 버튼을 누르면 NoxConfirm으로 라디오 버튼 값 보냄
         bd.enrollBtn.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), NoxConfirmActivity.class);
-            Log.d("Tag", "data:" + btnValue);
+            Log.d("Tag123", "data:" + btnValue);
             //데이터 값 전달
             intent.putExtra("HOW", btnValue);
             setResult(RESULT_OK, intent);

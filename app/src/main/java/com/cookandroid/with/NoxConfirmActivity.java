@@ -38,6 +38,8 @@ public class NoxConfirmActivity extends AppCompatActivity {
         });
 
         launcher();
+
+
     }
 
     //선착순, 지원에 따라 완료 화면 다르게 뜨도록
@@ -46,8 +48,8 @@ public class NoxConfirmActivity extends AppCompatActivity {
             if (result.getResultCode() == RESULT_OK) {
                 Intent intent = result.getData(); //Nox에서 넘어온 값 받아옴
                 howBtn = intent.getStringExtra("HOW");
+                Log.d("Tag", howBtn);
             }
-            Log.d("Tag", howBtn);
         });
 
         //등록 버튼을 눌렀을 때
