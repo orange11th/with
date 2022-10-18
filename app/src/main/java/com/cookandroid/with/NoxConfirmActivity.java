@@ -17,7 +17,7 @@ import java.util.Objects;
 public class NoxConfirmActivity extends AppCompatActivity {
     public ActivityResultLauncher<Intent> launcher;
     private ActivityNoxConfirmBinding binding;
-    public static String howBtn;
+    public static String typeBtn, howBtn, titleValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class NoxConfirmActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_simple);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setTitle(" ") ;
 
         //수정 버튼 activity
         binding.modifyBtn.setOnClickListener(v -> {
@@ -38,8 +38,6 @@ public class NoxConfirmActivity extends AppCompatActivity {
         });
 
         launcher();
-
-
     }
 
     //선착순, 지원에 따라 완료 화면 다르게 뜨도록
@@ -47,9 +45,16 @@ public class NoxConfirmActivity extends AppCompatActivity {
         launcher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
             if (result.getResultCode() == RESULT_OK) {
                 Intent intent = result.getData(); //Nox에서 넘어온 값 받아옴
+                typeBtn = intent.getStringExtra("TYPE");
+                titleValue = intent.getStringExtra("TITLE");
                 howBtn = intent.getStringExtra("HOW");
-                Log.d("Tag", howBtn);
+
+                binding.titleText.setText(titleValue);
             }
+
+            Log.d("Tag", "data:" + typeBtn);
+            Log.d("Tag", "data:" + howBtn);
+            //Log.d("Tag", "data:" + titleValue);
         });
 
         //등록 버튼을 눌렀을 때
@@ -70,7 +75,7 @@ public class NoxConfirmActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if (item.getItemId() == android.R.id.home) {
-            Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
+            Intent intent = new Intent(getApplicationContext(), NoxActivity.class);
             startActivity(intent);
             finish();
             return true;

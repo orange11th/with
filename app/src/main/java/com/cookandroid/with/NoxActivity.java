@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -21,13 +24,14 @@ import java.util.Calendar;
 public class NoxActivity extends AppCompatActivity implements View.OnClickListener{
     private ActivityNoxBinding bd;
     private RadioGroup radioGroup1, radioGroup2;
-    public static String btnValue;
+    static String typeBtn, howBtn, titleValue, dateValue;
+    private EditText titleText;
+    private TextView dateTextView;
     DatePickerDialog datePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-
         bd = ActivityNoxBinding.inflate(getLayoutInflater());
         setContentView(bd.getRoot());
 
@@ -39,13 +43,13 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
 
 
         /* 라디오 버튼 처리 */
-        radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup1);
+        radioGroup1 = findViewById(R.id.radioGroup1);
         //radioGroup1의 버튼 체크 상태를 풂
         radioGroup1.clearCheck();
         //라디오버튼의 상태가 변할 때 listener1 실행
         radioGroup1.setOnCheckedChangeListener(listener1);
 
-        radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup2);
+        radioGroup2 = findViewById(R.id.radioGroup2);
         radioGroup2.clearCheck();
         radioGroup2.setOnCheckedChangeListener(listener2);
 
@@ -147,31 +151,46 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
 
-        //라디오 버튼 값 가져오기
-        bd.radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+        //구인 방법 라디오 버튼 값 가져오기
+        bd.radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // 선택한 항목에 따라 다른 값 입력 받도록 설정
-                btnValue = ((RadioButton) findViewById(checkedId)).toString();
-                Log.d("Tag123test", "data:" + btnValue);
+                howBtn = ((RadioButton) findViewById(checkedId)).toString();
 
+                //Log.d("Tag", "data:" + howBtn);
             }
         });
 
 
-        //등록 버튼을 누르면 NoxConfirm으로 라디오 버튼 값 보냄
+        titleText = ((EditText) findViewById(R.id.titleText));
+        dateTextView = ((TextView) findViewById(R.id.dateTextView));;
+
+        //등록 버튼을 누르면 NoxConfirm으로 값 보냄
         bd.enrollBtn.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), NoxConfirmActivity.class);
-            Log.d("Tag123", "data:" + btnValue);
+            //titleText의 텍스트 가져오기
+            titleValue = titleText.getText().toString();
+            dateValue = dateTextView.getText().toString();
+
+            Intent intent = new Intent(NoxActivity.this, NoxConfirmActivity.class);
+            Log.d("Tag", "data:" + typeBtn);
+            Log.d("Tag", "data:" + howBtn);
+            Log.d("Tag", "data:" + titleValue);
+
             //데이터 값 전달
-            intent.putExtra("HOW", btnValue);
+            intent.putExtra("TITLE", titleValue);
+            intent.putExtra("TYPE", typeBtn);
+            intent.putExtra("DATE", dateValue);
+            intent.putExtra("HOW", howBtn);
             setResult(RESULT_OK, intent);
-            startActivity(intent); //안 넣으면 액티비티 종료됨
+            startActivity(intent); //안 넣으면 종료됨
             finish();
         });
     }
 
-    private RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {
+
+    //도움 종류 2x3 라디오 버튼 리스너
+    private final RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             if (checkedId != -1) {
@@ -179,10 +198,12 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
                 radioGroup2.clearCheck();
                 radioGroup2.setOnCheckedChangeListener(listener2);
             }
+            //라디오 버튼 값 가져오기
+            typeBtn = ((RadioButton) findViewById(checkedId)).getText().toString();
         }
     };
 
-    private RadioGroup.OnCheckedChangeListener listener2 = new RadioGroup.OnCheckedChangeListener() {
+    private final RadioGroup.OnCheckedChangeListener listener2 = new RadioGroup.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             if (checkedId != -1) {
@@ -190,6 +211,7 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
                 radioGroup1.clearCheck();
                 radioGroup1.setOnCheckedChangeListener(listener1);
             }
+            typeBtn = ((RadioButton) findViewById(checkedId)).getText().toString();
         }
     };
 
