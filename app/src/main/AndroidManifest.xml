@@ -69,11 +69,6 @@
         <activity
             android:name=".NoxActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".NoxConfirmActivity"
@@ -88,9 +83,7 @@
 
         <activity android:name=".HistoryActivity"
             android:exported="true">
-
         </activity>
-
         <activity
             android:name=".TmpActivity"
             android:exported="false" />
@@ -105,11 +98,15 @@
             android:exported="true" />
         <activity android:name=".MatchingList" />
         <activity android:name=".MatchingListContents" />
-        <activity android:name=".login.LoadingActivity" />
+        <activity android:name=".login.LoadingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".login.LoginActivity"
-            android:exported="true" >
-
+            android:name=".login.LoginActivity">
         </activity>
         <activity
             android:name=".login.RegisterActivity"

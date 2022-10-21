@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import com.cookandroid.with.MainActivity;
 import com.cookandroid.with.R;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,6 +25,7 @@ import java.util.Date;
 public class LoginActivity extends AppCompatActivity {
     EditText edtUsername,edtPassword;
     Button btnLogin,btnRegister;
+    TextView txtBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         edtUsername=(EditText)findViewById(R.id.username);
         edtPassword=(EditText)findViewById(R.id.password);
         btnLogin=(Button)findViewById(R.id.login);
-        btnRegister=(Button)findViewById(R.id.register);
+        txtBtn=(TextView)findViewById(R.id.txtBtn_Register);
         Cookie cookie=Cookie.getCookie();
 
         btnLogin.setOnClickListener(new View.OnClickListener(){
@@ -76,15 +79,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                //회원가입 버튼 클릭
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        txtBtn.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        //회원가입 버튼 클릭
+                        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
     }
 }
 
