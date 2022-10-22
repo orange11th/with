@@ -58,19 +58,17 @@
             android:exported="false" />
         <activity
             android:name=".ConfirmActivity"
-            android:exported="false" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".SimpleActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".NoxActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -87,7 +85,12 @@
             android:exported="true" />
         <activity android:name=".SeniorProfileActivity" />
         <activity android:name=".SeniorAlarmActivity" />
-        <activity android:name=".HistoryActivity" />
+
+        <activity android:name=".HistoryActivity"
+            android:exported="true">
+
+        </activity>
+
         <activity
             android:name=".TmpActivity"
             android:exported="false" />
@@ -105,7 +108,9 @@
         <activity android:name=".login.LoadingActivity" />
         <activity
             android:name=".login.LoginActivity"
-            android:exported="true" />
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".login.RegisterActivity"
             android:exported="true" />
