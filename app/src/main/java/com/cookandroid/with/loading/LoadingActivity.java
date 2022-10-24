@@ -1,4 +1,4 @@
-package com.cookandroid.with.login;
+package com.cookandroid.with.loading;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,8 +12,9 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.MainActivity;
 import com.cookandroid.with.R;
-import com.cookandroid.with.board.BoardInsert;
-import com.cookandroid.with.topic.GetTopic;
+import com.cookandroid.with.cookie.Cookie;
+import com.cookandroid.with.login.LoginActivity;
+import com.cookandroid.with.login.LoginRequest;
 
 import org.json.JSONObject;
 
@@ -33,6 +34,7 @@ public class LoadingActivity extends AppCompatActivity {
                 Cookie cookie=Cookie.getCookie();
                 cookie.checkCookie();
                 cookie.readCookie();
+                cookie.clearCookie();//자동로그인 방지용
                 String userID = cookie.getID();
                 String userPassword = cookie.getPW();
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -47,7 +49,7 @@ public class LoadingActivity extends AppCompatActivity {
                                 startActivity(intent);
                                 finish();
                             } else {
-                                Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();//거슬림
                                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(intent);
                                 finish();
