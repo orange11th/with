@@ -43,8 +43,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("회원가입");
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("회원가입");
 
         btnRegist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
             case android.R.id.home: {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
+                finish();
                 return true;
             }
         }

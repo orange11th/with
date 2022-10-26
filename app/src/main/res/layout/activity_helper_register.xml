@@ -1,9 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register.HelperRegisterActivity">
+    android:orientation="vertical"
+    tools:context=".register.RegisterActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.appcompat.widget.Toolbar
+                app:titleTextColor="#8FC759"
+                android:background="#FAFAFA"
+                android:id="@+id/toolbar"
+                android:layout_height="58dp"
+                app:subtitleTextColor="#8FC759"
+                android:layout_width="match_parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"
+                android:text="\n아이디"
+
+                />
+
+            <EditText
+                android:id="@+id/edtID"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="23dp"
+                android:text="\n비밀번호"/>
+
+            <EditText
+                android:id="@+id/edtPW"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:inputType="textPassword"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n비밀번호 재확인 "/>
+
+            <EditText
+                android:id="@+id/edtPWChk"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:inputType="textPassword"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n이름 "/>
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n이메일 " />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n전화번호 " />
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:hint=" 예: 010-0000-0000"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n지역" />
+
+            <EditText
+                android:id="@+id/edtRegion"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:editable="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n상세주소 " />
+
+            <EditText
+                android:id="@+id/edtAddress"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:focusable="false"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n성별 " />
+
+            ﻿<Spinner
+            android:id="@+id/spinGender"
+            android:minWidth="365dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_corner"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n생년월일 " />
+
+            <EditText
+                android:id="@+id/edtBirth"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:hint=" 예: 19980211"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="5dp"
+                android:text="\n자격증 유무 " />
+
+            <EditText
+                android:id="@+id/edtLicense"
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_corner_rectangle"
+                android:focusable="false"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="20dp"
+                android:text="\n본인은 어떤 성격이신가요? " />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:text="1. 대화할 때" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupIE"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="말을 먼저 걸어주는 사람"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="16dp"
+                    android:id="@+id/rbtn_E"
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="말을 먼저 들어주는 사람"
+                    android:layout_marginLeft="70dp"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/rbtn_I"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:textSize="18dp"
+                android:layout_marginBottom="18dp"
+                android:text="2. 문제가 생겼을 때" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupTF"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="공감과 위로를 해주는 사람"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="16dp"
+                    android:id="@+id/rbtn_F"
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:layout_weight="1"
+                    android:text="해결 방법을 제시해주는 사람"
+                    android:layout_marginLeft="70dp"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/rbtn_T"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="23dp"
+                android:text="위 개인정보 수집 이용에 동의합니다."
+                android:id="@+id/check1"
+                android:checked="false" />
+
+            <Button
+                android:id="@+id/btnRegist"
+                android:layout_width="359dp"
+                android:layout_height="wrap_content"
+                android:background="#8FC759"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="30dp"
+                android:textSize="16dp"
+                android:text="회원가입" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

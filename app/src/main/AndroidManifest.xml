@@ -106,6 +106,7 @@
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.HelperLoginActivity" />
         <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".register.HelperRegisterActivity"/>
     </application>
 
 </manifest>

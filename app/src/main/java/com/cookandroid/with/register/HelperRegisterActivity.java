@@ -18,6 +18,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.R;
+import com.cookandroid.with.login.HelperLoginActivity;
 import com.cookandroid.with.login.LoginActivity;
 
 import org.json.JSONObject;
@@ -30,7 +31,7 @@ public class HelperRegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_helper_register);
         Spinner spinGender=findViewById(R.id.spinGender);
         final String[] gender={"남","여"};
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, gender);
@@ -44,7 +45,7 @@ public class HelperRegisterActivity extends AppCompatActivity {
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("회원가입");
+        getSupportActionBar().setTitle("돌보미 회원가입");
 
         btnRegist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,8 +83,9 @@ public class HelperRegisterActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case android.R.id.home: {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HelperLoginActivity.class);
                 startActivity(intent);
+                finish();
                 return true;
             }
         }
