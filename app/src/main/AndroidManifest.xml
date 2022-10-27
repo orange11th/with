@@ -13,9 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".HelperRegisterActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SeniorProfileSettingActivity"
             android:exported="false" />
@@ -59,10 +57,10 @@
             android:name=".HelperPrivacySettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfirmActivity"
+            android:name=".confirm.ConfirmActivity"
             android:exported="true" />
         <activity
-            android:name=".SimpleActivity"
+            android:name=".simple.SimpleActivity"
             android:exported="true" />
         <activity
             android:name=".NoxActivity"
@@ -74,7 +72,13 @@
         <activity android:name=".Complete2Activity" />
         <activity
             android:name=".SeniorHomeActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SeniorProfileActivity" />
         <activity android:name=".SeniorAlarmActivity" />
         <activity
@@ -97,16 +101,15 @@
         <activity
             android:name=".loading.LoadingActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.HelperLoginActivity" />
         <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".register.HelperRegisterActivity"/>
+        <activity android:name=".register.HelperRegisterActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

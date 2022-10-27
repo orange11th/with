@@ -29,11 +29,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
                 android:layout_height="wrap_content"
                 android:text="\n아이디"
-
+                android:textColor="#444444"
                 />
 
             <EditText
@@ -47,10 +47,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="23dp"
-                android:text="\n비밀번호"/>
+                android:text="\n비밀번호"
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtPW"
@@ -65,9 +66,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n비밀번호 재확인 "/>
+                android:text="\n비밀번호 재확인 "
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtPWChk"
@@ -82,9 +84,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n이름 "/>
+                android:text="\n이름 "
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtName"
@@ -98,9 +101,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n이메일 " />
+                android:text="\n이메일 "
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtEmail"
@@ -114,9 +118,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n전화번호 " />
+                android:text="\n전화번호 "
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtPhone"
@@ -131,9 +136,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n지역" />
+                android:text="\n지역"
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtRegion"
@@ -148,9 +154,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n상세주소 " />
+                android:text="\n상세주소 "
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtAddress"
@@ -165,11 +172,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n성별 " />
+                android:text="\n성별 "
+                android:textColor="#444444"/>
 
-            ﻿<Spinner
+            <Spinner
             android:id="@+id/spinGender"
             android:minWidth="365dp"
             android:layout_width="wrap_content"
@@ -182,9 +190,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n생년월일 " />
+                android:text="\n생년월일 "
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtBirth"
@@ -199,9 +208,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="17dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n자격증 유무 " />
+                android:text="\n자격증 유무 "
+                android:textColor="#444444"/>
 
             <EditText
                 android:id="@+id/edtLicense"
@@ -212,21 +222,125 @@
                 android:layout_gravity="center"
                 android:layout_weight="1" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="23dp"
+                    android:text="\n어떤 것을 할 수 있으신가요?"
+                    android:textSize="17dp"
+                    android:textColor="#222222"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/radioBtn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="병원동행"
+                        android:textColor="#555555"
+                        android:textSize="17dp"
+                        android:button="@null"
+                        android:background="@drawable/hashtagbackground2"
+                        android:gravity="center"/>
+
+                    <CheckBox
+                        android:id="@+id/radioBtn2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="이동보조"
+                        android:textColor="#555555"
+                        android:textSize="17dp"
+                        android:button="@null"
+                        android:background="@drawable/hashtagbackground2"
+                        android:gravity="center"/>
+
+                    <CheckBox
+                        android:id="@+id/radioBtn3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="가사돌봄"
+                        android:textColor="#555555"
+                        android:textSize="17dp"
+                        android:button="@null"
+                        android:background="@drawable/hashtagbackground2"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center">
+
+                    <CheckBox
+                        android:id="@+id/radioBtn4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="말동무"
+                        android:textColor="#555555"
+                        android:textSize="17dp"
+                        android:button="@null"
+                        android:background="@drawable/hashtagbackground2"
+                        android:gravity="center"/>
+
+                    <CheckBox
+                        android:id="@+id/radioBtn5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="취미/여가"
+                        android:textColor="#555555"
+                        android:textSize="17dp"
+                        android:button="@null"
+                        android:background="@drawable/hashtagbackground2"
+                        android:gravity="center"/>
+
+                    <CheckBox
+                        android:id="@+id/radioBtn6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="기타"
+                        android:textColor="#555555"
+                        android:textSize="17dp"
+                        android:button="@null"
+                        android:background="@drawable/hashtagbackground2"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
                 android:layout_marginBottom="15dp"
-                android:textSize="20dp"
-                android:text="\n본인은 어떤 성격이신가요? " />
+                android:textSize="17dp"
+                android:text="\n본인은 어떤 성격이신가요? "
+                android:textColor="#222222"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_marginBottom="10dp"
-                android:text="1. 대화할 때" />
+                android:text="1. 대화할 때"
+                android:textColor="#222222"/>
 
             <RadioGroup
                 android:id="@+id/radioGroupIE"
@@ -235,31 +349,36 @@
                 android:layout_height="match_parent">
                 <RadioButton
                     android:layout_weight="1"
-                    android:text="말을 먼저 걸어주는 사람"
+                    android:text="다른 사람에게 말을 먼저 거는 사람"
                     android:layout_marginBottom="5dp"
                     android:textSize="16dp"
+                    android:textColor="#555555"
                     android:id="@+id/rbtn_E"
                     android:layout_marginLeft="70dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#8FC759"/>
                 <RadioButton
                     android:layout_weight="1"
-                    android:text="말을 먼저 들어주는 사람"
+                    android:text="다른 사람의 말을 들어주는 사람"
                     android:layout_marginLeft="70dp"
                     android:textSize="16dp"
+                    android:textColor="#555555"
                     android:layout_marginBottom="15dp"
                     android:id="@+id/rbtn_I"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#8FC759"/>
             </RadioGroup>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:layout_marginBottom="18dp"
-                android:text="2. 문제가 생겼을 때" />
+                android:text="2. 문제가 생겼을 때"
+                android:textColor="#222222"/>
 
             <RadioGroup
                 android:id="@+id/radioGroupTF"
@@ -271,19 +390,23 @@
                     android:text="공감과 위로를 해주는 사람"
                     android:layout_marginBottom="5dp"
                     android:textSize="16dp"
+                    android:textColor="#555555"
                     android:id="@+id/rbtn_F"
                     android:layout_marginLeft="70dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#8FC759"/>
                 <RadioButton
                     android:layout_weight="1"
                     android:text="해결 방법을 제시해주는 사람"
                     android:layout_marginLeft="70dp"
                     android:textSize="16dp"
+                    android:textColor="#555555"
                     android:layout_marginBottom="15dp"
                     android:id="@+id/rbtn_T"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#8FC759"/>
             </RadioGroup>
 
             <CheckBox
@@ -299,12 +422,12 @@
                 android:id="@+id/btnRegist"
                 android:layout_width="359dp"
                 android:layout_height="wrap_content"
-                android:background="#8FC759"
+                android:background="@drawable/color_edge"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:textColor="@color/white"
                 android:layout_marginBottom="30dp"
-                android:textSize="16dp"
+                android:textSize="19dp"
+                android:textColor="@color/white"
                 android:text="회원가입" />
 
         </LinearLayout>

@@ -2,10 +2,16 @@
 <resources>
     <string-array name="minute_value">
         <item>00분</item>
+        <item>05분</item>
         <item>10분</item>
+        <item>15분</item>
         <item>20분</item>
+        <item>25분</item>
         <item>30분</item>
+        <item>35분</item>
         <item>40분</item>
+        <item>45분</item>
         <item>50분</item>
+        <item>55분</item>
     </string-array>
 </resources>

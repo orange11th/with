@@ -1,4 +1,4 @@
-package com.cookandroid.with;
+package com.cookandroid.with.confirm;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -22,8 +22,20 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import com.cookandroid.with.Complete1Activity;
+import com.cookandroid.with.R;
 import com.cookandroid.with.databinding.ActivityConfirmBinding;
+import com.cookandroid.with.simple.SimpleActivity;
+import com.cookandroid.with.topic.GetRequest;
+import com.cookandroid.with.topic.GetTopic;
 
+import org.json.JSONObject;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -35,7 +47,7 @@ public class ConfirmActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
-
+    String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -48,6 +60,37 @@ public class ConfirmActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(" ");
+
+        Response.Listener<String> responseListener = new Response.Listener<String>(){
+            @Override
+            public void onResponse(String response) {
+                try{
+                    // String으로 그냥 못 보냄으로 JSON Object 형태로 변형하여 전송
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    if(success){
+                        //result = jsonResponse.getString("ID");
+                        //result+=": "+jsonResponse.getString("title");
+                        //txtResult.setText(result);
+                        Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                }
+                catch(Exception e){
+                    StringWriter errors = new StringWriter();
+                    e.printStackTrace(new PrintWriter(errors));
+                    Toast.makeText(getApplicationContext(), errors.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        // Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
+        GetConfirm getGonfirm = new GetConfirm(ID, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(ConfirmActivity.this);
+        queue.add(getGonfirm);
+
 
         /* 선착순, 지원에 따라 완료 화면 다르게 뜨도록 수정 필요 */
         //등록 버튼
@@ -166,8 +209,7 @@ public class ConfirmActivity extends AppCompatActivity {
                 }
 
                 //여기서 잠시 멈춤 : 확인 버튼을 누르면 값을 어떻게 보여줄지 결정해야함.
-                TextView text1 = findViewById(R.id.type1);
-                TextView text2 = findViewById(R.id.type2);
+                TextView text1 = findViewById(R.id.help);
             }
         });
 

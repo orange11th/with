@@ -13,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.cookandroid.with.databinding.ActivitySeniorHomeBinding;
+import com.cookandroid.with.simple.SimpleActivity;
 
 public class SeniorHomeActivity extends AppCompatActivity {
     private ActivitySeniorHomeBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         binding = ActivitySeniorHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -27,7 +27,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_senior_home);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("  홈");
+        getSupportActionBar().setTitle("  WITH");
 
         //알림 아이콘 버튼
         binding.alarmbtn.setOnClickListener( v -> {
