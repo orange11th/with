@@ -1,4 +1,4 @@
-package com.cookandroid.with;
+package com.cookandroid.with.simple;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -15,14 +15,24 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import com.cookandroid.with.confirm.ConfirmActivity;
+import com.cookandroid.with.R;
+import com.cookandroid.with.SeniorHomeActivity;
 import com.cookandroid.with.databinding.ActivitySimpleBinding;
+
+import org.json.JSONObject;
 
 import java.util.Calendar;
 
 public class SimpleActivity extends AppCompatActivity implements View.OnClickListener {
     private ActivitySimpleBinding bd;
     private RadioGroup radioGroup1, radioGroup2, radioGroup3;
+    private RadioButton rBtn;
     DatePickerDialog datePickerDialog;
+    String userID, help, start, dest, date, time, how;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,8 +176,59 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
         });
 
 
+
+
         //등록 버튼
         bd.enrollBtn.setOnClickListener( v-> {
+            // 현재 입력된 정보를 string으로 가져오기
+            //Cookie cookie=Cookie.getCookie();
+            //cookie.readCookie();
+
+            //help 값
+            rBtn = (RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId());
+
+            //start 값
+            RadioGroup radioGroup4 = (RadioGroup) findViewById( R.id.radioGroup4);
+            RadioButton rBtn4 = (RadioButton) findViewById(radioGroup4.getCheckedRadioButtonId());
+
+            //how 값
+            RadioGroup radioGroup5 = (RadioGroup) findViewById( R.id.radioGroup5);
+            RadioButton rBtn5 = (RadioButton) findViewById(radioGroup5.getCheckedRadioButtonId());
+
+            userID = "testSimple"; /* 수정 필요 */
+            help = "병원 동행"; //rBtn.getText().toString();
+            start = rBtn4.getText().toString();
+            dest = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
+            date = bd.dateTextView.getText().toString();
+            time = bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
+            how = rBtn5.getText().toString();
+
+            Response.Listener<String> responseListener = new Response.Listener<String>(){
+                @Override
+                public void onResponse(String response) {
+                    try{
+                        // String으로 그냥 못 보냄으로 JSON Object 형태로 변형하여 전송
+                        JSONObject jsonResponse = new JSONObject(response);
+                        boolean success = jsonResponse.getBoolean("success");
+                        if(success){
+                            Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            };
+
+            // Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
+            InsertSimple insertSimple = new InsertSimple(userID, help, start, dest, date, time, how, responseListener);
+            RequestQueue queue = Volley.newRequestQueue(SimpleActivity.this);
+            queue.add(insertSimple);
+
             Intent intent = new Intent(getApplicationContext(), ConfirmActivity.class);
             startActivity(intent);
         });
@@ -201,6 +262,7 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
                 radioGroup3.clearCheck();
                 radioGroup3.setOnCheckedChangeListener(listener3);
             }
+            rBtn = (RadioButton) findViewById(radioGroup2.getCheckedRadioButtonId());
         }
     };
 
@@ -216,6 +278,7 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
                 radioGroup2.clearCheck();
                 radioGroup2.setOnCheckedChangeListener(listener2);
             }
+            rBtn = (RadioButton) findViewById(radioGroup3.getCheckedRadioButtonId());
         }
     };
 

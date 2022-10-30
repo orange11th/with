@@ -6,22 +6,31 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.cookandroid.with.databinding.ActivityComplete1Binding;
+import com.cookandroid.with.databinding.ActivitySimpleBinding;
 
 public class Complete1Activity extends AppCompatActivity {
+    private ActivityComplete1Binding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complete1);
+        binding = ActivityComplete1Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        //complete1 확인 버튼 activity
-        Button confirm_btn = (Button) findViewById(R.id.confirm_btn);
-        confirm_btn.setOnClickListener(new View.OnClickListener() {
+        //상세보기 버튼
+        binding.detailsBtn.setOnClickListener( v -> {
+            Intent intent = new Intent(getApplicationContext(), SeniorCheck1Activity.class);
+            startActivity(intent);
+        });
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
-                startActivity(intent);
-            }
+        //홈으로 가기 버튼
+        binding.confirmBtn.setOnClickListener( v -> {
+            Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
+            startActivity(intent);
+
         });
     }
 }

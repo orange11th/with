@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.cookandroid.with.simple.SimpleActivity;
+
 public class TmpActivity extends AppCompatActivity {
     Button btn1,btn2,btn3;
     @Override

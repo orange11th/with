@@ -11,7 +11,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.R;
-import com.cookandroid.with.login.Cookie;
+import com.cookandroid.with.cookie.Cookie;
 
 import org.json.JSONObject;
 

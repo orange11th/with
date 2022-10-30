@@ -13,11 +13,17 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.databinding.ActivityNoxBinding;
+
+import org.json.JSONObject;
 
 import java.util.Calendar;
 
@@ -28,6 +34,8 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
     private EditText titleText;
     private TextView dateTextView;
     DatePickerDialog datePickerDialog;
+
+    String userID, title, help, start, dest, date, time, how, contents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -153,12 +161,11 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
 
 
         //구인 방법 라디오 버튼 값 가져오기
-        bd.radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bd.radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                howBtn = ((RadioButton) findViewById(checkedId)).toString();
-
-                //Log.d("Tag", "data:" + howBtn);
+                howBtn = ((RadioButton) findViewById(checkedId)).getText().toString();
+                Log.d("Tag", "data:" + howBtn);
             }
         });
 
@@ -168,14 +175,61 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
 
         //등록 버튼을 누르면 NoxConfirm으로 값 보냄
         bd.enrollBtn.setOnClickListener(v -> {
+            // 현재 입력된 정보를 string으로 가져오기
+
+
+            //start 값
+            RadioGroup radioGroup3 = (RadioGroup) findViewById( R.id.radioGroup3);
+            RadioButton rBtn3 = (RadioButton) findViewById(radioGroup3.getCheckedRadioButtonId());
+
+            //how 값
+            RadioGroup radioGroup4 = (RadioGroup) findViewById( R.id.radioGroup4);
+            RadioButton rBtn4 = (RadioButton) findViewById(radioGroup4.getCheckedRadioButtonId());
+
+            userID = "testNox"; /* 수정 필요 */
+            title = bd.titleText.getText().toString();
+            help = "1";
+            start = rBtn3.getText().toString();
+            dest = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
+            date = bd.dateTextView.getText().toString();
+            time = bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
+            how = rBtn4.getText().toString();
+            contents = bd.contentsText.getText().toString();
+
+            Response.Listener<String> responseListener = new Response.Listener<String>(){
+                @Override
+                public void onResponse(String response) {
+                    try{
+                        // String으로 그냥 못 보냄으로 JSON Object 형태로 변형하여 전송
+                        JSONObject jsonResponse = new JSONObject(response);
+                        boolean success = jsonResponse.getBoolean("success");
+                        if(success){
+                            Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            };
+
+            // Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
+            InsertNox insertNox = new InsertNox(userID, title, help, start, dest, date, time, how, contents, responseListener);
+            RequestQueue queue = Volley.newRequestQueue(NoxActivity.this);
+            queue.add(insertNox);
+
             //titleText의 텍스트 가져오기
             titleValue = titleText.getText().toString();
             dateValue = dateTextView.getText().toString();
 
             Intent intent = new Intent(NoxActivity.this, NoxConfirmActivity.class);
-            Log.d("Tag", "data:" + typeBtn);
-            Log.d("Tag", "data:" + howBtn);
-            Log.d("Tag", "data:" + titleValue);
+            //Log.d("Tag", "data:" + typeBtn);
+            //Log.d("Tag", "data:" + howBtn);
+            //Log.d("Tag", "data:" + titleValue);
 
             //데이터 값 전달
             intent.putExtra("TITLE", titleValue);

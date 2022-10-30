@@ -65,10 +65,10 @@
                     android:textSize="24dp"
                     android:textStyle="bold"
                     android:bufferType="spannable"
-                    android:background="@drawable/simple_checkbox_back"
+                    android:background="@drawable/simple_hospital"
                     android:gravity="start"
                     android:button="@null"
-                    android:elevation="3dp"/>
+                    android:elevation="3dp" />
 
                 <RadioButton
                     android:id="@+id/radioBtn2"
@@ -82,7 +82,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold"
                     android:bufferType="spannable"
-                    android:background="@drawable/simple_checkbox_back"
+                    android:background="@drawable/simple_walk"
                     android:gravity="start"
                     android:button="@null"
                     android:elevation="3dp"/>
@@ -108,7 +108,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold"
                     android:bufferType="spannable"
-                    android:background="@drawable/simple_checkbox_back"
+                    android:background="@drawable/simple_household"
                     android:gravity="start"
                     android:button="@null"
                     android:elevation="3dp" />
@@ -125,7 +125,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold"
                     android:bufferType="spannable"
-                    android:background="@drawable/simple_checkbox_back"
+                    android:background="@drawable/simple_talk"
                     android:gravity="start"
                     android:button="@null"
                     android:elevation="3dp"/>
@@ -150,7 +150,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold"
                     android:bufferType="spannable"
-                    android:background="@drawable/simple_checkbox_back"
+                    android:background="@drawable/simple_hobby"
                     android:gravity="start"
                     android:button="@null"
                     android:elevation="3dp"/>
@@ -167,7 +167,7 @@
                     android:textSize="24dp"
                     android:textStyle="bold"
                     android:bufferType="spannable"
-                    android:background="@drawable/simple_checkbox_back"
+                    android:background="@drawable/simple_etc"
                     android:gravity="start"
                     android:button="@null"
                     android:elevation="3dp"/>
@@ -301,6 +301,7 @@
                 android:orientation="vertical">
 
                 <RadioGroup
+                    android:id="@+id/radioGroup4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -310,7 +311,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
-                        android:text="주소1\n세종특별자치시 조치원읍 어쩌구 저쩌구 101-101"/>
+                        android:text="세종특별자치시 조치원읍 돌간길 54 101-101"
+                        android:buttonTint="#8FC759" />
 
                     <View
                         android:layout_width="350dp"
@@ -324,7 +326,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="15dp"
-                        android:text="주소2\n세종특별자치시 조치원읍 어쩌구 저쩌구 102-102"/>
+                        android:text="세종특별자치시 조치원읍 돌간길 54 102-102"
+                        android:buttonTint="#8FC759"/>
 
                 </RadioGroup>
 
@@ -377,21 +380,38 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/addressText3"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:text="주소 검색 추가"
-                    android:textColor="#2E2E2E"
-                    android:textSize="18sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <EditText
+                        android:id="@+id/addressText3"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:text="주소 검색 추가"
+                        android:textColor="#2E2E2E"
+                        android:textSize="18dp"
+                        android:focusable="false" />
+
+                    <Button
+                        android:layout_width="55dp"
+                        android:layout_height="40dp"
+                        android:text="검색"
+                        android:textSize="16dp"
+                        android:background="@drawable/confirm_change_background"/>
+
+                </LinearLayout>
+
 
                 <EditText
                     android:id="@+id/addressText4"
                     android:layout_width="300dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:hint="상세 주소"
+                    android:hint="세부 주소를 입력해주세요."
                     android:textColor="#2E2E2E"
                     android:textSize="18sp" />
 
@@ -589,7 +609,7 @@
             android:gravity="center">
 
             <Spinner
-                android:id="@+id/hour_spinner"
+                android:id="@+id/hourSpinner"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"
@@ -598,7 +618,7 @@
                 android:entries="@array/hour_value" />
 
             <Spinner
-                android:id="@+id/minute_spinner"
+                android:id="@+id/minuteSpinner"
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:layout_margin="5dp"
@@ -637,6 +657,7 @@
             android:layout_height="wrap_content">
 
             <RadioGroup
+                android:id="@+id/radioGroup5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

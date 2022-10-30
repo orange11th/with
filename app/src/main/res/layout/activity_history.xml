@@ -53,6 +53,7 @@
           android:textColor="#777777"
           android:gravity="center"
           android:background="@color/white"
+          android:bufferType="spannable"
           android:elevation="5dp"/>
 
       <View
@@ -69,67 +70,39 @@
           android:textColor="#777777"
           android:gravity="center"
           android:background="@color/white"
+          android:bufferType="spannable"
           android:elevation="5dp"/>
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/date_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="25dp"
-        android:text="2022.08"
+        android:text="2022.10"
         android:textSize="14dp"
         android:textColor="@color/white"
         android:background="@drawable/history_date_background"
         android:gravity="center_horizontal" />
-
-    <Button
-        android:id="@+id/history_btn1"
-        android:layout_width="370dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:paddingLeft="20dp"
-        android:background="@drawable/simple_checkbox_back"
-        android:text="2022.08.25\n병원 동행 · 이동 보조"
-        android:textSize="20dp"
-        android:bufferType="spannable"
-        android:gravity="center_vertical"/>
-
-    <Button
-        android:layout_width="370dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:paddingLeft="20dp"
-        android:background="@drawable/simple_checkbox_back"
-        android:text="2022.08.16\n산책 동반"
-        android:textSize="20dp"
-        android:gravity="center_vertical"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="25dp"
-        android:text="2022.07"
+        android:text="2022.09"
         android:textSize="14dp"
         android:textColor="@color/white"
         android:background="@drawable/history_date_background"
         android:gravity="center_horizontal" />
 
-    <Button
-        android:layout_width="370dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:paddingLeft="20dp"
-        android:background="@drawable/simple_checkbox_back"
-        android:text="2022.08.25\n병원 동행"
-        android:textSize="20dp"
-        android:gravity="center_vertical"/>
+    <LinearLayout
+        android:id="@+id/viewLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"/>
 
   </LinearLayout>
 

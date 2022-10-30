@@ -18,8 +18,8 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.MainActivity;
 import com.cookandroid.with.R;
-import com.cookandroid.with.SeniorHomeActivity;
 import com.cookandroid.with.cookie.Cookie;
+import com.cookandroid.with.register.HelperRegisterActivity;
 import com.cookandroid.with.register.RegisterActivity;
 
 import org.json.JSONObject;
@@ -27,20 +27,24 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class LoginActivity extends AppCompatActivity {
+public class HelperLoginActivity extends AppCompatActivity {
     EditText edtUsername,edtPassword;
-    Button btnLogin,btnRegister;
-    TextView txtBtn,txtBtn_Helper;
+    Button btnLogin;
+    TextView txtBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_helper_login);
+
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(" ");
 
         edtUsername=(EditText)findViewById(R.id.username);
         edtPassword=(EditText)findViewById(R.id.password);
         btnLogin=(Button)findViewById(R.id.login);
         txtBtn=(TextView)findViewById(R.id.txtBtn_Register);
-        txtBtn_Helper=(TextView)findViewById(R.id.txtBtn_Helper);
         Cookie cookie=Cookie.getCookie();
 
         btnLogin.setOnClickListener(new View.OnClickListener(){
@@ -64,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String date=sdf.format(new Date(System.currentTimeMillis()));
                                 cookie.writeCookie(userID,userPassword,date);
 
-                                Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 // 로그인 하면서 사용자 정보 넘기기
                                 //intent.putExtra("userID", userID);
                                 //intent.putExtra("userPassword", userPassword);
@@ -80,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 };
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                RequestQueue queue = Volley.newRequestQueue(HelperLoginActivity.this);
                 queue.add(loginRequest);
             }
         });
@@ -90,21 +94,23 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         //회원가입 버튼 클릭
-                        Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), HelperRegisterActivity.class);
                         startActivity(intent);
                         finish();
                     }
                 });
-
-        txtBtn_Helper.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View view) {
-                        //돌보미로그인 버튼 클릭
-                        Intent intent = new Intent(getApplicationContext(), HelperLoginActivity.class);
-                        startActivity(intent);
-                    }
-                });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home: {
+                Intent intent = new Intent(getApplicationContext(), HelperLoginActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
 

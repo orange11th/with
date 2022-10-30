@@ -5,7 +5,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.ColorSpace;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -13,20 +12,29 @@ import android.text.Spanned;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.cookandroid.with.databinding.ActivityConfirmBinding;
+import com.cookandroid.with.databinding.ActivityHistoryBinding;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
 public class HistoryActivity extends AppCompatActivity {
-    private Button historybtn1;
-
-    private TextView text1;
-
+    private ActivityHistoryBinding binding;
+    Button historyButton;
+    LayoutInflater layoutInflater;
+    ArrayList<String> historyList;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history);
+        binding = ActivityHistoryBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_history);
@@ -34,32 +42,53 @@ public class HistoryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(" 도움 내역");
 
-        historybtn1 = (Button) findViewById(R.id.history_btn1);
-        historybtn1.setOnClickListener(new View.OnClickListener() {
+        historyList = new ArrayList();
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HistoryActivity.this, SeniorCheck1Activity.class);
-                startActivity(intent);
-            }
-        });
+        historyList.add("2022.09.30\n병원 동행");
+        historyList.add("2022.09.27\n병원 동행");
+        historyList.add("2022.09.16\n취미/여가");
 
-        Spannable span1 = (Spannable) historybtn1.getText();
-        //글자 크기 다르게
-        span1.setSpan(new AbsoluteSizeSpan(43), 0,10, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //색 다르게
-        span1.setSpan(new ForegroundColorSpan(Color.GRAY), 0, 10, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //스타일 다르게
-        span1.setSpan(new StyleSpan(Typeface.BOLD), 11, 24, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        layoutInflater = LayoutInflater.from(this);
+
+        for(int i = 0; i < (historyList.size()); i++) {
+            View view = layoutInflater.inflate(R.layout.layout_history_contents, null, false);
+
+            //버튼 생성
+            historyButton = view.findViewById(R.id.historyBtn1);
+            historyButton.setText(historyList.get(i));
+
+            Spannable span = (Spannable) historyButton.getText();
+            span.setSpan(new AbsoluteSizeSpan(43), 0,10, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            span.setSpan(new ForegroundColorSpan(Color.GRAY), 0, 10, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            span.setSpan(new StyleSpan(Typeface.NORMAL), 0, 10, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            binding.viewLayout.addView(view);
+
+            historyButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(HistoryActivity.this, SeniorCheck1Activity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
 
-        text1 = (TextView) findViewById(R.id.text1);
-        Spannable span2 = (Spannable) text1.getText();
-        //색 다르게
+        Spannable span1 = (Spannable) binding.text1.getText();
+        span1.setSpan(new ForegroundColorSpan(Color.rgb(34,34,34)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span1.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        Spannable span2 = (Spannable) binding.text2.getText();
         span2.setSpan(new ForegroundColorSpan(Color.rgb(34,34,34)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //스타일 다르게
         span2.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        Spannable span3 = (Spannable) binding.text3.getText();
+        span3.setSpan(new ForegroundColorSpan(Color.rgb(34,34,34)), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span3.setSpan(new StyleSpan(Typeface.BOLD), 0, 5, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
     }
+
     //toolbar
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

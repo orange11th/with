@@ -3,7 +3,6 @@ package com.cookandroid.with.topic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,9 +15,6 @@ import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.R;
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import com.cookandroid.with.board.BoardInsert;
-import com.cookandroid.with.board.InsertRequest;
-import com.cookandroid.with.login.Cookie;
 
 import org.json.JSONObject;
 
