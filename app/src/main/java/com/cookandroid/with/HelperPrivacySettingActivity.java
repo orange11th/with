@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.cookandroid.with.profile.HelperProfileActivity;
 
 /*written by 병훈*/
 
@@ -82,7 +82,7 @@ public class HelperPrivacySettingActivity extends AppCompatActivity implements V
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),HelperProfileActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HelperProfileActivity.class);
                 startActivity(intent);//액티비티 띄우기
             }
         });

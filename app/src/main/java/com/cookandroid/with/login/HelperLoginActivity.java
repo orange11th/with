@@ -104,7 +104,7 @@ public class HelperLoginActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case android.R.id.home: {
-                Intent intent = new Intent(getApplicationContext(), HelperLoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
                 finish();
                 return true;

@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.cookandroid.with.databinding.ActivitySeniorHomeBinding;
+import com.cookandroid.with.profile.SeniorProfileActivity;
 import com.cookandroid.with.simple.SimpleActivity;
 
 public class SeniorHomeActivity extends AppCompatActivity {
@@ -33,12 +34,14 @@ public class SeniorHomeActivity extends AppCompatActivity {
         binding.alarmbtn.setOnClickListener( v -> {
             Intent intent = new Intent(SeniorHomeActivity.this, SeniorAlarmActivity.class);
             startActivity(intent);
+            finish();
         });
 
         //프로필 아이콘 버튼
         binding.profilebtn.setOnClickListener( v -> {
             Intent intent = new Intent(SeniorHomeActivity.this, SeniorProfileActivity.class);
             startActivity(intent);
+            finish();
         });
 
         //간편 도움 신청 버튼
@@ -47,6 +50,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SimpleActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

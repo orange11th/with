@@ -105,6 +105,7 @@
                 android:id="@+id/edtEmail"
                 android:layout_width="365dp"
                 android:layout_height="wrap_content"
+                android:hint=" 예: aaa@gmail.com"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
                 android:layout_weight="1" />
@@ -132,7 +133,7 @@
                 android:layout_marginLeft="23dp"
                 android:textSize="16dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n지역" />
+                android:text="\n주소" />
 
             <EditText
                 android:id="@+id/edtRegion"
@@ -141,7 +142,9 @@
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:hint="이곳을 클릭해서 주소를 검색할 수 있습니다."
                 android:editable="false"/>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -156,7 +159,7 @@
                 android:layout_width="365dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
-                android:focusable="false"
+                android:hint="자세한 주소를 입력해 주세요.(건물명, 동/호수 등)"
                 android:layout_gravity="center"
                 android:layout_weight="1" />
 
@@ -189,7 +192,7 @@
                 android:id="@+id/edtBirth"
                 android:layout_width="365dp"
                 android:layout_height="wrap_content"
-                android:hint=" 예: 19980211"
+                android:hint=" 예: 1998-02-11"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
                 android:layout_weight="1" />
