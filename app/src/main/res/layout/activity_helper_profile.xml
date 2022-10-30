@@ -184,6 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
+            android:layout_marginBottom="15dp"
             android:text="도움 가능 종류"/>
     </LinearLayout>
     <LinearLayout
@@ -195,6 +196,7 @@
             android:paddingHorizontal="10dp"
             android:paddingVertical="2dp"
             android:background="@drawable/bg_custom_button"
+            android:backgroundTint="#A9CF84"
             android:layout_marginLeft="60dp"
             android:text="#병원동행"/>
         <TextView
@@ -202,6 +204,7 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
             android:paddingVertical="2dp"
+            android:backgroundTint="#A9CF84"
             android:background="@drawable/bg_custom_button"
             android:layout_marginLeft="10dp"
             android:text="#이동보조"/>
