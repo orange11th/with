@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
-
         <activity
             android:name=".SeniorProfileSettingActivity"
             android:exported="false" />
@@ -36,9 +35,6 @@
             android:name=".SelectMatchList"
             android:exported="false" />
         <activity
-            android:name=".WebviewActivity"
-            android:exported="false" />
-        <activity
             android:name=".SeniorCheck3Activity"
             android:exported="true" />
         <activity
@@ -51,7 +47,7 @@
             android:name=".HelperProfileReviseActivity"
             android:exported="true" />
         <activity
-            android:name=".HelperProfileActivity"
+            android:name=".profile.HelperProfileActivity"
             android:exported="true" />
         <activity
             android:name=".HelperPrivacySettingActivity"
@@ -72,14 +68,8 @@
         <activity android:name=".Complete2Activity" />
         <activity
             android:name=".SeniorHomeActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".SeniorProfileActivity" />
+            android:exported="true" />
+        <activity android:name=".profile.SeniorProfileActivity" />
         <activity android:name=".SeniorAlarmActivity" />
         <activity
             android:name=".HistoryActivity"
@@ -101,15 +91,20 @@
         <activity
             android:name=".loading.LoadingActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.HelperLoginActivity" />
         <activity android:name=".register.RegisterActivity" />
-        <activity android:name=".register.HelperRegisterActivity"
-            android:exported="true">
-
-        </activity>
+        <activity
+            android:name=".register.HelperRegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".register.WebViewActivity"/>
     </application>
 
 </manifest>

@@ -75,13 +75,12 @@
             android:layout_marginLeft="50dp"
             android:text="이름"/>
         <TextView
-            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textStyle="bold"
             android:textSize="17sp"
-            android:text="이름"/>
+            android:text="홍길동"/>
 
     </LinearLayout>
 
@@ -96,26 +95,25 @@
             android:layout_marginLeft="50dp"
             android:text="성별"/>
         <TextView
-            android:id="@+id/sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:text="성별"/>
+            android:text="남"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
+
             android:text="나이"/>
         <TextView
-            android:id="@+id/birth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:text="나이"/>
+            android:text="20세"/>
     </LinearLayout>
 
     <!--지역-->
@@ -130,13 +128,12 @@
             android:text="지역"
             />
         <TextView
-            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:text="지역"/>
+            android:text="서울"/>
     </LinearLayout>
 
     <!--자격증-->
@@ -155,7 +152,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/license1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ㅁㅁㅁ 자격증"
@@ -163,7 +159,6 @@
                 android:textStyle="bold"
                 android:layout_marginLeft="20dp"/>
             <TextView
-                android:id="@+id/license2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ㅇㅇㅇ 자격증"
@@ -189,7 +184,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/needs1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
@@ -198,7 +192,6 @@
             android:layout_marginLeft="60dp"
             android:text="#병원동행"/>
         <TextView
-            android:id="@+id/needs2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
@@ -217,7 +210,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="평가 기록"/>
+            android:text="평가 기록(1)"/>
     </LinearLayout>
 
 
@@ -226,22 +219,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center_vertical"
         android:layout_marginLeft="70dp">
         <!--날짜-->
         <TextView
-            android:id="@+id/StartTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="날짜"/>
-        <RatingBar
-            android:id="@+id/AfterStar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:stepSize="0.5"
-            android:rating="3"
-            style="@style/Widget.AppCompat.RatingBar.Small"/>
+            android:text="6월 22일"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/star_icon"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/star_icon"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/star_icon"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/star_icon"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/star_icon"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -249,7 +254,6 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="70dp">
         <TextView
-            android:id="@+id/Aftercontent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"

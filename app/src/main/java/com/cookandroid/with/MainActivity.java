@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.cookandroid.with.profile.HelperProfileActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView profilebtn, alarmbtn;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         alarmbtn.setOnClickListener(v ->{
             Intent intent = new Intent(MainActivity.this, HelperAlarmActivity.class);
             startActivity(intent);
+            finish();
         });
 
         //click profile
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, HelperProfileActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -53,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -63,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SelectMatchList.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -74,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MatchingList.class);
                 startActivity(intent);
+                finish();
             }
         });
 
