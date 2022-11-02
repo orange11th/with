@@ -35,8 +35,8 @@ public class LoadingActivity extends AppCompatActivity {
             public void run() {
                 Cookie cookie=Cookie.getCookie();
                 cookie.checkCookie();
-                cookie.readCookie();
                 cookie.clearCookie();//자동로그인 방지용
+                cookie.readCookie();
                 String userID = cookie.getID();
                 String userPassword = cookie.getPW();
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
