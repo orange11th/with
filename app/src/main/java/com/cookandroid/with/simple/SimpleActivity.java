@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
@@ -38,6 +39,8 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         bd = ActivitySimpleBinding.inflate(getLayoutInflater());
         setContentView(bd.getRoot());
+
+        Log.d("Tag123", "testSimple");
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_simple);
