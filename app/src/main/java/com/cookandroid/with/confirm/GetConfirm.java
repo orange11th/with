@@ -14,11 +14,11 @@ public class GetConfirm extends StringRequest {
     private Map<String, String> parameters;
 
     /* 수정 필요 */
-    public GetConfirm(String ID, Response.Listener<String> listener) {
+    public GetConfirm(String matchingID, Response.Listener<String> listener) {
         super(Request.Method.POST, URL, listener, null);
 
         parameters = new HashMap<>();
-        parameters.put("ID", ID);
+        parameters.put("matchingID", matchingID);
     }
 
     @Override

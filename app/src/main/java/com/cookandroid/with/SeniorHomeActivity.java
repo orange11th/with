@@ -56,7 +56,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
 
         Spannable span2 = (Spannable) binding.button2.getText();
         //글자 크기 다르게
-        span2.setSpan(new AbsoluteSizeSpan(47), 11,40, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span2.setSpan(new AbsoluteSizeSpan(44), 11,40, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //글자 색 다르게
         span2.setSpan(new ForegroundColorSpan(Color.DKGRAY), 11, 40, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
@@ -72,10 +72,8 @@ public class SeniorHomeActivity extends AppCompatActivity {
         });
 
         Spannable span3 = (Spannable) binding.button3.getText();
-        //글자 크기 다르게
-        span3.setSpan(new AbsoluteSizeSpan(47), 13,45, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //글자 색 다르게
-        span3.setSpan(new ForegroundColorSpan(Color.DKGRAY), 13, 45, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span3.setSpan(new AbsoluteSizeSpan(44), 13,43, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span3.setSpan(new ForegroundColorSpan(Color.DKGRAY), 13, 43, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
 
         //도움 내역 버튼
@@ -90,7 +88,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
 
         Spannable span4 = (Spannable) binding.button4.getText();
         //글자 크기 다르게
-        span4.setSpan(new AbsoluteSizeSpan(47), 6,25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span4.setSpan(new AbsoluteSizeSpan(44), 6,25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //글자 색 다르게
         span4.setSpan(new ForegroundColorSpan(Color.DKGRAY), 6, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }

@@ -13,19 +13,17 @@ public class InsertNox extends StringRequest {
     final static private String URL = "http://3.36.66.178/nox/dbinsert.php"; // "http:// 퍼블릭 DNS 주소/Register.php"
     private Map<String, String> parameters;
 
-    public InsertNox(String userID, String title, String help, String start, String dest, String date, String time, String how, String contents, Response.Listener<String> listener) {
+    public InsertNox(String title, String needs, String startDes, String endDes, String time, String way, String content, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         parameters = new HashMap<>();
-        parameters.put("userID", userID);
         parameters.put("title", title);
-        parameters.put("help", help);
-        parameters.put("start", start);
-        parameters.put("dest", dest);
-        parameters.put("date", date);
+        parameters.put("needs", needs);
+        parameters.put("startDes", startDes);
+        parameters.put("endDes", endDes);
         parameters.put("time", time);
-        parameters.put("how", how);
-        parameters.put("contents", contents);
+        parameters.put("way", way);
+        parameters.put("content", content);
 
     }
 

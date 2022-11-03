@@ -32,7 +32,7 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
     private RadioGroup radioGroup1, radioGroup2, radioGroup3;
     private RadioButton rBtn;
     DatePickerDialog datePickerDialog;
-    String userID, help, start, dest, date, time, how;
+    String ID, needs, startDes, endDes, time, way;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,8 +176,6 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
         });
 
 
-
-
         //등록 버튼
         bd.enrollBtn.setOnClickListener( v-> {
             // 현재 입력된 정보를 string으로 가져오기
@@ -195,13 +193,12 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             RadioGroup radioGroup5 = (RadioGroup) findViewById( R.id.radioGroup5);
             RadioButton rBtn5 = (RadioButton) findViewById(radioGroup5.getCheckedRadioButtonId());
 
-            userID = "testSimple"; /* 수정 필요 */
-            help = "병원 동행"; //rBtn.getText().toString();
-            start = rBtn4.getText().toString();
-            dest = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
-            date = bd.dateTextView.getText().toString();
-            time = bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
-            how = rBtn5.getText().toString();
+            //ID = "testSimple"; /* 수정 필요 */
+            needs = rBtn.getText().toString();
+            startDes = rBtn4.getText().toString();
+            endDes = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
+            time = bd.dateTextView.getText().toString() + bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
+            way = rBtn5.getText().toString();
 
             Response.Listener<String> responseListener = new Response.Listener<String>(){
                 @Override
@@ -225,7 +222,7 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             };
 
             // Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
-            InsertSimple insertSimple = new InsertSimple(userID, help, start, dest, date, time, how, responseListener);
+            InsertSimple insertSimple = new InsertSimple(needs, startDes, endDes, time, way, responseListener);
             RequestQueue queue = Volley.newRequestQueue(SimpleActivity.this);
             queue.add(insertSimple);
 

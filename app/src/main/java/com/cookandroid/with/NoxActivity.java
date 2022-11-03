@@ -33,9 +33,10 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
     static String typeBtn, howBtn, titleValue, dateValue;
     private EditText titleText;
     private TextView dateTextView;
+    private RadioButton rBtn;
     DatePickerDialog datePickerDialog;
 
-    String userID, title, help, start, dest, date, time, how, contents;
+    String ID, title, needs, startDes, endDes, time, way, content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -177,6 +178,7 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
         bd.enrollBtn.setOnClickListener(v -> {
             // 현재 입력된 정보를 string으로 가져오기
 
+            rBtn = (RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId());
 
             //start 값
             RadioGroup radioGroup3 = (RadioGroup) findViewById( R.id.radioGroup3);
@@ -186,15 +188,14 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             RadioGroup radioGroup4 = (RadioGroup) findViewById( R.id.radioGroup4);
             RadioButton rBtn4 = (RadioButton) findViewById(radioGroup4.getCheckedRadioButtonId());
 
-            userID = "testNox"; /* 수정 필요 */
+            //ID = "testNox"; /* 수정 필요 */
             title = bd.titleText.getText().toString();
-            help = "1";
-            start = rBtn3.getText().toString();
-            dest = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
-            date = bd.dateTextView.getText().toString();
-            time = bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
-            how = rBtn4.getText().toString();
-            contents = bd.contentsText.getText().toString();
+            needs = "병원동행"; //rBtn.getText().toString();
+            startDes = rBtn3.getText().toString();
+            endDes = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
+            time = bd.dateTextView.getText().toString() + bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
+            way = rBtn4.getText().toString();
+            content = bd.contentsText.getText().toString();
 
             Response.Listener<String> responseListener = new Response.Listener<String>(){
                 @Override
@@ -218,7 +219,7 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             };
 
             // Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
-            InsertNox insertNox = new InsertNox(userID, title, help, start, dest, date, time, how, contents, responseListener);
+            InsertNox insertNox = new InsertNox(title, needs, startDes, endDes, time, way, content, responseListener);
             RequestQueue queue = Volley.newRequestQueue(NoxActivity.this);
             queue.add(insertNox);
 

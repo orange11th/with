@@ -16,11 +16,10 @@ import androidx.appcompat.widget.Toolbar;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.cookandroid.with.MainActivity;
+import com.cookandroid.with.HelperHomeActivity;
 import com.cookandroid.with.R;
 import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.register.HelperRegisterActivity;
-import com.cookandroid.with.register.RegisterActivity;
 
 import org.json.JSONObject;
 
@@ -68,7 +67,7 @@ public class HelperLoginActivity extends AppCompatActivity {
                                 String date=sdf.format(new Date(System.currentTimeMillis()));
                                 cookie.writeCookie(userID,userPassword,date);
 
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
                                 // 로그인 하면서 사용자 정보 넘기기
                                 //intent.putExtra("userID", userID);
                                 //intent.putExtra("userPassword", userPassword);

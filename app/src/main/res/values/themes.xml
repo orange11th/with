@@ -13,12 +13,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
+
 
     <!--RatingBar 색 변경 - 병훈-->
     <style name="RatingBar" parent="Theme.AppCompat">
         <item name="colorControlNormal">@color/gray</item>
         <item name="colorControlActivated">@color/gray</item>
+    </style>
+
+    <style name="Toolbar.Home.TitleText" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>

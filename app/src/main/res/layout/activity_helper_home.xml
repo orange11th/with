@@ -6,26 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".HelperHomeActivity">
 
     <androidx.appcompat.widget.Toolbar
-        app:titleTextColor="#000000"
-        android:background="#8FC759"
         android:id="@+id/toolbar_main"
-        android:layout_height="84dp"
+        app:titleTextColor="@color/white"
+        android:background="#8FC759"
+        android:layout_height="145dp"
         android:layout_width="match_parent"
+        android:paddingTop="30dp"
+        android:gravity="top"
         tools:ignore="MissingConstraints"
-
-        />
-
+        app:titleTextAppearance="@style/Toolbar.Home.TitleText"/>
 
     <ImageView
         android:id="@+id/alarmbtn"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="330dp"
-        android:layout_marginLeft="330dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="328dp"
+        android:layout_marginLeft="328dp"
+        android:layout_marginTop="45dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:padding="0dp"
@@ -33,15 +33,15 @@
         android:src="@drawable/alarmimg"
         app:backgroundTint="#d9d9d9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/profilebtn"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="45dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:padding="0dp"
@@ -57,23 +57,18 @@
         android:layout_height="170dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="100dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:paddingTop="20dp"
+        android:layout_marginTop="110dp"
+        android:paddingTop="38dp"
+        android:paddingLeft="20dp"
         android:gravity="left"
-        android:text="선착순 마감 도움 리스트\n\n시니어 분들이 올리신 도움들 중\n선착순으로 마감되는 도움들 입니다."
+        android:text="빠른 돌봄 지원하기\n\n지원 시 바로 매칭이 확정됩니다."
         android:bufferType="spannable"
-        android:textSize="22dp"
+        android:textSize="27dp"
         android:textColor="#000000"
         android:textStyle = "bold"
-        app:backgroundTint="#FFFFFF"
-        app:iconTint="#FFFFFF"
+        android:background="@drawable/simple_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#000000"
-        app:strokeWidth="1dp"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button3"
@@ -81,22 +76,18 @@
         android:layout_height="170dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="6dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:paddingTop="20dp"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="37dp"
         android:gravity="left"
-        android:text="선택 마감 도움 리스트\n\n시니어 분들이 올리신 도움들 중 지원을 하면\n시니어 분들의 수락 후에 확정되는 도움들 입니다."
+        android:text="돌봄 지원하기\n\n시니어의 수락 후 지원이 확정됩니다."
         android:bufferType="spannable"
-        android:textSize="22dp"
+        android:textSize="27dp"
         android:textColor="#000000"
         android:textStyle = "bold"
-        app:backgroundTint="#FFFFFF"
-        app:iconTint="#FFFFFF"
+        android:background="@drawable/simple_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:strokeColor="#000000"
-        app:strokeWidth="1dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button4"
@@ -104,21 +95,17 @@
         android:layout_height="170dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="6dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:paddingTop="20dp"
+        android:layout_marginTop="15dp"
+        android:paddingTop="37dp"
+        android:paddingLeft="20dp"
         android:gravity="left"
-        android:text="매칭 리스트\n\n지금까지의 매칭 내역과 현재 매칭된 내역입니다."
+        android:text="매칭 내역\n\n매칭 내역을 확인할 수 있습니다."
         android:bufferType="spannable"
-        android:textSize="22dp"
+        android:textSize="27dp"
         android:textColor="#000000"
         android:textStyle = "bold"
-        app:backgroundTint="#FFFFFF"
-        app:iconTint="#FFFFFF"
+        android:background="@drawable/simple_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:strokeColor="#000000"
-        app:strokeWidth="1dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

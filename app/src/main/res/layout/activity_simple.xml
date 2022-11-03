@@ -58,7 +58,6 @@
                     android:layout_width="185dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
-                    android:paddingTop="15dp"
                     android:paddingLeft="15dp"
                     android:text="병원 동행"
                     android:textColor="#222222"
@@ -66,7 +65,7 @@
                     android:textStyle="bold"
                     android:bufferType="spannable"
                     android:background="@drawable/simple_hospital"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:button="@null"
                     android:elevation="3dp" />
 
@@ -75,7 +74,6 @@
                     android:layout_width="185dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
-                    android:paddingTop="15dp"
                     android:paddingLeft="15dp"
                     android:text="이동 보조"
                     android:textColor="#222222"
@@ -83,7 +81,7 @@
                     android:textStyle="bold"
                     android:bufferType="spannable"
                     android:background="@drawable/simple_walk"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:button="@null"
                     android:elevation="3dp"/>
 
@@ -101,7 +99,6 @@
                     android:layout_width="185dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
-                    android:paddingTop="15dp"
                     android:paddingLeft="15dp"
                     android:text="가사 돌봄"
                     android:textColor="#222222"
@@ -109,7 +106,7 @@
                     android:textStyle="bold"
                     android:bufferType="spannable"
                     android:background="@drawable/simple_household"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:button="@null"
                     android:elevation="3dp" />
 
@@ -118,7 +115,6 @@
                     android:layout_width="185dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
-                    android:paddingTop="15dp"
                     android:paddingLeft="15dp"
                     android:text="말동무"
                     android:textColor="#222222"
@@ -126,7 +122,7 @@
                     android:textStyle="bold"
                     android:bufferType="spannable"
                     android:background="@drawable/simple_talk"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:button="@null"
                     android:elevation="3dp"/>
             </RadioGroup>
@@ -143,7 +139,6 @@
                     android:layout_width="185dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
-                    android:paddingTop="15dp"
                     android:paddingLeft="15dp"
                     android:text="취미/여가"
                     android:textColor="#222222"
@@ -151,7 +146,7 @@
                     android:textStyle="bold"
                     android:bufferType="spannable"
                     android:background="@drawable/simple_hobby"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:button="@null"
                     android:elevation="3dp"/>
 
@@ -160,7 +155,6 @@
                     android:layout_width="185dp"
                     android:layout_height="100dp"
                     android:layout_margin="5dp"
-                    android:paddingTop="15dp"
                     android:paddingLeft="15dp"
                     android:text="기타"
                     android:textColor="#222222"
@@ -168,7 +162,7 @@
                     android:textStyle="bold"
                     android:bufferType="spannable"
                     android:background="@drawable/simple_etc"
-                    android:gravity="start"
+                    android:gravity="center_vertical"
                     android:button="@null"
                     android:elevation="3dp"/>
             </RadioGroup>
@@ -312,6 +306,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:text="세종특별자치시 조치원읍 돌간길 54 101-101"
+                        android:textSize="16dp"
                         android:buttonTint="#8FC759" />
 
                     <View
@@ -327,6 +322,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="15dp"
                         android:text="세종특별자치시 조치원읍 돌간길 54 102-102"
+                        android:textSize="16dp"
                         android:buttonTint="#8FC759"/>
 
                 </RadioGroup>
@@ -391,7 +387,7 @@
                         android:layout_width="240dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="4dp"
-                        android:text="주소 검색 추가"
+                        android:text="도로명 주소"
                         android:textColor="#2E2E2E"
                         android:textSize="18dp"
                         android:focusable="false" />

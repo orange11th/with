@@ -25,7 +25,7 @@ public class HelperAlarmActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case android.R.id.home:{
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
                 startActivity(intent);
                 finish();
                 return true;

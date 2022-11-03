@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".HelperHomeActivity">
 
     <!--toolbar : id 지정해줘야함-->
     <androidx.appcompat.widget.Toolbar

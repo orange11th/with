@@ -15,11 +15,10 @@
         android:gravity="center">
 
         <androidx.appcompat.widget.Toolbar
-            app:titleTextColor="#000000"
-            android:background="#FAFAFA"
             android:id="@+id/toolbar_simple"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextColor="#000000"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -27,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="다음 내용이 맞나요?"
-            android:textSize="26sp"
+            android:textSize="26dp"
             android:textColor="#111111"
             android:textStyle="bold"/>
 
@@ -36,9 +35,9 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="6월 20일 병원 동행을 도와줄 돌보미를 구합니다."
+            android:text="11월 25일 병원 동행을 도와줄 돌보미를 구합니다."
             android:textStyle="bold"
-            android:textSize="21sp"
+            android:textSize="21dp"
             android:textColor="#111111"/>
 
         <TextView
@@ -49,7 +48,18 @@
             android:layout_marginStart="35dp"
             android:layout_marginLeft="35dp"
             android:layout_gravity="start"
-            android:text="위치: oo시 oo구 oo동"
+            android:text="출발지: 세종특별자치시 조치원읍 돌간길 54 101-101"
+            android:textColor="#222222"/>
+
+        <TextView
+            android:id="@+id/dest_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_gravity="start"
+            android:text="목적지: 세종특별자치시 조치원읍 조치원로 54"
             android:textColor="#222222"/>
 
         <TextView
@@ -131,21 +141,12 @@
             android:layout_gravity="start">
 
             <TextView
-                android:id="@+id/tag1"
+                android:id="@+id/tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/hashtagbackground"
                 android:gravity="center"
                 android:text="병원동행" />
-
-            <TextView
-                android:id="@+id/tag2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/hashtagbackground"
-                android:gravity="center"
-                android:text="이동보조" />
 
         </LinearLayout>
 
@@ -186,7 +187,7 @@
                 android:layout_marginRight="5dp"
                 android:background="@drawable/confirm_change_background"
                 android:text="수정"
-                android:textSize="17sp"
+                android:textSize="17dp"
                 android:textColor="#222222"
                 android:elevation="4dp"/>
 
@@ -198,12 +199,13 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="5dp"
                 android:text="확인"
-                android:textSize="17sp"
+                android:textSize="17dp"
                 android:textColor="@color/white"
                 android:outlineProvider="none"
                 android:background="@drawable/color_edge"/>
 
         </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

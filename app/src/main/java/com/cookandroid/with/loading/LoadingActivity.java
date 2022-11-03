@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.cookandroid.with.MainActivity;
+import com.cookandroid.with.HelperHomeActivity;
 import com.cookandroid.with.R;
 import com.cookandroid.with.SeniorHomeActivity;
 import com.cookandroid.with.cookie.Cookie;
@@ -47,7 +47,7 @@ public class LoadingActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
                                 Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
                                 startActivity(intent);
                                 finish();
                             } else {

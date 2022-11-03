@@ -47,7 +47,7 @@ public class ConfirmActivity extends AppCompatActivity {
     AlertDialog.Builder builder;
     DatePickerDialog datePickerDialog;
     TimePickerDialog timePickerDialog;
-    String ID;
+    String matchingID, needs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -61,17 +61,17 @@ public class ConfirmActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(" ");
 
+        needs="";
+
         Response.Listener<String> responseListener = new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
                 try{
-                    // String으로 그냥 못 보냄으로 JSON Object 형태로 변형하여 전송
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
                     if(success){
-                        //result = jsonResponse.getString("ID");
-                        //result+=": "+jsonResponse.getString("title");
-                        //txtResult.setText(result);
+                        needs = jsonResponse.getString("needs");
+                        binding.needsText.setText(needs);
                         Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
@@ -87,9 +87,9 @@ public class ConfirmActivity extends AppCompatActivity {
             }
         };
         // Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
-        GetConfirm getGonfirm = new GetConfirm(ID, responseListener);
+        GetConfirm getConfirm = new GetConfirm(matchingID, responseListener);
         RequestQueue queue = Volley.newRequestQueue(ConfirmActivity.this);
-        queue.add(getGonfirm);
+        queue.add(getConfirm);
 
 
         /* 선착순, 지원에 따라 완료 화면 다르게 뜨도록 수정 필요 */
@@ -209,7 +209,7 @@ public class ConfirmActivity extends AppCompatActivity {
                 }
 
                 //여기서 잠시 멈춤 : 확인 버튼을 누르면 값을 어떻게 보여줄지 결정해야함.
-                TextView text1 = findViewById(R.id.help);
+                TextView text1 = findViewById(R.id.needsText);
             }
         });
 

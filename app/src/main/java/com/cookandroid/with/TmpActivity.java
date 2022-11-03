@@ -22,7 +22,7 @@ public class TmpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //회원가입 버튼 클릭
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
                 startActivity(intent);
                 //finish();
             }
