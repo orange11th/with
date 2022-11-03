@@ -16,7 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.HelperPrivacySettingActivity;
 import com.cookandroid.with.HelperProfileReviseActivity;
-import com.cookandroid.with.MainActivity;
+import com.cookandroid.with.HelperHomeActivity;
 import com.cookandroid.with.R;
 import com.cookandroid.with.cookie.Cookie;
 
@@ -132,7 +132,7 @@ public class HelperProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case android.R.id.home:{
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
                 startActivity(intent);
                 finish();
                 return true;

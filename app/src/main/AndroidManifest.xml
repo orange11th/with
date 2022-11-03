@@ -73,11 +73,7 @@
         <activity
             android:name=".SeniorHomeActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".profile.SeniorProfileActivity" />
         <activity android:name=".SeniorAlarmActivity" />
@@ -105,7 +101,14 @@
         </activity>
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.HelperLoginActivity" />
-        <activity android:name=".register.RegisterActivity" />
+        <activity android:name=".register.RegisterActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".register.HelperRegisterActivity"
             android:exported="true">
 

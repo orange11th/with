@@ -19,7 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.cookandroid.with.MainActivity;
+import com.cookandroid.with.HelperHomeActivity;
 import com.cookandroid.with.R;
 import com.cookandroid.with.login.LoginActivity;
 
@@ -29,7 +29,7 @@ import org.json.JSONObject;
 public class RegisterActivity extends AppCompatActivity {
     private static final int SEARCH_ADDRESS_ACTIVITY = 10000;
     private EditText edtID,edtPW,edtName,edtEmail,edtPhone,edtRegion,edtAddress,edtBirth;
-    private Button btnRegist;
+    private Button btnRegist, searchBtn;
     private RadioGroup rgIE, rgTF;
     private RadioButton rbIE, rbTF;
     private String personality_IE, personality_TF;
@@ -55,7 +55,9 @@ public class RegisterActivity extends AppCompatActivity {
         edtAddress=(EditText)findViewById(R.id.edtAddress);
         edtBirth=(EditText)findViewById(R.id.edtBirth);
         rgIE=(RadioGroup)findViewById(R.id.radioGroupIE);
+        rgIE=(RadioGroup)findViewById(R.id.radioGroupIE);
         rgTF=(RadioGroup)findViewById(R.id.radioGroupTF);
+        searchBtn=(Button)findViewById(R.id.searchBtn);
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -108,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        edtRegion.setOnClickListener(new View.OnClickListener() {
+        searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
