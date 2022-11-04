@@ -9,13 +9,12 @@
 
     <!--toolbar : id 지정해줘야함-->
     <androidx.appcompat.widget.Toolbar
-        app:titleTextColor="#000000"
-        android:background="#FFFFFF"
         android:id="@+id/toolbar_seniorproProfileRevise"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        tools:ignore="MissingConstraints"
-        />
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:titleTextColor="#000000"
+        tools:ignore="MissingConstraints" />
 
     <!--프로필, 수정 버튼, 설정 버튼-->
     <LinearLayout
@@ -26,20 +25,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"/>
+            android:layout_gravity="left" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <!--저장 버튼-->
         <Button
+            android:id="@+id/btn_save_senior_profile"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
-            android:textColor="@color/white"
-            android:text="저장"/>
+            android:text="저장"
+            android:textColor="@color/white" />
 
 
     </LinearLayout>
@@ -48,8 +48,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="left">
+        android:gravity="left"
+        android:orientation="vertical">
         <!--프로필 사진 수정 버튼-->
         <!--핸들링 해주기 위해 id를 btn_profile_revise로 설정한다.-->
         <ImageView
@@ -58,15 +58,15 @@
             android:layout_height="100dp"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="30dp"
-            android:src="@drawable/profile"/>
+            android:src="@drawable/profile" />
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="55dp"
-            android:textSize="13sp"
-            android:text="프로필 사진 변경"/>
+            android:text="프로필 사진 변경"
+            android:textSize="13sp" />
 
 
     </LinearLayout>
@@ -76,21 +76,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="이름"/>
+            android:text="이름" />
 
         <!--이름 입력-->
         <EditText
+            android:id="@+id/edt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:background="@drawable/memo_border"
             android:ems="5"
-            android:text="시니어"
             android:paddingLeft="5dp"
+            android:text="시니어"
             android:textSize="17sp" />
 
     </LinearLayout>
@@ -100,31 +102,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="성별"/>
+            android:text="성별" />
+
         <TextView
+            android:id="@+id/tv_sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:text="남"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="남"/>
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
 
-            android:text="나이"/>
+            android:text="나이" />
+
         <TextView
+            android:id="@+id/tv_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:text="20세"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="20세"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!--지역-->
@@ -132,23 +140,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="지역"
-            />
+            android:text="주소" />
 
         <!--지역 입력-->
         <EditText
+            android:id="@+id/edt_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:textSize="17sp"
             android:background="@drawable/memo_border"
             android:ems="5"
             android:paddingLeft="5dp"
-            android:text="서울"/>
+            android:text="서울"
+            android:textSize="17sp" />
     </LinearLayout>
 
     <!--자격증-->
@@ -157,19 +166,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="특이사항"/>
+            android:text="특이사항" />
+
         <EditText
+            android:id="@+id/edt_sick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:textSize="17sp"
             android:background="@drawable/memo_border"
             android:paddingLeft="5dp"
-            android:text="관절이 좋지 않음"/>
+            android:text="관절이 좋지 않음"
+            android:textSize="17sp" />
 
     </LinearLayout>
 
@@ -178,36 +190,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="원하는 도움 종류"/>
+            android:text="원하는 도움 종류" />
     </LinearLayout>
     <!--도움 가능 버튼s-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
-        <Button
-            android:layout_width="200px"
-            android:layout_height="70px"
-            android:background="@drawable/bg_custom_button"
-            android:layout_marginLeft="60dp"
-            android:text="#병원동행"/>
 
         <Button
             android:layout_width="200px"
             android:layout_height="70px"
+            android:layout_marginLeft="60dp"
             android:background="@drawable/bg_custom_button"
-            android:layout_marginLeft="10dp"
-            android:text="#이동보조"/>
+            android:text="#병원동행" />
+
         <Button
             android:layout_width="200px"
             android:layout_height="70px"
-            android:background="@drawable/bg_custom_button"
             android:layout_marginLeft="10dp"
-            android:text="#이동보조"/>
+            android:background="@drawable/bg_custom_button"
+            android:text="#이동보조" />
+
+        <Button
+            android:layout_width="200px"
+            android:layout_height="70px"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_custom_button"
+            android:text="#이동보조" />
 
     </LinearLayout>
     <!--도움 가능 버튼s-->
@@ -215,25 +230,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
-        <Button
-            android:layout_width="200px"
-            android:layout_height="70px"
-            android:background="@drawable/bg_custom_button"
-            android:layout_marginLeft="60dp"
-            android:text="#병원동행"/>
 
         <Button
             android:layout_width="200px"
             android:layout_height="70px"
+            android:layout_marginLeft="60dp"
             android:background="@drawable/bg_custom_button"
-            android:layout_marginLeft="10dp"
-            android:text="#이동보조"/>
+            android:text="#병원동행" />
+
         <Button
             android:layout_width="200px"
             android:layout_height="70px"
-            android:background="@drawable/bg_custom_button"
             android:layout_marginLeft="10dp"
-            android:text="#이동보조"/>
+            android:background="@drawable/bg_custom_button"
+            android:text="#이동보조" />
+
+        <Button
+            android:layout_width="200px"
+            android:layout_height="70px"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_custom_button"
+            android:text="#이동보조" />
 
     </LinearLayout>
 

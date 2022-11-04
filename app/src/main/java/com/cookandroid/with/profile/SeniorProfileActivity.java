@@ -35,28 +35,33 @@ import java.io.StringWriter;
 
 /* 필요 기능
 * 1. 결제 버튼(완료)
-* 2. 수정 버튼
-* 3. 설정 버튼*/
+* 2. 수정 버튼(완료)
+* 3. 설정 버튼(완료)
+* 4. 데이터 띄우기(50%) - 특이사항, 지병 쪽 수정해야함.
+* */
 
 public class SeniorProfileActivity extends AppCompatActivity {
 
     ImageView btn_cash;// 결제 버튼 선언
     ImageView btn_revise; //수정 버튼 선언
     ImageView btn_setting; //세팅 버튼 선언
-    private TextView txtName,txtSex,txtAge,txtAddress;
-    private String ID, address;
-    private int age;
+
+    private TextView txtName,txtSex,txtAge,txtAddress; // 이름, 성별, 이름, 주소
+    private String ID, address; // 아이디, 주소
+    private int age; // 나이
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_senior_profile);
 
+        //툴바
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("시니어 프로필");
 
+        //위젯 연결
         btn_cash = (ImageView) findViewById(R.id.btn_cash);
         btn_revise = (ImageView) findViewById(R.id.btn_revise);
         btn_setting = (ImageView) findViewById(R.id.btn_setting);
@@ -65,11 +70,12 @@ public class SeniorProfileActivity extends AppCompatActivity {
         txtSex=(TextView)findViewById(R.id.txtSex);
         txtAddress=(TextView)findViewById(R.id.txtAddress);
 
+        //쿠키 가져옴
         Cookie cookie=Cookie.getCookie();
         cookie.readCookie();
         ID = cookie.getID();
 
-        // 회원가입 절차 시작
+        // 데이터 가져오기
         Response.Listener<String> responseListener = new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
@@ -104,7 +110,7 @@ public class SeniorProfileActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(SeniorProfileActivity.this);
         queue.add(getRequest);
 
-        //화면전환 - 결제 버튼 누르면 결제내역화면(CashHistoryActivity)으로 이동
+        //결제 버튼 기능
         btn_cash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,7 +119,7 @@ public class SeniorProfileActivity extends AppCompatActivity {
             }
         });
 
-        //화면전환 - 수정 버튼 누르면 시니어 프로필 수정 화면으로 이동
+        //프로필 수정 버튼 기능
         btn_revise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -122,7 +128,7 @@ public class SeniorProfileActivity extends AppCompatActivity {
             }
         });
 
-        //화면전환 - 세팅 버튼 누르면 세팅 화면으로 이동
+        //개인정보 세팅 버튼 기능
         btn_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +137,8 @@ public class SeniorProfileActivity extends AppCompatActivity {
             }
         });
     }
+
+    //toolbar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
