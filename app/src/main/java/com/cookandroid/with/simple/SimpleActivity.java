@@ -9,7 +9,6 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
@@ -25,14 +24,10 @@ import com.cookandroid.with.R;
 import com.cookandroid.with.SeniorHomeActivity;
 import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.databinding.ActivitySimpleBinding;
-import com.cookandroid.with.register.HelperRegisterActivity;
 import com.cookandroid.with.register.WebViewActivity;
 
 import org.json.JSONObject;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class SimpleActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,8 +44,6 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         bd = ActivitySimpleBinding.inflate(getLayoutInflater());
         setContentView(bd.getRoot());
-
-        Log.d("Tag123", "testSimple");
 
         //toolbar
         Toolbar toolbar = findViewById(R.id.toolbar_simple);
