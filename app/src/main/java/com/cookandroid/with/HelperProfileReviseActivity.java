@@ -39,7 +39,7 @@ public class HelperProfileReviseActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_helperProfileRevise);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(" ");
+        getSupportActionBar().setTitle("프로필 수정");
 
         /*1. 프로필 사진 변경 기능*/
         ImageView imageView = findViewById(R.id.btn_profile_revise);

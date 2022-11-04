@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".CashHistoryActivity">
 
+    <!--toolbar : id 지정해줘야함-->
+    <androidx.appcompat.widget.Toolbar
+        app:titleTextColor="#000000"
+        android:background="#FFFFFF"
+        android:id="@+id/toolbar_helperProfileCash"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        tools:ignore="MissingConstraints"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

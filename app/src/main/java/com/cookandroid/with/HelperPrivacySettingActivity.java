@@ -2,6 +2,7 @@ package com.cookandroid.with;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -9,8 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.cookandroid.with.profile.HelperProfileActivity;
+import com.cookandroid.with.profile.SeniorProfileActivity;
 
 /*written by 병훈*/
 
@@ -46,6 +49,12 @@ public class HelperPrivacySettingActivity extends AppCompatActivity implements V
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_helper_privacy_setting);
 
+        //toolbar 연결
+        Toolbar toolbar=findViewById(R.id.toolbar_helperProfileSetting);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("개인정보 설정");
+
         /*비밀번호 변경 버튼 구현*/
         inputEditText1 = findViewById(R.id.edittext_input1);
         inputEditText1.setOnClickListener(this); // 여기서 this가 onClick 메서드를 말하는 것 같다.
@@ -75,18 +84,6 @@ public class HelperPrivacySettingActivity extends AppCompatActivity implements V
 
         btn3 = findViewById(R.id.btn3);
         btn3.setOnClickListener(this::onClick2);
-
-
-        /*뒤로가기 버튼 구현하기*/
-        ImageView backBtn = (ImageView) findViewById(R.id.back_btn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), HelperProfileActivity.class);
-                startActivity(intent);//액티비티 띄우기
-            }
-        });
-
 
 
     }
@@ -165,5 +162,19 @@ public class HelperPrivacySettingActivity extends AppCompatActivity implements V
                 inputEditText3.setVisibility(View.GONE);
                 break;
         }
+    }
+
+    //toolbar
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case android.R.id.home:{
+                Intent intent = new Intent(getApplicationContext(), HelperProfileActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
