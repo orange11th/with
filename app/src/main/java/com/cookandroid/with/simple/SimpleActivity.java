@@ -1,11 +1,13 @@
 package com.cookandroid.with.simple;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,19 +23,27 @@ import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.confirm.ConfirmActivity;
 import com.cookandroid.with.R;
 import com.cookandroid.with.SeniorHomeActivity;
+import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.databinding.ActivitySimpleBinding;
+import com.cookandroid.with.register.HelperRegisterActivity;
+import com.cookandroid.with.register.WebViewActivity;
 
 import org.json.JSONObject;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 public class SimpleActivity extends AppCompatActivity implements View.OnClickListener {
     private ActivitySimpleBinding bd;
+    private static final int SEARCH_ADDRESS_ACTIVITY = 10000;
     private RadioGroup radioGroup1, radioGroup2, radioGroup3;
     private RadioButton rBtn;
     DatePickerDialog datePickerDialog;
-    String ID, needs, startDes, endDes, time, way;
+    String ID, needs, startDes, endDes, time, way, getTime, getDay;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,6 +152,11 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             bd.newLayout2.setVisibility(View.VISIBLE);
         });
 
+        //주소 검색
+        bd.searchBtn.setOnClickListener( v -> {
+            Intent i = new Intent(SimpleActivity.this, WebViewActivity.class);
+            startActivityForResult(i, SEARCH_ADDRESS_ACTIVITY);
+        });
 
         //날짜 제한 변수
         Calendar minDate = Calendar.getInstance();
@@ -161,7 +176,7 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                                 month = month + 1;
-                                String date = year + "년 " + month + "월 " + day + "일";
+                                String date = year + "-" + month + "-" + day;
 
                                 bd.dateTextView.setText(date);
                             }
@@ -179,8 +194,8 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
         //등록 버튼
         bd.enrollBtn.setOnClickListener( v-> {
             // 현재 입력된 정보를 string으로 가져오기
-            //Cookie cookie=Cookie.getCookie();
-            //cookie.readCookie();
+            Cookie cookie = Cookie.getCookie();
+            cookie.readCookie();
 
             //help 값
             rBtn = (RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId());
@@ -193,11 +208,21 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             RadioGroup radioGroup5 = (RadioGroup) findViewById( R.id.radioGroup5);
             RadioButton rBtn5 = (RadioButton) findViewById(radioGroup5.getCheckedRadioButtonId());
 
-            //ID = "testSimple"; /* 수정 필요 */
+            //날짜,시간 값
+            String hh = bd.hourSpinner.getSelectedItem().toString().replace('시', ':');
+            String mm = bd.minuteSpinner.getSelectedItem().toString().replace('분', ':') + "00";
+            getTime = hh + mm;
+
+            getDay = bd.dateTextView.getText().toString();
+
+            String time2 = getDay + " " + getTime;
+
+
+            ID = cookie.getID();
             needs = rBtn.getText().toString();
             startDes = rBtn4.getText().toString();
-            endDes = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
-            time = bd.dateTextView.getText().toString() + bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
+            endDes = bd.addressText3.getText().toString() + " " + bd.addressText4.getText().toString();
+            time = time2;
             way = rBtn5.getText().toString();
 
             Response.Listener<String> responseListener = new Response.Listener<String>(){
@@ -222,7 +247,7 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             };
 
             // Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
-            InsertSimple insertSimple = new InsertSimple(needs, startDes, endDes, time, way, responseListener);
+            InsertSimple insertSimple = new InsertSimple(ID, needs, startDes, endDes, time, way, responseListener);
             RequestQueue queue = Volley.newRequestQueue(SimpleActivity.this);
             queue.add(insertSimple);
 
@@ -230,6 +255,20 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
         });
 
+    }
+    public void onActivityResult(int requestCode, int resultCode, Intent intent)
+    {
+        super.onActivityResult(requestCode, resultCode, intent);
+        switch (requestCode) {
+            case SEARCH_ADDRESS_ACTIVITY:
+                if (resultCode == RESULT_OK) {
+                    String data = intent.getExtras().getString("data");
+                    if (data != null) {
+                        bd.addressText3.setText(data);
+                    }
+                }
+                break;
+        }
     }
 
     private RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {

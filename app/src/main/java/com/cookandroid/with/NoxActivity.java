@@ -22,6 +22,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.databinding.ActivityNoxBinding;
+import com.cookandroid.with.register.WebViewActivity;
+import com.cookandroid.with.simple.SimpleActivity;
 
 import org.json.JSONObject;
 
@@ -29,6 +31,7 @@ import java.util.Calendar;
 
 public class NoxActivity extends AppCompatActivity implements View.OnClickListener{
     private ActivityNoxBinding bd;
+    private static final int SEARCH_ADDRESS_ACTIVITY = 10000;
     private RadioGroup radioGroup1, radioGroup2;
     static String typeBtn, howBtn, titleValue, dateValue;
     private EditText titleText;
@@ -125,6 +128,12 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
         bd.newBtn2.setOnClickListener( v -> {
             bd.existingLayout2.setVisibility(View.GONE);
             bd.newLayout2.setVisibility(View.VISIBLE);
+        });
+
+        //주소 검색
+        bd.searchBtn.setOnClickListener(v->{
+            Intent i = new Intent(NoxActivity.this, WebViewActivity.class);
+            startActivityForResult(i, SEARCH_ADDRESS_ACTIVITY);
         });
 
         //날짜 제한 변수
@@ -243,6 +252,20 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
         });
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent intent)
+    {
+        super.onActivityResult(requestCode, resultCode, intent);
+        switch (requestCode) {
+            case SEARCH_ADDRESS_ACTIVITY:
+                if (resultCode == RESULT_OK) {
+                    String data = intent.getExtras().getString("data");
+                    if (data != null) {
+                        bd.addressText3.setText(data);
+                    }
+                }
+                break;
+        }
+    }
 
     //도움 종류 2x3 라디오 버튼 리스너
     private final RadioGroup.OnCheckedChangeListener listener1 = new RadioGroup.OnCheckedChangeListener() {

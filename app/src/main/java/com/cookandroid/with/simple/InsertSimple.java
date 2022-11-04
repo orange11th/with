@@ -13,10 +13,11 @@ public class InsertSimple extends StringRequest {
     final static private String URL = "http://3.36.66.178/simple/dbinsert.php"; // "http:// 퍼블릭 DNS 주소/Register.php"
     private Map<String, String> parameters;
 
-    public InsertSimple(String needs, String startDes, String endDes, String time, String way, Response.Listener<String> listener) {
+    public InsertSimple(String ID, String needs, String startDes, String endDes, String time, String way, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         parameters = new HashMap<>();
+        parameters.put("ID", ID);
         parameters.put("needs", needs);
         parameters.put("startDes", startDes);
         parameters.put("endDes", endDes);
