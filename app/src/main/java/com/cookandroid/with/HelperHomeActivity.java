@@ -29,7 +29,7 @@ public class HelperHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_helper_home);
         //toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar_main);
+        Toolbar toolbar = findViewById(R.id.toolbar_helper_home);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("   WITH");
 
@@ -94,8 +94,8 @@ public class HelperHomeActivity extends AppCompatActivity {
         button3 = findViewById(R.id.button3);
         //button3 text size
         Spannable span2 = (Spannable)button3.getText();
-        span2.setSpan(new AbsoluteSizeSpan(47), 7, 28, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        span2.setSpan(new ForegroundColorSpan(Color.DKGRAY), 7, 28, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span2.setSpan(new AbsoluteSizeSpan(47), 7, 29, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        span2.setSpan(new ForegroundColorSpan(Color.DKGRAY), 7, 29, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         //button4 text size
         Spannable span3 = (Spannable)button4.getText();
