@@ -210,7 +210,6 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
 
             String time2 = getDay + " " + getTime;
 
-
             ID = cookie.getID();
             needs = rBtn.getText().toString();
             startDes = rBtn4.getText().toString();

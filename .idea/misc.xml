@@ -15,9 +15,8 @@
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_get_topic.xml" value="0.2109375" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_alarm.xml" value="0.264" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_privacy_setting.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile.xml" value="0.536" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile_revise.xml" value="0.2115036231884058" />
-        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_register.xml" value="0.215625" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_history.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_loading.xml" value="0.2115036231884058" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_login.xml" value="0.2115036231884058" />
@@ -38,7 +37,7 @@
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check2_test.xml" value="0.2" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check3.xml" value="0.264" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_home.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile.xml" value="0.2" />
+        <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile.xml" value="0.7242178447276941" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile_revise.xml" value="0.264" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile_setting.xml" value="0.264" />
         <entry key="..\:/Users/GRAM/AndroidStudioProjects/with/app/src/main/res/layout/activity_simple.xml" value="0.2109375" />
@@ -58,15 +57,23 @@
         <entry key="..\:/Users/USER-PC/AndroidStudioProjects/Withp/app/src/main/res/layout/activity_matching_list.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/color_edge.xml" value="0.3325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/date_select.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/edge.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/radiobtn_back.xml" value="0.3325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/simple_checkbox_back.xml" value="0.3325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable-v24/simple_hospital.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/confirm_change_background.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/edit_edge.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/edit_text_edge.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/edittext_rounded_corner_rectangle.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/hashtagbackground2.xml" value="0.3325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/hospital_btn.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/nox_ad_edge.xml" value="0.3295" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/nox_confirm_background.xml" value="0.3325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/search_edge.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_btn.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_btn1.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_btn2.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_btn3.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_etc.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_hobby.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_household.xml" value="0.325" />
@@ -74,19 +81,22 @@
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_radio_text.xml" value="0.3325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_talk.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/simple_walk.xml" value="0.325" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/spinner_corner.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/drawable/white_edge.xml" value="0.325" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_alarm.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_board_insert.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_cash_history.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete1.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_complete2.xml" value="0.2803442028985507" />
-        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_confirm.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_confirm.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_get_topic.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_alarm.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_home.xml" value="0.33" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_login.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_privacy_setting.xml" value="0.2586050724637681" />
-        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile.xml" value="0.2586050724637681" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_profile_revise.xml" value="0.2586050724637681" />
-        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_register.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_helper_register.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_history.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_login.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
@@ -96,7 +106,7 @@
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_matching_list_contents.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_nox.xml" value="0.2803442028985507" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_nox_confirm.xml" value="0.33" />
-        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_register.xml" value="0.2803442028985507" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_register.xml" value="0.29496951219512196" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_select_match_list.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_select_match_list_contents.xml" value="0.2586050724637681" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_select_match_notice.xml" value="0.2586050724637681" />
@@ -104,8 +114,8 @@
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check2.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check2_temp.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_check3.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_home.xml" value="0.33" />
-        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile.xml" value="0.2586050724637681" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_home.xml" value="0.25" />
+        <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile.xml" value="0.33" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile_revise.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senior_profile_setting.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/leem/AndroidStudioProjects/with/app/src/main/res/layout/activity_senoir_alarm.xml" value="0.33" />
