@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.profile.GetSeniorRequest;
 import com.cookandroid.with.profile.SeniorProfileActivity;
+import com.cookandroid.with.register.RegisterActivity;
+import com.cookandroid.with.register.WebViewActivity;
 
 import org.json.JSONObject;
 
@@ -31,6 +34,7 @@ import java.io.StringWriter;
 * 3. 저장 버튼 기능 - 수정된 데이터로 update 해야함 (미완)*/
 
 public class SeniorProfileReviseActivity extends AppCompatActivity {
+    private static final int SEARCH_ADDRESS_ACTIVITY = 10000; // 주소 찾기 버튼에 필요
 
     //위젯 선언
     private Button btn_save; //저장 버튼
@@ -40,7 +44,9 @@ public class SeniorProfileReviseActivity extends AppCompatActivity {
     private TextView tv_age; //나이
     private EditText edt_address; //지역
     private EditText edt_sick; //특이사항
-
+    
+    private Button btn_address_search;
+    
     private String ID, address;
 
     //모르겠음.//원하는 도움 종류
@@ -65,6 +71,8 @@ public class SeniorProfileReviseActivity extends AppCompatActivity {
         tv_age = findViewById(R.id.tv_age);
         edt_address = findViewById(R.id.edt_address);
         edt_sick = findViewById(R.id.edt_sick);
+
+        btn_address_search = findViewById(R.id.btn_address_search); // 주소 찾기
 
         //쿠키 가져옴
         Cookie cookie=Cookie.getCookie();
@@ -107,7 +115,34 @@ public class SeniorProfileReviseActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(SeniorProfileReviseActivity.this);
         queue.add(getRequest);
 
+        //주소 찾기 버튼
+        btn_address_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(SeniorProfileReviseActivity.this, WebViewActivity.class);
+                startActivityForResult(i, SEARCH_ADDRESS_ACTIVITY);
+            }
+        });
 
+
+
+    }
+
+    //추소 EditText에 넣기
+    public void onActivityResult(int requestCode, int resultCode, Intent intent)
+    {
+        super.onActivityResult(requestCode, resultCode, intent);
+        switch (requestCode) {
+            case SEARCH_ADDRESS_ACTIVITY:
+                if (resultCode == RESULT_OK) {
+                    String data = intent.getExtras().getString("data");
+                    if (data != null) {
+                        edt_address.setText(data);
+                    }
+                }
+                break;
+        }
     }
 
     //toolbar

@@ -85,7 +85,7 @@
             android:layout_marginLeft="20dp"
             android:textStyle="bold"
             android:textSize="17sp"
-            android:text="시니어 이름"/>
+            android:text="시니어"/>
 
     </LinearLayout>
 
@@ -106,7 +106,7 @@
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:text="남"/>
+            android:text="성별"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:text="68세"/>
+            android:text="나이"/>
     </LinearLayout>
 
     <!--지역-->
@@ -140,7 +140,7 @@
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
             android:textStyle="bold"
-            android:text="서울"/>
+            android:text="주소"/>
     </LinearLayout>
 
     <!--자격증-->
@@ -161,7 +161,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="관절이 좋지 않음"
+                android:text="특이사항"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="20dp"/>
