@@ -245,6 +245,7 @@
                 android:textColorHint="#AEAEAE"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
+                android:focusable="false"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
                 android:textSize="17dp"/>

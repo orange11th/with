@@ -23,6 +23,7 @@ import com.cookandroid.with.SeniorProfileReviseActivity;
 import com.cookandroid.with.SeniorProfileSettingActivity;
 import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.login.HelperLoginActivity;
+import com.cookandroid.with.login.LoginActivity;
 import com.cookandroid.with.topic.GetRequest;
 import com.cookandroid.with.topic.GetTopic;
 
@@ -49,6 +50,7 @@ public class SeniorProfileActivity extends AppCompatActivity {
     private TextView txtName,txtSex,txtAge,txtAddress; // 이름, 성별, 이름, 주소
     private String ID, address; // 아이디, 주소
     private int age; // 나이
+    private Button logoutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class SeniorProfileActivity extends AppCompatActivity {
         txtAge=(TextView)findViewById(R.id.txtAge);
         txtSex=(TextView)findViewById(R.id.txtSex);
         txtAddress=(TextView)findViewById(R.id.txtAddress);
+        logoutBtn=(Button)findViewById(R.id.logoutBtn);
 
         //쿠키 가져옴
         Cookie cookie=Cookie.getCookie();
@@ -134,6 +137,16 @@ public class SeniorProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SeniorProfileSettingActivity.class);//변경 예정
                 startActivity(intent);
+            }
+        });
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cookie.clearCookie();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import com.cookandroid.with.HelperProfileReviseActivity;
 import com.cookandroid.with.HelperHomeActivity;
 import com.cookandroid.with.R;
 import com.cookandroid.with.cookie.Cookie;
+import com.cookandroid.with.login.LoginActivity;
 
 import org.json.JSONObject;
 
@@ -31,6 +33,7 @@ public class HelperProfileActivity extends AppCompatActivity {
     private TextView txtName,txtSex,txtAge,txtAddress,txtLicense;
     private String ID, address;
     private int age;
+    private Button logoutBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,7 @@ public class HelperProfileActivity extends AppCompatActivity {
         txtSex=(TextView)findViewById(R.id.txtSex);
         txtAddress=(TextView)findViewById(R.id.txtAddress);
         txtLicense=(TextView)findViewById(R.id.txtLicense);
+        logoutBtn=(Button)findViewById(R.id.logoutBtn);
 
         Cookie cookie=Cookie.getCookie();
         cookie.readCookie();
@@ -123,7 +127,15 @@ public class HelperProfileActivity extends AppCompatActivity {
             }
         });
 
-
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cookie.clearCookie();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 

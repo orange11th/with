@@ -36,7 +36,6 @@ public class Cookie {
             writer.write(id + "\r\n");
             writer.write(pw + "\r\n");
             writer.write(date);
-
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -120,6 +119,10 @@ public class Cookie {
 
     public String getPW() {
         return PW;
+    }
+
+    public String getDate() {
+        return DATE;
     }
 
 }

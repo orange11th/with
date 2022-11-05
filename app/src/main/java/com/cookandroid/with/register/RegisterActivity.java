@@ -68,6 +68,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // 회원가입 절차 시작
+                if(edtID.getText().length()==0){
+                    Toast.makeText(getApplicationContext(), "아이디를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Response.Listener<String> responseListener = new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response) {

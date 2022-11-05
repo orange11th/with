@@ -35,10 +35,11 @@ public class LoadingActivity extends AppCompatActivity {
             public void run() {
                 Cookie cookie=Cookie.getCookie();
                 cookie.checkCookie();
-                cookie.clearCookie();//자동로그인 방지용
+                //cookie.clearCookie();//자동로그인 방지용
                 cookie.readCookie();
                 String userID = cookie.getID();
                 String userPassword = cookie.getPW();
+                String date = cookie.getDate();
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -46,10 +47,19 @@ public class LoadingActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success){
-                                Toast.makeText(getApplicationContext(), "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
-                                startActivity(intent);
-                                finish();
+                                String role = jsonResponse.getString("role");
+                                if(role.equals("돌보미")){
+                                    Toast.makeText(getApplicationContext(), role+" 마지막 로그인: "+date, Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else if(role.equals("시니어")){
+                                    Toast.makeText(getApplicationContext(), role+" 마지막 로그인: "+date, Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), SeniorHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             } else {
                                 //Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();//거슬림
                                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);

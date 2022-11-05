@@ -88,7 +88,6 @@ public class LoginActivity extends AppCompatActivity {
                         //회원가입 버튼 클릭
                         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                         startActivity(intent);
-                        finish();
                     }
                 });
 
@@ -99,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                         //돌보미로그인 버튼 클릭
                         Intent intent = new Intent(getApplicationContext(), HelperLoginActivity.class);
                         startActivity(intent);
+                        finish();
                     }
                 });
     }
