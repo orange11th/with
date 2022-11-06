@@ -39,7 +39,7 @@ public class SelectLoadingActivity extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");
                     if (success) {
                         int length = jsonResponse.length();
-                        dataList = new String[length * 4];
+                        dataList = new String[length];
                         for (int i = 0; i <= length; i++) {
                             String data = jsonResponse.getString(String.valueOf(i));
                             dataList[i] = data;
