@@ -7,6 +7,7 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -177,7 +178,6 @@ public class SeniorCheck1Activity extends AppCompatActivity {
                 ll.removeAllViews();
 
 
-
                 for(String item : mSelectedItems){
                     //이 부분이 문제였음 - 리스트 mSelectedItems 에서 값을 하나씩 꺼내와야하는데, 같은 값을 변수에 넣었으니 그렇게 된 것임
 
@@ -190,12 +190,13 @@ public class SeniorCheck1Activity extends AppCompatActivity {
 
                     //레이아웃 설정
                     LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-                    param.leftMargin = 30;
+                    param.rightMargin = 625;
                     tv.setLayoutParams(param);
 
                     //텍스트뷰 백그라운드 색상 설정하기기
-                   tv.setBackgroundColor(Color.rgb(242,248,214));
-                   tv.setTextColor(Color.rgb(34,34,34));
+                    tv.setBackground(getResources().getDrawable(R.drawable.confirm_btn_background));
+                    tv.setGravity(Gravity.CENTER);
+                    tv.setTextColor(Color.rgb(34,34,34));
 
                    //생성및 설정된 텍스트뷰 레이아웃에 적용하기
                     ll.addView(tv);
@@ -204,7 +205,6 @@ public class SeniorCheck1Activity extends AppCompatActivity {
 
                 //여기서 잠시 멈춤 : 확인 버튼을 누르면 값을 어떻게 보여줄지 결정해야함.
                 TextView text1 = findViewById(R.id.type1);
-                TextView text2 = findViewById(R.id.type2);
             }
         });
         //취소 이벤트
@@ -226,7 +226,6 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(SeniorCheck1Activity.this);
         builder.setTitle("장소가 어디인가요?");
         builder.setView(editText);
-        builder.setIcon(R.drawable.ic_launcher_background);
         builder.setPositiveButton("입력", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -272,19 +271,20 @@ public class SeniorCheck1Activity extends AppCompatActivity {
 
     /*시간을 보여주는 메소드*/
     void change_time() {
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+        Calendar cal = Calendar.getInstance();
+        int HOUR = cal.get(Calendar.HOUR); //년
+        int MINUTE = cal.get(Calendar.MINUTE);//월
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, android.R.style.Theme_Holo_Light_Dialog,new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                h = hourOfDay;
-                mi = minute;
 
-                //이제 입력값에 따라 text를 바꿔주자
-                //문제 발생 : 다이얼로그에서 값을 입력하고 창을 닫으면, settext가 되어야하는데, 한발 늦게 되고 있다.
-                //해결책 : 여기에 넣고 해결함
-                text_time.setText(h + "시 " + mi + "분");
+                String time = hourOfDay + "시 " + minute + "분";
+
+                text_time.setText(time);
 
             }
-        }, 18, 30, true); //다이얼로그가 켜졌을 때, 첫 세팅된 시간을 의미한다.
+        }, HOUR, MINUTE, true); //현재 시간으로 변경하기
         timePickerDialog.setMessage("시간을 선택하세요.");
 
         timePickerDialog.show();//다이얼로그 띄우기
@@ -294,7 +294,7 @@ public class SeniorCheck1Activity extends AppCompatActivity {
 
     void change_how_to_get_helper() {
         //블로그의 코드를 가져와서 만들었습니다.(출처 노션에 남겨둠) -> setText 부분만 수정해서 적용했습니다.
-        final CharSequence[] oltems = {"선착순", "선택"}; //배열에 값을 넣어준다.
+        final CharSequence[] oltems = {"빠르게 돌보미 구하기", "지원한 돌보미 중 선택하기"}; //배열에 값을 넣어준다.
 
         //목록 다이얼로그 객체를 생성하고
         AlertDialog.Builder oDialog = new AlertDialog.Builder(this, android.R.style.Theme_DeviceDefault_Light_Dialog_Alert);

@@ -190,14 +190,14 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             Cookie cookie = Cookie.getCookie();
             cookie.readCookie();
 
-            //help 값
+            //needs 값
             rBtn = (RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId());
 
             //start 값
             RadioGroup radioGroup4 = (RadioGroup) findViewById( R.id.radioGroup4);
             RadioButton rBtn4 = (RadioButton) findViewById(radioGroup4.getCheckedRadioButtonId());
 
-            //how 값
+            //way 값
             RadioGroup radioGroup5 = (RadioGroup) findViewById( R.id.radioGroup5);
             RadioButton rBtn5 = (RadioButton) findViewById(radioGroup5.getCheckedRadioButtonId());
 

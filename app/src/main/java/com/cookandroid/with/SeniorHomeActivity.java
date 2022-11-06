@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.cookandroid.with.databinding.ActivitySeniorHomeBinding;
 import com.cookandroid.with.profile.SeniorProfileActivity;
+import com.cookandroid.with.simple.NoxActivity;
 import com.cookandroid.with.simple.SimpleActivity;
 
 public class SeniorHomeActivity extends AppCompatActivity {

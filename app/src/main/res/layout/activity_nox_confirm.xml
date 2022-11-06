@@ -35,13 +35,13 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="11월 25일 병원 동행을 도와줄 돌보미를 구합니다."
+            android:text="게시글 제목"
             android:textStyle="bold"
             android:textSize="21dp"
             android:textColor="#111111"/>
 
         <TextView
-            android:id="@+id/location_text"
+            android:id="@+id/startAddText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -52,7 +52,7 @@
             android:textColor="#222222"/>
 
         <TextView
-            android:id="@+id/dest_text"
+            android:id="@+id/endAddText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -63,7 +63,7 @@
             android:textColor="#222222"/>
 
         <TextView
-            android:id="@+id/when_text"
+            android:id="@+id/dateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -74,10 +74,40 @@
             android:textColor="#222222"/>
 
         <TextView
+            android:id="@+id/wayText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_gravity="start"
+            android:text="구인 방법: 빠르게 돌보미 구하기"
+            android:textColor="#222222"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_gravity="start">
+
+            <TextView
+                android:id="@+id/tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                android:text="병원동행" />
+
+        </LinearLayout>
+
+        <TextView
             android:id="@+id/seniorInfo"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:padding="2dp"
@@ -132,23 +162,6 @@
             android:text="지병 및 유의사항: 고혈압, 거동 불편"
             android:textColor="#222222" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_gravity="start">
-
-            <TextView
-                android:id="@+id/tag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/hashtagbackground"
-                android:gravity="center"
-                android:text="병원동행" />
-
-        </LinearLayout>
 
         <TextView
             android:id="@+id/context_text1"
@@ -166,7 +179,7 @@
             android:background="@drawable/nox_confirm_background"/>
 
         <TextView
-            android:id="@+id/context_text2"
+            android:id="@+id/contentText"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

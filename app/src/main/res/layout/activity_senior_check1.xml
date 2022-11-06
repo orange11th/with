@@ -63,7 +63,7 @@
                     android:text="도움 종류"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#111111"/>
+                    android:textColor="#75A843"/>
 
                 <Button
                     android:id="@+id/change_btn1"
@@ -78,17 +78,17 @@
 
             <!-- 도움 종류 가로 정렬 -->
             <LinearLayout
-                android:id = "@+id/linearlayout1"
+                android:id="@+id/linearlayout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
-                android:gravity="center">
+                android:layout_marginLeft="25dp">
 
                 <TextView
                     android:id="@+id/type1"
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:text="이동 보조"
                     android:textSize="20dp"
@@ -97,17 +97,6 @@
                     android:gravity="center"
                     android:background="@drawable/confirm_btn_background" />
 
-                <TextView
-                    android:id="@+id/type2"
-                    android:layout_width="150dp"
-                    android:layout_height="55dp"
-                    android:layout_marginLeft="5dp"
-                    android:text="산책 동반"
-                    android:textSize="20dp"
-                    android:textColor="#222222"
-                    android:textAlignment="center"
-                    android:gravity="center"
-                    android:background="@drawable/confirm_btn_background"/>
 
             </LinearLayout>
 
@@ -138,7 +127,7 @@
                     android:text="도움 장소"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#111111"/>
+                    android:textColor="#75A843"/>
 
                 <Button
                     android:id="@+id/change_btn2"
@@ -198,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="150dp"
                     android:text="도움 시간"
-                    android:textColor="#111111"
+                    android:textColor="#75A843"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
@@ -270,7 +259,7 @@
                     android:text="돌보미 구인 방법"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#111111"/>
+                    android:textColor="#75A843"/>
 
                 <Button
                     android:id="@+id/change_btn4"
@@ -323,8 +312,7 @@
                 android:layout_marginRight="5dp"
                 android:background="@drawable/confirm_change_background"
                 android:text="취소"
-                android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="19sp"
                 android:textColor="#111111"
                 android:elevation="4dp"/>
 
@@ -336,9 +324,8 @@
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="5dp"
                 android:text="확인"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="#111111"
+                android:textSize="19sp"
+                android:textColor="@color/white"
                 android:outlineProvider="none"
                 android:background="@drawable/color_edge"/>
 
