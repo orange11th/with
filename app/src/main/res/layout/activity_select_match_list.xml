@@ -22,7 +22,7 @@
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
         android:layout_marginTop="32dp"
-        android:text="서울"
+        android:text="모든 지역"
         android:textColor="#000000"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -34,9 +34,9 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="48dp"
         android:text="지역변경"
         android:textColor="#8d8d8d"
         android:textSize="12dp"
@@ -46,17 +46,71 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/tag1"
+        android:id="@+id/tag0"
         android:layout_width="82dp"
         android:layout_height="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="130dp"
-        android:text="#병원동행"
+        android:text="전체보기"
+        android:backgroundTint="#A9CF84"
         android:background="@drawable/hashtagbackground"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tag3"
+        android:layout_width="82dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="#가사돌봄"
+        android:background="@drawable/hashtagbackground"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tag0" />
+
+    <Button
+        android:id="@+id/tag1"
+        android:layout_width="82dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="130dp"
+        android:text="#병원동행"
+        android:background="@drawable/hashtagbackground"
+        android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@id/tag0"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/tag4"
+        android:layout_width="82dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="30dp"
+        android:text="#말동무"
+        android:background="@drawable/hashtagbackground"
+        android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@id/tag3"
+        app:layout_constraintTop_toTopOf="@id/tag1" />
+
+    <Button
+        android:id="@+id/tag5"
+        android:layout_width="82dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="30dp"
+        android:text="#취미/여가"
+        android:background="@drawable/hashtagbackground"
+        android:gravity="center"
+        app:layout_constraintLeft_toRightOf="@id/tag4"
+        app:layout_constraintTop_toTopOf="@id/tag1" />
+
     <Button
         android:id="@+id/tag2"
         android:layout_width="82dp"
@@ -64,23 +118,14 @@
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="130dp"
-        android:text="#산책"
+        android:text="#이동보조"
         android:background="@drawable/hashtagbackground"
         android:gravity="center"
         app:layout_constraintLeft_toRightOf="@id/tag1"
         app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/tag0"
-        android:layout_width="82dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="130dp"
-        android:text="전체보기"
-        android:background="@drawable/hashtagbackground"
-        android:gravity="center"
-        app:layout_constraintLeft_toRightOf="@id/tag2"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
+
     <ListView
         android:id="@+id/listtest"
         android:layout_width="371dp"
