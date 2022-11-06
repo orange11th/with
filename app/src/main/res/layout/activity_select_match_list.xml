@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".SelectMatchList">
+    tools:context=".selectMatch.SelectMatchList">
     <androidx.appcompat.widget.Toolbar
         app:titleTextColor="#000000"
         android:background="#FFFFFF"
@@ -22,7 +22,7 @@
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
         android:layout_marginTop="32dp"
-        android:text="서울"
+        android:text="모든 지역"
         android:textColor="#000000"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -34,9 +34,9 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="48dp"
         android:text="지역변경"
         android:textColor="#8d8d8d"
         android:textSize="12dp"

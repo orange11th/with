@@ -76,5 +76,6 @@ public class LoadingActivity extends AppCompatActivity {
                 queue.add(loginRequest);
             }
         }, 2000);
+        //handler.removeMessages(0);
     }
 }

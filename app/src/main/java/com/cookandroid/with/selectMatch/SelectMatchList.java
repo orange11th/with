@@ -1,4 +1,4 @@
-package com.cookandroid.with;
+package com.cookandroid.with.selectMatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,13 +16,29 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import com.cookandroid.with.HelperHomeActivity;
+import com.cookandroid.with.MainActivity2;
+import com.cookandroid.with.R;
+import com.cookandroid.with.SelectMatchListContents;
+import com.cookandroid.with.selectMatch.TestList;
+
+import org.json.JSONObject;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SelectMatchList extends AppCompatActivity {
 
     private String TAG = MainActivity2.class.getSimpleName();
     private ListView listview = null;
     private ListViewAdapter adapter = null;
+    private String[] dataList;
+    private String data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +50,31 @@ public class SelectMatchList extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("선택 마감 도움 리스트");
 
-        //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_TEST) ;
+        Intent intent = getIntent();
+        dataList = intent.getStringArrayExtra("dataList");
 
+        listview=(ListView) findViewById(R.id.listtest);
+        adapter = new ListViewAdapter();
+
+
+        //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_TEST) ;
         //ListView listview = (ListView) findViewById(R.id.listtest) ;
         //listview.setAdapter(adapter) ;
 
         //listview
-        listview=(ListView) findViewById(R.id.listtest);
-        adapter = new ListViewAdapter();
+        /*
+        try {
+            Toast.makeText(getApplicationContext(), dataList[0], Toast.LENGTH_SHORT).show();//거슬림
+        }catch (Exception e){
+            StringWriter errors = new StringWriter();
+            e.printStackTrace(new PrintWriter(errors));
+            Toast.makeText(getApplicationContext(), errors.toString(), Toast.LENGTH_SHORT).show();
+        }
 
+         */
+
+        adapter.addItem(new TestList(dataList[0], dataList[1],dataList[2],dataList[3]));
+        adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "필요한 도움에 대한 내용", "지역"));
         adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "필요한 도움에 대한 내용", "지역"));
         adapter.addItem(new TestList("7월 5일 병원동행", "#산책", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "지역1"));
         adapter.addItem(new TestList("8월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용222", "서울"));
@@ -57,7 +89,6 @@ public class SelectMatchList extends AppCompatActivity {
         adapter.addItem(new TestList("7월 5일 병원동행", "태그5", "내용11", "지역1"));
 
         listview.setAdapter(adapter);
-
         //tag
         Button button1 = findViewById(R.id.tag1);
         button1.setOnClickListener(new View.OnClickListener(){
@@ -79,6 +110,7 @@ public class SelectMatchList extends AppCompatActivity {
             }
         });
     }
+
     //List View Adapter
     public class ListViewAdapter extends BaseAdapter {
         ArrayList<TestList> items = new ArrayList<TestList>();
@@ -153,7 +185,7 @@ public class SelectMatchList extends AppCompatActivity {
             case android.R.id.home:{
                 Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
                 startActivity(intent);
-                //finish();
+                finish();
                 return true;
             }
         }

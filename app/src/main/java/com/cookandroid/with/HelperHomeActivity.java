@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.cookandroid.with.profile.HelperProfileActivity;
+import com.cookandroid.with.selectMatch.SelectLoadingActivity;
+import com.cookandroid.with.selectMatch.SelectMatchList;
 
 public class HelperHomeActivity extends AppCompatActivity {
 
@@ -68,7 +70,7 @@ public class HelperHomeActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HelperHomeActivity.this, SelectMatchList.class);
+                Intent intent = new Intent(HelperHomeActivity.this, SelectLoadingActivity.class);
                 startActivity(intent);
                 finish();
             }
