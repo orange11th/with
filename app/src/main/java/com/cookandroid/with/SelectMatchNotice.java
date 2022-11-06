@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class SelectMatchNotice extends AppCompatActivity {
-    private Button SMCButton;
+    private Button SMCButton, detailsBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +22,19 @@ public class SelectMatchNotice extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true); //뒤로가기 버튼 제거
         getSupportActionBar().setTitle(" ");
 
+
+        detailsBtn = findViewById(R.id.detailsBtn);
+        detailsBtn.setOnClickListener(v->{
+            Intent intent = new Intent(SelectMatchNotice.this, MatchingListContents.class);
+            startActivity(intent);
+        });
+
         //click confirm button
         SMCButton = findViewById(R.id.SMatchConfirm);
         SMCButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectMatchNotice.this, MatchingList.class);
+                Intent intent = new Intent(SelectMatchNotice.this, HelperHomeActivity.class);
                 startActivity(intent);
             }
         });

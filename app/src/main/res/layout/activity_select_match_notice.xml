@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".SelectMatchNotice">
+
     <androidx.appcompat.widget.Toolbar
         app:titleTextColor="#000000"
-        android:background="#FFFFFF"
         android:id="@+id/toolbar_selectmatchnotice"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -19,30 +18,47 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="200dp"
         android:gravity="center"
-        android:text="시니어 측에서 신청을 수락하면 매칭 완료됩니다.\n매칭 완료시 알람으로 알려드리겠습니다. "
+        android:text="지원이 완료되었습니다!\n상대방이 신청을 수락하면 매칭이 확정됩니다.\n확정 시 알림으로 알려드리겠습니다. "
         android:textColor="#000000"
-        android:textSize="18dp"
+        android:textSize="19dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_selectmatchnotice" />
 
     <Button
-        android:id="@+id/SMatchConfirm"
-        android:layout_width="350dp"
+        android:id="@+id/detailsBtn"
+        android:layout_width="180dp"
         android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="180dp"
-        android:text="확인"
-        android:textColor="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/white_edge"
+        android:text="신청 상세보기"
+        android:textColor="#222222"
         android:textSize="19dp"
-        android:background="@drawable/color_edge"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <Button
+        android:id="@+id/SMatchConfirm"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/color_edge"
+        android:text="홈으로 가기"
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
