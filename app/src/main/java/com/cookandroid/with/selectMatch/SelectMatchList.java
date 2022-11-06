@@ -72,22 +72,28 @@ public class SelectMatchList extends AppCompatActivity {
         }
 
          */
+        if(dataList.length!=0) {
+            int i=0;
+                adapter.addItem(new TestList(dataList[i], dataList[++i], dataList[++i], dataList[++i]));
 
-        adapter.addItem(new TestList(dataList[0], dataList[1],dataList[2],dataList[3]));
-        adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "필요한 도움에 대한 내용", "지역"));
-        adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "필요한 도움에 대한 내용", "지역"));
-        adapter.addItem(new TestList("7월 5일 병원동행", "#산책", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "지역1"));
-        adapter.addItem(new TestList("8월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용222", "서울"));
-        adapter.addItem(new TestList("9월 5일 병원동행", "태그1", "내용3", "대전"));
-        adapter.addItem(new TestList("1월 13일 병원 동행을 해줄 돌보미를...", "#다른항목", "내용4", "세종"));
-        adapter.addItem(new TestList("12월 8일 병원동행", "#산책", "내용5", "강릉"));
-        adapter.addItem(new TestList("2월 21일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용6", "제주"));
-        adapter.addItem(new TestList("8월 9일 병원동행", "태그3", "내용7", "부산"));
-        adapter.addItem(new TestList("6월 8일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용8", "대구"));
-        adapter.addItem(new TestList("7월 5일 병원동행", "#산책", "내용9", "인천"));
-        adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용10", "지역"));
-        adapter.addItem(new TestList("7월 5일 병원동행", "태그5", "내용11", "지역1"));
-
+            adapter.addItem(new TestList(dataList[0], dataList[1], dataList[2], dataList[3]));
+            adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "필요한 도움에 대한 내용", "지역"));
+            adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "필요한 도움에 대한 내용", "지역"));
+            adapter.addItem(new TestList("7월 5일 병원동행", "#산책", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "지역1"));
+            adapter.addItem(new TestList("8월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용222", "서울"));
+            adapter.addItem(new TestList("9월 5일 병원동행", "태그1", "내용3", "대전"));
+            adapter.addItem(new TestList("1월 13일 병원 동행을 해줄 돌보미를...", "#다른항목", "내용4", "세종"));
+            adapter.addItem(new TestList("12월 8일 병원동행", "#산책", "내용5", "강릉"));
+            adapter.addItem(new TestList("2월 21일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용6", "제주"));
+            adapter.addItem(new TestList("8월 9일 병원동행", "태그3", "내용7", "부산"));
+            adapter.addItem(new TestList("6월 8일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용8", "대구"));
+            adapter.addItem(new TestList("7월 5일 병원동행", "#산책", "내용9", "인천"));
+            adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "내용10", "지역"));
+            adapter.addItem(new TestList("7월 5일 병원동행", "태그5", "내용11", "지역1"));
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "현재 신청내역이 없습니다", Toast.LENGTH_LONG).show();//거슬림
+        }
         listview.setAdapter(adapter);
         //tag
         Button button1 = findViewById(R.id.tag1);

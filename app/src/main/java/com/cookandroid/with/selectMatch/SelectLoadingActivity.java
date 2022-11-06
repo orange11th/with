@@ -44,12 +44,8 @@ public class SelectLoadingActivity extends AppCompatActivity {
                             String data = jsonResponse.getString(String.valueOf(i));
                             dataList[i] = data;
                         }
-                        Intent intent = new Intent(SelectLoadingActivity.this, SelectMatchList.class);
-                        intent.putExtra("dataList", dataList);
-                        startActivity(intent);
-                        finish();
                     } else {
-                        Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();//거슬림
+                        dataList = new String[0];
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
