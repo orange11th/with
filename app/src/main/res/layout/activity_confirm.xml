@@ -139,7 +139,7 @@
 
                 <TextView
                     android:id="@+id/startAddText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginBottom="15dp"
@@ -160,10 +160,10 @@
 
                 <TextView
                     android:id="@+id/endAddText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="세종특별자치시 조치원읍 조치원로 54\n(조치원공영버스터미널)"
+                    android:text="세종특별자치시 조치원읍 조치원로 54"
                     android:textSize="18dp"
                     android:textColor="#444444"/>
 

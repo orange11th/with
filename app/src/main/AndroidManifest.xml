@@ -72,6 +72,7 @@
         <activity
             android:name=".confirm.NoxConfirmActivity"
             android:exported="true" />
+
         <activity android:name=".Complete1Activity" />
         <activity android:name=".Complete2Activity" />
         <activity

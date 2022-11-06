@@ -2,7 +2,6 @@ package com.cookandroid.with.confirm;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -28,7 +27,7 @@ import java.util.Objects;
 
 public class ConfirmActivity extends AppCompatActivity {
     private ActivityConfirmBinding binding;
-    String ID, dayText, timeText;
+    private String ID, dayText, dayText2, timeText;
     static String way;
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -53,18 +52,19 @@ public class ConfirmActivity extends AppCompatActivity {
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
                     if(success){
-                        dayText = jsonResponse.getString("StartTime");
-                        dayText = dayText.substring(0,10);
+                        dayText = jsonResponse.getString("StartTime").substring(0,10);
+                        dayText = dayText.replaceFirst("-", "년 ");
+                        dayText2 = dayText.replaceFirst("-", "월 ") +"일";
 
-                        timeText = jsonResponse.getString("StartTime");
-                        timeText = timeText.substring(11,19);
+                        timeText = jsonResponse.getString("StartTime").substring(11,16);
+                        timeText = timeText.replaceFirst(":", "시 ") + "분";
 
                         way = jsonResponse.getString("Way");
 
                         binding.needsText.setText(jsonResponse.getString("Needs"));
                         binding.startAddText.setText(jsonResponse.getString("StartDes"));
                         binding.endAddText.setText(jsonResponse.getString("EndDes"));
-                        binding.dateText.setText(dayText);
+                        binding.dateText.setText(dayText2);
                         binding.timeText.setText(timeText);
                         binding.wayText.setText(way);
 
@@ -95,10 +95,10 @@ public class ConfirmActivity extends AppCompatActivity {
 
         //등록 버튼
         binding.confirmBtn.setOnClickListener( v -> {
-            if (Objects.equals(way, "빠르게 돌보미\n구하기")) {
+            if (Objects.equals(way, "빠르게 돌보미 구하기")) {
                 Intent intent = new Intent(getApplicationContext(), Complete1Activity.class);
                 startActivity(intent);
-            } else if (Objects.equals(way, "지원한 돌보미 중\n선택하기")){
+            } else if (Objects.equals(way, "지원한 돌보미 중 선택하기")){
                 Intent intent = new Intent(getApplicationContext(), Complete2Activity.class);
                 startActivity(intent);
             }
