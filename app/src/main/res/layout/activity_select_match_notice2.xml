@@ -8,26 +8,25 @@
 
     <androidx.appcompat.widget.Toolbar
         app:titleTextColor="#000000"
-        android:id="@+id/toolbar_selectmatchnotice"
+        android:id="@+id/toolbar_selectmatchnotice2"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="200dp"
         android:gravity="center"
-        android:text="지원이 완료되었습니다!\n상대방이 신청을 수락하면 매칭이 확정됩니다.\n확정 시 알림으로 알려드리겠습니다. "
+        android:text="매칭이 완료되었습니다!\n자세한 신청 내용은 상세보기를 클릭해주세요. "
         android:textColor="#000000"
         android:textSize="19dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_selectmatchnotice" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_selectmatchnotice2" />
 
     <Button
         android:id="@+id/detailsBtn"

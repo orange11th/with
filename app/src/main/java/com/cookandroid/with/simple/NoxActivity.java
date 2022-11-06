@@ -1,4 +1,4 @@
-package com.cookandroid.with;
+package com.cookandroid.with.simple;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -21,10 +20,12 @@ import androidx.appcompat.widget.Toolbar;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.cookandroid.with.confirm.NoxConfirmActivity;
+import com.cookandroid.with.R;
+import com.cookandroid.with.SeniorHomeActivity;
 import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.databinding.ActivityNoxBinding;
 import com.cookandroid.with.register.WebViewActivity;
-import com.cookandroid.with.simple.SimpleActivity;
 
 import org.json.JSONObject;
 
@@ -34,7 +35,7 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
     private ActivityNoxBinding bd;
     private static final int SEARCH_ADDRESS_ACTIVITY = 10000;
     private RadioGroup radioGroup1, radioGroup2;
-    static String typeBtn, howBtn, titleValue, dateValue;
+    static String howBtn;
     private EditText titleText;
     private TextView dateTextView;
     private RadioButton rBtn;
@@ -150,7 +151,7 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
                 int Month = cal.get(Calendar.MONTH);//월
                 int Day = cal.get(Calendar.DAY_OF_MONTH);//일
 
-                datePickerDialog = new DatePickerDialog(NoxActivity.this,
+                datePickerDialog = new DatePickerDialog(NoxActivity.this, R.style.DatePickerStyle,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -170,13 +171,11 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             }
         });
 
-
         //구인 방법 라디오 버튼 값 가져오기
         bd.radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 howBtn = ((RadioButton) findViewById(checkedId)).getText().toString();
-                Log.d("Tag", "data:" + howBtn);
             }
         });
 
@@ -190,22 +189,26 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             Cookie cookie = Cookie.getCookie();
             cookie.readCookie();
 
+            //needs 값
             rBtn = (RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId());
 
             //start 값
             RadioGroup radioGroup3 = (RadioGroup) findViewById( R.id.radioGroup3);
             RadioButton rBtn3 = (RadioButton) findViewById(radioGroup3.getCheckedRadioButtonId());
 
-            //how 값
+            //way 값
             RadioGroup radioGroup4 = (RadioGroup) findViewById( R.id.radioGroup4);
             RadioButton rBtn4 = (RadioButton) findViewById(radioGroup4.getCheckedRadioButtonId());
 
             //날짜,시간 값
+            getDay = bd.dateTextView.getText().toString();
+            getDay = getDay.replace("년 ", "-");
+            getDay = getDay.replace("월 ", "-");
+            getDay = getDay.replace("일", "");
+
             String hh = bd.hourSpinner.getSelectedItem().toString().replace('시', ':');
             String mm = bd.minuteSpinner.getSelectedItem().toString().replace('분', ':') + "00";
             getTime = hh + mm;
-
-            getDay = bd.dateTextView.getText().toString();
 
             String time2 = getDay + " " + getTime;
 
@@ -214,15 +217,14 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             needs = rBtn.getText().toString();
             startDes = rBtn3.getText().toString();
             endDes = bd.addressText3.getText().toString() + bd.addressText4.getText().toString();
-            time = bd.dateTextView.getText().toString() + bd.hourSpinner.getSelectedItem().toString() + bd.minuteSpinner.getSelectedItem().toString();
+            time = time2;
             way = rBtn4.getText().toString();
-            content = bd.contentsText.getText().toString();
+            content = bd.contentText.getText().toString();
 
             Response.Listener<String> responseListener = new Response.Listener<String>(){
                 @Override
                 public void onResponse(String response) {
                     try{
-                        // String으로 그냥 못 보냄으로 JSON Object 형태로 변형하여 전송
                         JSONObject jsonResponse = new JSONObject(response);
                         boolean success = jsonResponse.getBoolean("success");
                         if(success){
@@ -244,23 +246,8 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
             RequestQueue queue = Volley.newRequestQueue(NoxActivity.this);
             queue.add(insertNox);
 
-            //titleText의 텍스트 가져오기
-            titleValue = titleText.getText().toString();
-            dateValue = dateTextView.getText().toString();
-
             Intent intent = new Intent(NoxActivity.this, NoxConfirmActivity.class);
-            //Log.d("Tag", "data:" + typeBtn);
-            //Log.d("Tag", "data:" + howBtn);
-            //Log.d("Tag", "data:" + titleValue);
-
-            //데이터 값 전달
-            intent.putExtra("TITLE", titleValue);
-            intent.putExtra("TYPE", typeBtn);
-            intent.putExtra("DATE", dateValue);
-            intent.putExtra("HOW", howBtn);
-            setResult(RESULT_OK, intent);
-            startActivity(intent); //안 넣으면 종료됨
-            finish();
+            startActivity(intent);
         });
     }
 
@@ -288,8 +275,6 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
                 radioGroup2.clearCheck();
                 radioGroup2.setOnCheckedChangeListener(listener2);
             }
-            //라디오 버튼 값 가져오기
-            typeBtn = ((RadioButton) findViewById(checkedId)).getText().toString();
         }
     };
 
@@ -301,7 +286,6 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
                 radioGroup1.clearCheck();
                 radioGroup1.setOnCheckedChangeListener(listener1);
             }
-            typeBtn = ((RadioButton) findViewById(checkedId)).getText().toString();
         }
     };
 

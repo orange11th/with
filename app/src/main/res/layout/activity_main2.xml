@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".MainActivity2">
+
     <androidx.appcompat.widget.Toolbar
         app:titleTextColor="#000000"
-        android:background="#FFFFFF"
         android:id="@+id/toolbar_list"
+        android:background="@color/white"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
@@ -45,47 +45,123 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_list"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/tag1"
-        android:layout_width="82dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="130dp"
-        android:text="#병원동행"
-        android:background="@drawable/hashtagbackground"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/tag2"
-        android:layout_width="82dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="130dp"
-        android:text="#산책"
-        android:background="@drawable/hashtagbackground"
-        android:gravity="center"
-        app:layout_constraintLeft_toRightOf="@id/tag1"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/tag0"
-        android:layout_width="82dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="130dp"
-        android:text="전체보기"
-        android:background="@drawable/hashtagbackground"
-        android:gravity="center"
-        app:layout_constraintLeft_toRightOf="@id/tag2"
-        app:layout_constraintTop_toTopOf="parent" />
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/tag0"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="130dp"
+                android:text="#전체"
+                android:button="@null"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tag2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <CheckBox
+                android:id="@+id/tag1"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="130dp"
+                android:text="#병원동행"
+                android:button="@null"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/tag2"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="130dp"
+                android:text="#이동보조"
+                android:button="@null"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tag1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/tag3"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="130dp"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                android:text="#가사돌봄"
+                android:button="@null"
+                app:layout_constraintLeft_toRightOf="@id/tag1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/tag4"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="130dp"
+                android:text="#말동무"
+                android:button="@null"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tag1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/tag5"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="130dp"
+                android:text="#취미/여가"
+                android:button="@null"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tag1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/tag6"
+                android:layout_width="85dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="130dp"
+                android:text="#기타"
+                android:button="@null"
+                android:background="@drawable/hashtagbackground"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/tag1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
     <ListView
         android:id="@+id/listtest"
         android:layout_width="371dp"
         android:layout_height="match_parent"
-
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="200dp"

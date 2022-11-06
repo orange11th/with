@@ -13,9 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.With"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".selectMatch.SelectLoadingActivity"
-            android:exported="false" />
+
         <activity
             android:name=".SeniorProfileSettingActivity"
             android:exported="false" />
@@ -63,10 +61,14 @@
             android:exported="true" />
         <activity
             android:name=".simple.SimpleActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+
+        </activity>
         <activity
-            android:name=".NoxActivity"
-            android:exported="true"></activity>
+            android:name=".simple.NoxActivity"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".NoxConfirmActivity"
             android:exported="true" />
@@ -74,7 +76,9 @@
         <activity android:name=".Complete2Activity" />
         <activity
             android:name=".SeniorHomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+
+        </activity>
         <activity android:name=".profile.SeniorProfileActivity" />
         <activity android:name=".SeniorAlarmActivity" />
         <activity
@@ -91,7 +95,9 @@
             android:exported="true" />
         <activity
             android:name=".HelperHomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" >
+
+        </activity>
         <activity android:name=".MatchingList" />
         <activity android:name=".MatchingListContents" />
         <activity
@@ -103,16 +109,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".login.LoginActivity"
-            android:exported="true"></activity>
+        <activity android:name=".login.LoginActivity"
+            android:exported="true">
+        </activity>
         <activity android:name=".login.HelperLoginActivity" />
-        <activity
-            android:name=".register.RegisterActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".register.HelperRegisterActivity"
-            android:exported="true"></activity>
+        <activity android:name=".register.RegisterActivity"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".register.HelperRegisterActivity"
+            android:exported="true">
+
+        </activity>
     </application>
 
 </manifest>

@@ -164,12 +164,12 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
                 int Month = cal.get(Calendar.MONTH);//월
                 int Day = cal.get(Calendar.DAY_OF_MONTH);//일
 
-                datePickerDialog = new DatePickerDialog(SimpleActivity.this,
+                datePickerDialog = new DatePickerDialog(SimpleActivity.this, R.style.DatePickerStyle,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                                 month = month + 1;
-                                String date = year + "-" + month + "-" + day;
+                                String date = year + "년 " + month + "월 " + day + "일";
 
                                 bd.dateTextView.setText(date);
                             }
@@ -190,23 +190,26 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
             Cookie cookie = Cookie.getCookie();
             cookie.readCookie();
 
-            //help 값
+            //needs 값
             rBtn = (RadioButton) findViewById(radioGroup1.getCheckedRadioButtonId());
 
             //start 값
             RadioGroup radioGroup4 = (RadioGroup) findViewById( R.id.radioGroup4);
             RadioButton rBtn4 = (RadioButton) findViewById(radioGroup4.getCheckedRadioButtonId());
 
-            //how 값
+            //way 값
             RadioGroup radioGroup5 = (RadioGroup) findViewById( R.id.radioGroup5);
             RadioButton rBtn5 = (RadioButton) findViewById(radioGroup5.getCheckedRadioButtonId());
 
             //날짜,시간 값
+            getDay = bd.dateTextView.getText().toString();
+            getDay = getDay.replace("년 ", "-");
+            getDay = getDay.replace("월 ", "-");
+            getDay = getDay.replace("일", "");
+
             String hh = bd.hourSpinner.getSelectedItem().toString().replace('시', ':');
             String mm = bd.minuteSpinner.getSelectedItem().toString().replace('분', ':') + "00";
             getTime = hh + mm;
-
-            getDay = bd.dateTextView.getText().toString();
 
             String time2 = getDay + " " + getTime;
 

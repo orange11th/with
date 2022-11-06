@@ -44,7 +44,7 @@ public class MainActivity3 extends AppCompatActivity {
         confirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity3.this, MatchingList.class);
+                Intent intent = new Intent(MainActivity3.this, SelectMatchNotice2Activity.class);
                 startActivity(intent);
             }
         });

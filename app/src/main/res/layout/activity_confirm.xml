@@ -54,20 +54,11 @@
                     android:id="@+id/help_type"
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="150dp"
+                    android:layout_marginRight="240dp"
                     android:text="도움 종류"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="#75A843"/>
-
-                <Button
-                    android:id="@+id/changeBtn1"
-                    android:layout_width="90dp"
-                    android:layout_height="34dp"
-                    android:text="변경하기"
-                    android:textSize="16dp"
-                    android:textColor="#333333"
-                    android:background="@drawable/confirm_change_background"/>
 
             </LinearLayout>
 
@@ -77,7 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginLeft="25dp">
 
                 <TextView
@@ -118,20 +109,11 @@
                     android:id="@+id/help_place"
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="150dp"
+                    android:layout_marginRight="240dp"
                     android:text="도움 장소"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="#75A843"/>
-
-                <Button
-                    android:id="@+id/changeBtn2"
-                    android:layout_width="90dp"
-                    android:layout_height="34dp"
-                    android:text="변경하기"
-                    android:textSize="16dp"
-                    android:textColor="#333333"
-                    android:background="@drawable/confirm_change_background"/>
 
             </LinearLayout>
 
@@ -141,7 +123,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="15dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -151,17 +133,18 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="20dp"
                     android:text="출발지 "
-                    android:textSize="18dp"
+                    android:textSize="19dp"
                     android:textStyle="bold"
                     android:textColor="#222222" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/startAddText"
+                    android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="15dp"
                     android:text="세종특별자치시 조치원읍 돌간길 54 101-101"
-                    android:textSize="19dp"
+                    android:textSize="18dp"
                     android:textColor="#444444"/>
 
                 <TextView
@@ -171,17 +154,17 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="20dp"
                     android:text="목적지 "
-                    android:textSize="18dp"
+                    android:textSize="19dp"
                     android:textStyle="bold"
                     android:textColor="#222222" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/endAddText"
+                    android:layout_width="305dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="세종특별자치시 조치원읍 조치원로 54\n(조치원공영버스터미널)"
-                    android:textSize="19dp"
+                    android:text="세종특별자치시 조치원읍 조치원로 54"
+                    android:textSize="18dp"
                     android:textColor="#444444"/>
 
 
@@ -211,20 +194,11 @@
                     android:id="@+id/help_time"
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="150dp"
+                    android:layout_marginRight="240dp"
                     android:text="도움 시간"
                     android:textColor="#75A843"
                     android:textSize="22sp"
                     android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/changeBtn3"
-                    android:layout_width="90dp"
-                    android:layout_height="34dp"
-                    android:text="변경하기"
-                    android:textSize="16dp"
-                    android:textColor="#333333"
-                    android:background="@drawable/confirm_change_background"/>
 
             </LinearLayout>
 
@@ -234,7 +208,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -282,20 +256,11 @@
                     android:id="@+id/help_how"
                     android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="85dp"
+                    android:layout_marginRight="175dp"
                     android:text="돌보미 구인 방법"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:textColor="#75A843"/>
-
-                <Button
-                    android:id="@+id/changeBtn4"
-                    android:layout_width="90dp"
-                    android:layout_height="34dp"
-                    android:text="변경하기"
-                    android:textSize="16dp"
-                    android:textColor="#333333"
-                    android:background="@drawable/confirm_change_background"/>
 
             </LinearLayout>
 
@@ -309,7 +274,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/howText"
+                    android:id="@+id/wayText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -327,18 +292,31 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="15dp"
             android:gravity="center">
 
             <Button
+                android:id="@+id/modifyBtn"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/confirm_change_background"
+                android:text="수정"
+                android:textSize="19sp"
+                android:textColor="#111111"
+                android:elevation="4dp"/>
+
+            <Button
                 android:id="@+id/confirmBtn"
-                android:layout_width="350dp"
+                android:layout_width="260dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
                 android:layout_marginLeft="5dp"
                 android:text="확인"
-                android:textSize="19dp"
+                android:textSize="19sp"
                 android:textColor="@color/white"
                 android:outlineProvider="none"
                 android:background="@drawable/color_edge"/>
