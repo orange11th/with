@@ -155,7 +155,6 @@ public class NoxActivity extends AppCompatActivity implements View.OnClickListen
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-
                                 month = month + 1;
                                 String date = year + "년 " + month + "월 " + day + "일";
 

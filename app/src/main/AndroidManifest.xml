@@ -36,6 +36,9 @@
             android:name=".selectMatch.SelectMatchList"
             android:exported="false" />
         <activity
+            android:name=".selectMatch.SelectLoadingActivity"
+            android:exported="false" />
+        <activity
             android:name=".register.WebViewActivity"
             android:exported="false" />
         <activity
@@ -70,7 +73,7 @@
 
         </activity>
         <activity
-            android:name=".NoxConfirmActivity"
+            android:name=".confirm.NoxConfirmActivity"
             android:exported="true" />
         <activity android:name=".Complete1Activity" />
         <activity android:name=".Complete2Activity" />
@@ -105,7 +108,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
