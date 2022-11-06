@@ -32,7 +32,6 @@ public class MainActivity2 extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_list);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("선착순 마감 도움 리스트");
 
         //ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, LIST_TEST) ;
 

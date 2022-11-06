@@ -29,173 +29,223 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
                 android:layout_height="wrap_content"
                 android:text="\n아이디"
-                />
+                android:textColor="#111111" />
 
             <EditText
                 android:id="@+id/edtID"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
+                android:textSize="17dp"
+                android:hint="아이디"
+                android:textColorHint="#AEAEAE"
                 android:layout_weight="1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="23dp"
-                android:text="\n비밀번호"/>
+                android:text="\n비밀번호"
+                android:textColor="#111111"/>
 
             <EditText
                 android:id="@+id/edtPW"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
                 android:inputType="textPassword"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:hint="비밀번호 입력"
+                android:textSize="17dp"
+                android:textColorHint="#AEAEAE"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n비밀번호 재확인 "/>
+                android:text="\n비밀번호 재확인 "
+                android:textColor="#111111"/>
 
             <EditText
                 android:id="@+id/edtPWChk"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
                 android:inputType="textPassword"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:hint="비밀번호 재확인"
+                android:textSize="17dp"
+                android:textColorHint="#AEAEAE"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n이름 "/>
+                android:text="\n이름 "
+                android:textColor="#111111"/>
 
             <EditText
                 android:id="@+id/edtName"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:hint="이름"
+                android:textSize="17dp"
+                android:textColorHint="#AEAEAE"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n이메일 " />
+                android:text="\n이메일 "
+                android:textColor="#111111"/>
 
             <EditText
                 android:id="@+id/edtEmail"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
-                android:hint=" 예: aaa@gmail.com"
+                android:layout_height="50dp"
+                android:hint="aaa@gmail.com"
+                android:textColorHint="#AEAEAE"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textSize="17dp"
+                android:paddingLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n전화번호 " />
+                android:text="\n전화번호 "
+                android:textColor="#111111"/>
 
             <EditText
                 android:id="@+id/edtPhone"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
-                android:hint=" 예: 010-0000-0000"
+                android:paddingLeft="10dp"
+                android:hint="010-0000-0000"
+                android:textSize="17dp"
+                android:textColorHint="#AEAEAE"
                 android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n주소" />
+                android:text="\n주소"
+                android:textColor="#111111"/>
 
-            <EditText
-                android:id="@+id/edtRegion"
-                android:layout_width="365dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/edittext_rounded_corner_rectangle"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:hint="이곳을 클릭해서 주소를 검색할 수 있습니다."
-                android:editable="false"/>
-
-
-            <TextView
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="23dp"
-                android:textSize="16dp"
-                android:layout_marginBottom="5dp"
-                android:text="\n상세주소 " />
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edtRegion"
+                    android:layout_width="270dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="23dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_rounded_corner_rectangle"
+                    android:editable="false"
+                    android:hint="오른쪽 찾기 버튼을 눌러주세요."
+                    android:paddingLeft="10dp"
+                    android:textSize="17dp"
+                    android:textColorHint="#AEAEAE" />
+
+                <Button
+                    android:id="@+id/searchBtn"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/search_edge"
+                    android:text="주소 찾기"
+                    android:textColor="@color/white"
+                    android:textSize="17dp" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <EditText
                 android:id="@+id/edtAddress"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
-                android:hint="자세한 주소를 입력해 주세요.(건물명, 동/호수 등)"
+                android:hint="상세 주소를 입력해 주세요. (건물명, 동/호수)"
+                android:textColorHint="#AEAEAE"
                 android:layout_gravity="center"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n성별 " />
+                android:text="\n성별 "
+                android:textColor="#111111"/>
 
             ﻿<Spinner
             android:id="@+id/spinGender"
             android:minWidth="365dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
             android:background="@drawable/spinner_corner"
             android:layout_gravity="center"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textSize="17dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:layout_marginBottom="5dp"
-                android:text="\n생년월일 " />
+                android:text="\n생년월일 "
+                android:textColor="#111111"/>
 
             <EditText
                 android:id="@+id/edtBirth"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
-                android:hint=" 예: 1998-02-11"
+                android:layout_height="50dp"
+                android:hint="19980211"
+                android:textColorHint="#AEAEAE"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
-                android:layout_weight="1" />
+                android:focusable="false"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -209,10 +259,15 @@
             <EditText
                 android:id="@+id/edtLicense"
                 android:layout_width="365dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:hint="자격증 정보를 적어주세요."
+                android:textColorHint="#AEAEAE"
                 android:background="@drawable/edittext_rounded_corner_rectangle"
                 android:layout_gravity="center"
-                android:layout_weight="1" />
+                android:focusable="false"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:textSize="17dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
