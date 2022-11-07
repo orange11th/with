@@ -155,7 +155,7 @@ public class MainActivity2 extends AppCompatActivity {
             case android.R.id.home:{
                 Intent intent = new Intent(getApplicationContext(), HelperHomeActivity.class);
                 startActivity(intent);
-                //finish();
+                finish();
                 return true;
             }
         }

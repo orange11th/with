@@ -9,17 +9,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#8FC759"
     tools:context=".HelperHomeActivity">
 
-    <!--toolbar : id 지정해줘야함-->
     <androidx.appcompat.widget.Toolbar
-        app:titleTextColor="#8FC759"
-        android:background="#FAFAFA"
+        app:titleTextColor="@color/white"
+        android:background="#8FC759"
         android:id="@+id/toolbar"
         android:layout_height="58dp"
         app:subtitleTextColor="#8FC759"
         android:layout_width="match_parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:theme="@style/Toolbar.Profile.Theme"
+        app:titleTextAppearance="@style/Toolbar.ProfileText"/>
 
     <!--수정 버튼, 설정 버튼-->
     <LinearLayout
@@ -30,19 +32,19 @@
         android:orientation="horizontal">
 
         <!--수정 버튼-->
-        <!--핸들링하기 위해서 id : btn_revise 를 부여한다.-->
         <ImageView
             android:id="@+id/btn_revise"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
             android:src="@drawable/revise_icon"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="1dp"/>
+
         <!--설정 버튼-->
-        <!--핸들링하기 위해서 id: btn_setting 을 부여한다.-->
         <ImageView
             android:id="@+id/btn_setting"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:src="@drawable/setting_icon"
             android:layout_marginRight="25dp"/>
 
@@ -53,253 +55,276 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left">
+
         <!--프로필 사진-->
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="30dp"
-            android:src="@drawable/profile"/>
-
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/profile2" />
 
     </LinearLayout>
 
-    <!--이름-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_height="700dp"
+        android:orientation="vertical"
+        android:background="@drawable/profile_border">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <!--이름-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:textSize="16dp"
-            android:text="이름"/>
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:textSize="16dp"
+                android:text="이름"
+                android:textColor="#666666"/>
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="17sp"
+                android:textColor="#222222"
+                android:text="홍길동"/>
+
+        </LinearLayout>
+
+        <!--성별, 나이-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textStyle="bold"
-            android:textSize="17sp"
-            android:textColor="#333333"
-            android:text="홍길동"/>
+            android:layout_marginTop="20dp">
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="성별"
+                android:textSize="16dp"
+                android:textColor="#666666"/>
 
-    <!--성별, 나이-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txtSex"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="남"
+                android:textSize="17dp"
+                android:textColor="#222222"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:text="나이"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/txtAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="17sp"
+                android:text="20세"
+                android:textColor="#222222"/>
+        </LinearLayout>
+
+        <!--지역-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="성별"
-            android:textSize="16dp"/>
+            android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/txtSex"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="20dp"
-            android:text="남"
-            android:textSize="17dp"
-            android:textStyle="bold"
-            android:textColor="#333333"/>
-        <TextView
-            android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="주소"
+                android:textSize="16dp"
+                android:textColor="#666666"/>
+
+            <TextView
+                android:id="@+id/txtAddress"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textSize="17sp"
+                android:text="서울"
+                android:textColor="#222222"/>
+
+        </LinearLayout>
+
+        <!--자격증-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:text="나이"
-            android:textSize="16dp"/>
-        <TextView
-            android:id="@+id/txtAge"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="자격증"
+                android:textSize="16dp"
+                android:textColor="#666666"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="245dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtLicense"
+                    android:text="ㅁㅁㅁ 자격증"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#222222"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--도움 가능 종류-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="20세"
-            android:textColor="#333333"/>
-    </LinearLayout>
+            android:layout_marginTop="40dp">
 
-    <!--지역-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="15dp"
+                android:text="도움 가능 종류"
+                android:textSize="16dp"
+                android:textColor="#666666"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="주소"
-            android:textSize="16dp"/>
-
-        <TextView
-            android:id="@+id/txtAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:text="서울"
-            android:textColor="#333333"/>
-
-    </LinearLayout>
-
-    <!--자격증-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="자격증"
-            android:textSize="16dp"/>
+        </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtLicense"
-                android:text="ㅁㅁㅁ 자격증"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="20dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:background="@drawable/bg_custom_button"
+                android:backgroundTint="#A8D37E"
+                android:layout_marginLeft="60dp"
+                android:text="#병원동행"
+                android:textSize="15dp"
                 android:textColor="#333333"/>
-            <!--
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ㅇㅇㅇ 자격증"
-                android:textStyle="bold"
-                android:textSize="17sp"
-                android:layout_marginLeft="20dp"/>
-                -->
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="2dp"
+                android:backgroundTint="#A8D37E"
+                android:background="@drawable/bg_custom_button"
+                android:layout_marginLeft="10dp"
+                android:text="#이동보조"
+                android:textSize="15dp"
+                android:textColor="#333333"/>
+
+        </LinearLayout>
+
+        <!--평가 기록-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="평가 기록"
+                android:textSize="16dp"
+                android:textColor="#666666"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:background="@drawable/simple_btn"
+            android:elevation="2dp" >
+
+            <!--평가 기록 내용(1)-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <!--날짜-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="6월 22일  "
+                    android:textSize="16dp"
+                    android:textColor="#333333"/>
+
+                <RatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    style="?android:attr/ratingBarStyleSmall"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="친절하고 약속 시간을 잘 지키셨어요."
+                    android:textSize="15dp"
+                    android:textColor="#333333"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp">
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="300dp"
+                android:layout_gravity="right"
+                android:text="로그아웃"
+                android:textSize="15dp"
+                android:textColor="#888888"
+                android:background="@drawable/confirm_change_background" />
+
         </LinearLayout>
 
     </LinearLayout>
 
-    <!--도움 가능 종류-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginBottom="15dp"
-            android:text="도움 가능 종류"
-            android:textSize="16dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
-            android:background="@drawable/bg_custom_button"
-            android:backgroundTint="#A9CF84"
-            android:layout_marginLeft="60dp"
-            android:text="#병원동행"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
-            android:backgroundTint="#A9CF84"
-            android:background="@drawable/bg_custom_button"
-            android:layout_marginLeft="10dp"
-            android:text="#이동보조"/>
-
-    </LinearLayout>
-    <!--평가 기록-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="평가 기록"
-            android:textSize="16dp"/>
-
-    </LinearLayout>
-
-
-    <!--평가 기록 내용(1)-->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="70dp">
-        <!--날짜-->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="6월 22일  "
-            android:textSize="16dp"
-            android:textColor="#333333"/>
-
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            style="?android:attr/ratingBarStyleSmall"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="70dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="친절하시고 좋았습니다."
-            android:textSize="15dp"
-            android:textColor="#333333"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
-
-        <Button
-            android:id="@+id/logoutBtn"
-            android:layout_width="80dp"
-            android:layout_height="35dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="300dp"
-            android:layout_gravity="right"
-            android:text="로그아웃"
-            android:textSize="15dp"
-            android:textColor="#888888"
-            android:background="@drawable/confirm_change_background" />
-
-    </LinearLayout>
 
 </LinearLayout>
