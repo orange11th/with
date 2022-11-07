@@ -48,7 +48,7 @@ public class SelectMatchList extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar_list);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("선택 마감 도움 게시글");
+        getSupportActionBar().setTitle(" ");
 
         Intent intent = getIntent();
         dataList = intent.getStringArrayExtra("dataList");

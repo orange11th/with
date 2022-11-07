@@ -20,7 +20,6 @@
 
             <androidx.appcompat.widget.Toolbar
                 app:titleTextColor="#111111"
-                android:background="@color/white"
                 android:id="@+id/toolbar_senior1"
                 android:layout_height="58dp"
                 android:layout_width="match_parent"
@@ -208,7 +207,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -287,7 +286,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="20dp"
-                    android:text="선착순"
+                    android:text="빠르게 돌보미 구하기"
                     android:textSize="20dp"
                     android:textColor="#222222" />
 

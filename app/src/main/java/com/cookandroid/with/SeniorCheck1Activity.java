@@ -22,6 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.cookandroid.with.simple.NoxActivity;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -30,6 +32,7 @@ import java.util.List;
 /*written by 병훈*/
 
 public class SeniorCheck1Activity extends AppCompatActivity {
+    DatePickerDialog datePickerDialog;
 
     //변경하기 버튼
     Button btn_back; //뒤로가기
@@ -242,27 +245,23 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         //선택 가능한 날짜의 최소값을 저장하는 객체입니다.
         Calendar minDate = Calendar.getInstance();
 
-        ///여기까지
+        Calendar cal = Calendar.getInstance();
+        int Year = cal.get(Calendar.YEAR); //년
+        int Month = cal.get(Calendar.MONTH);//월
+        int Day = cal.get(Calendar.DAY_OF_MONTH);//일
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOdMonth) {
-                y = year;
-                m = month + 1;
-                d = dayOdMonth;
-                //이제 입력값에 따라 text를 바꿔주자
+        datePickerDialog = new DatePickerDialog(SeniorCheck1Activity.this, R.style.DatePickerStyle,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
 
-                //이전날짜 선택불가하게 만들기
+                        month = month + 1;
+                        String date = year + "년 " + month + "월 " + day + "일";
 
-                text_date.setText(y + "년 " + m + "월 " + d + "일");
+                        text_date.setText(date);
+                    }
+                }, Year, Month, Day);
 
-            }
-        }, 2022, 8, 22);//다이얼로그가 켜졌을 때 첫 세팅된 날짜를 의미한다.
-        ////업그레이드 : 오늘 날짜로 자동으로 변경하는 법 찾아보기
-
-        datePickerDialog.setMessage("날짜를 선택하세요");//다이얼로그 제목
-
-//        minDate.set(2022,9-1,19);
         //오늘 날짜 이전 날짜는 선택 불가능하게 만드는 코드입니다.
         datePickerDialog.getDatePicker().setMinDate(minDate.getTimeInMillis());
 
@@ -275,7 +274,7 @@ public class SeniorCheck1Activity extends AppCompatActivity {
         int HOUR = cal.get(Calendar.HOUR); //년
         int MINUTE = cal.get(Calendar.MINUTE);//월
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(this, android.R.style.Theme_Holo_Light_Dialog,new TimePickerDialog.OnTimeSetListener() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this, android.R.style.Theme_Holo_Light_Dialog, new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
 

@@ -15,7 +15,7 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
-    
+
     <style name="DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
         <!-- 상단 색 변경 -->
         <item name="colorAccent">#8FC759</item>
@@ -40,6 +40,15 @@
     <style name="Toolbar.Register.TitleText" parent="@android:style/Widget.TextView">
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Toolbar.ProfileText" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Toolbar.Profile.Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/white</item>
     </style>
 
 </resources>
