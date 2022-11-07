@@ -396,7 +396,7 @@
                 android:layout_height="match_parent">
                 <RadioButton
                     android:layout_weight="1"
-                    android:text="말을 먼저 걸어주는 사람"
+                    android:text="말을 먼저 건다."
                     android:layout_marginBottom="5dp"
                     android:textSize="16dp"
                     android:id="@+id/rbtn_E"
@@ -406,7 +406,7 @@
                     android:buttonTint="#8FC759"/>
                 <RadioButton
                     android:layout_weight="1"
-                    android:text="말을 먼저 들어주는 사람"
+                    android:text="상대방의 말을 들어준다."
                     android:layout_marginLeft="70dp"
                     android:textSize="16dp"
                     android:layout_marginBottom="15dp"
@@ -433,7 +433,7 @@
 
                 <RadioButton
                     android:layout_weight="1"
-                    android:text="공감과 위로를 해주는 사람"
+                    android:text="공감과 위로를 해준다."
                     android:layout_marginBottom="5dp"
                     android:textSize="16dp"
                     android:id="@+id/rbtn_F"
@@ -443,7 +443,7 @@
                     android:buttonTint="#8FC759"/>
                 <RadioButton
                     android:layout_weight="1"
-                    android:text="해결 방법을 제시해주는 사람"
+                    android:text="해결 방법을 제시해준다."
                     android:layout_marginLeft="70dp"
                     android:textSize="16dp"
                     android:layout_marginBottom="15dp"
