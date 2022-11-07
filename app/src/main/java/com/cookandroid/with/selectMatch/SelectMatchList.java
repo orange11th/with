@@ -16,21 +16,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.HelperHomeActivity;
 import com.cookandroid.with.MainActivity2;
 import com.cookandroid.with.R;
-import com.cookandroid.with.SelectMatchListContents;
-import com.cookandroid.with.selectMatch.TestList;
 
-import org.json.JSONObject;
-
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SelectMatchList extends AppCompatActivity {
 
@@ -39,6 +29,7 @@ public class SelectMatchList extends AppCompatActivity {
     private ListViewAdapter adapter = null;
     private String[] dataList;
     private String data;
+    private Button btnRefresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +43,8 @@ public class SelectMatchList extends AppCompatActivity {
 
         Intent intent = getIntent();
         dataList = intent.getStringArrayExtra("dataList");
+
+        btnRefresh=(Button)findViewById(R.id.btnRefresh);
 
         listview=(ListView) findViewById(R.id.listtest);
         adapter = new ListViewAdapter();
@@ -82,7 +75,7 @@ public class SelectMatchList extends AppCompatActivity {
             //adapter.addItem(new TestList("6월 20일 병원 동행을 해줄 돌보미를...", "#병원동행", "필요한 도움에 대한 내용", "지역"));
         }
         else{
-            Toast.makeText(getApplicationContext(), "현재 신청내역이 없습니다", Toast.LENGTH_LONG).show();//거슬림
+            Toast.makeText(getApplicationContext(), "현재 신청내역이 없습니다", Toast.LENGTH_SHORT).show();//거슬림
         }
         listview.setAdapter(adapter);
         //tag
@@ -103,6 +96,13 @@ public class SelectMatchList extends AppCompatActivity {
         button0.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 String tag = null;
+            }
+        });
+        btnRefresh.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(SelectMatchList.this, SelectLoadingActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -161,7 +161,7 @@ public class SelectMatchList extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     //Toast.makeText(context, testList.getTitle() + "제목", Toast.LENGTH_LONG).show( );
-                    Intent intent = new Intent(SelectMatchList.this, SelectMatchListContents.class);
+                    Intent intent = new Intent(SelectMatchList.this, PopUpActivity.class);
                     intent.putExtra("title", testList.getTitle());
                     intent.putExtra("tag", testList.getTag());
                     intent.putExtra("region", testList.getRegion());

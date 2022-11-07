@@ -228,7 +228,7 @@ public class SimpleActivity extends AppCompatActivity implements View.OnClickLis
                         JSONObject jsonResponse = new JSONObject(response);
                         boolean success = jsonResponse.getBoolean("success");
                         if(success){
-                            Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "성공", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
                             return;

@@ -1,4 +1,4 @@
-package com.cookandroid.with;
+package com.cookandroid.with.selectMatch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,8 +8,12 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.cookandroid.with.R;
+import com.cookandroid.with.SelectMatchNotice;
 
 public class SelectMatchListContents extends AppCompatActivity {
 
@@ -18,6 +22,7 @@ public class SelectMatchListContents extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
             setContentView(R.layout.activity_select_match_list_contents);
             //toolbar
             Toolbar toolbar = findViewById(R.id.toolbar_main3);

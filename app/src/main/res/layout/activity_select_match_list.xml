@@ -141,4 +141,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="84dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="20dp"
+        android:background="#8FC759"
+        android:text="새로고침"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_list" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -68,7 +68,7 @@ public class ConfirmActivity extends AppCompatActivity {
                         binding.timeText.setText(timeText);
                         binding.wayText.setText(way);
 
-                        Toast.makeText(getApplicationContext(), "가져오기 성공", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getApplicationContext(), "가져오기 성공", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getApplicationContext(), "실패", Toast.LENGTH_SHORT).show();
                         return;
