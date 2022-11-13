@@ -21,7 +21,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="200dp"
         android:gravity="center"
-        android:text="매칭이 완료되었습니다!\n자세한 신청 내용은 상세보기를 클릭해주세요. "
+        android:text="매칭이 완료되었습니다!\n자세한 매칭 내용은 상세보기를 클릭해주세요. "
         android:textColor="#000000"
         android:textSize="19dp"
         android:textStyle="bold"

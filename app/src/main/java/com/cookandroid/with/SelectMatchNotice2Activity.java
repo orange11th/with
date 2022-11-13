@@ -9,6 +9,8 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.cookandroid.with.seniorHome.SeniorHomeActivity;
+
 public class SelectMatchNotice2Activity extends AppCompatActivity {
     private Button SMCButton, detailsBtn;
     @Override
@@ -33,8 +35,9 @@ public class SelectMatchNotice2Activity extends AppCompatActivity {
         SMCButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SelectMatchNotice2Activity.this, HelperHomeActivity.class);
+                Intent intent = new Intent(SelectMatchNotice2Activity.this, SeniorHomeActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

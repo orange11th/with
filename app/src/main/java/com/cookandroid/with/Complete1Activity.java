@@ -2,14 +2,11 @@ package com.cookandroid.with;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.cookandroid.with.databinding.ActivityComplete1Binding;
-import com.cookandroid.with.databinding.ActivitySimpleBinding;
+import com.cookandroid.with.seniorHome.SeniorHomeActivity;
 
 public class Complete1Activity extends AppCompatActivity {
     private ActivityComplete1Binding binding;

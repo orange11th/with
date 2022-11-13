@@ -3,7 +3,6 @@ package com.cookandroid.with.loading;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.Telephony;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.HelperHomeActivity;
 import com.cookandroid.with.R;
-import com.cookandroid.with.SeniorHomeActivity;
+import com.cookandroid.with.seniorHome.SeniorHomeActivity;
 import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.login.LoginActivity;
 import com.cookandroid.with.login.LoginRequest;

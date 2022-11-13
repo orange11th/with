@@ -15,8 +15,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".selectMatch.PopUpActivity"
-            android:theme="@style/Theme.MyDialog"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyDialog" />
         <activity
             android:name=".SeniorProfileSettingActivity"
             android:exported="false" />
@@ -32,6 +32,7 @@
         <activity
             android:name=".SelectMatchNotice"
             android:exported="false" />
+        <activity android:name=".SelectMatchNotice2Activity"/>
         <activity
             android:name=".selectMatch.SelectMatchListContents"
             android:exported="false" />
@@ -67,20 +68,23 @@
             android:exported="true" />
         <activity
             android:name=".simple.SimpleActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".simple.NoxActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".confirm.NoxConfirmActivity"
             android:exported="true" />
         <activity android:name=".Complete1Activity" />
         <activity android:name=".Complete2Activity" />
         <activity
-            android:name=".SeniorHomeActivity"
-            android:exported="true"></activity>
+            android:name=".seniorHome.SeniorHomeActivity"
+            android:exported="true" />
+        <activity android:name=".seniorHome.AlarmPopUpActivity"
+            android:theme="@style/Theme.MyDialog"/>
         <activity android:name=".profile.SeniorProfileActivity" />
-        <activity android:name=".SeniorAlarmActivity" />
+        <activity android:name=".seniorHome.SeniorAlarmActivity" />
+        <activity android:name=".seniorHome.AlarmLoadingActivity" />
         <activity
             android:name=".HistoryActivity"
             android:exported="true" />
@@ -95,7 +99,7 @@
             android:exported="true" />
         <activity
             android:name=".HelperHomeActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".MatchingList" />
         <activity android:name=".MatchingListContents" />
         <activity
@@ -109,14 +113,14 @@
         </activity>
         <activity
             android:name=".login.LoginActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity android:name=".login.HelperLoginActivity" />
         <activity
             android:name=".register.RegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".register.HelperRegisterActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

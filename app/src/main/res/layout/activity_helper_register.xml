@@ -378,6 +378,7 @@
                 android:layout_marginLeft="23dp"
                 android:layout_marginBottom="15dp"
                 android:textSize="20dp"
+                android:textColor="@color/black"
                 android:text="\n본인은 어떤 성격이신가요? " />
 
             <TextView
@@ -386,6 +387,7 @@
                 android:layout_marginLeft="60dp"
                 android:textSize="18dp"
                 android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
                 android:text="1. 대화할 때" />
 
             <RadioGroup
@@ -418,6 +420,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
                 android:textSize="18dp"
+                android:textColor="@color/black"
                 android:layout_marginBottom="18dp"
                 android:text="2. 문제가 생겼을 때" />
 

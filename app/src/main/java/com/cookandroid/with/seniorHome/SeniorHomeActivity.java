@@ -1,4 +1,4 @@
-package com.cookandroid.with;
+package com.cookandroid.with.seniorHome;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,10 +12,18 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import com.cookandroid.with.HistoryActivity;
+import com.cookandroid.with.R;
+import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.databinding.ActivitySeniorHomeBinding;
 import com.cookandroid.with.profile.SeniorProfileActivity;
 import com.cookandroid.with.simple.NoxActivity;
 import com.cookandroid.with.simple.SimpleActivity;
+
+import org.json.JSONObject;
 
 public class SeniorHomeActivity extends AppCompatActivity {
     private ActivitySeniorHomeBinding binding;
@@ -33,7 +41,7 @@ public class SeniorHomeActivity extends AppCompatActivity {
 
         //알림 아이콘 버튼
         binding.alarmbtn.setOnClickListener( v -> {
-            Intent intent = new Intent(SeniorHomeActivity.this, SeniorAlarmActivity.class);
+            Intent intent = new Intent(SeniorHomeActivity.this, AlarmLoadingActivity.class);
             startActivity(intent);
             finish();
         });
@@ -92,5 +100,31 @@ public class SeniorHomeActivity extends AppCompatActivity {
         span4.setSpan(new AbsoluteSizeSpan(44), 6,25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         //글자 색 다르게
         span4.setSpan(new ForegroundColorSpan(Color.DKGRAY), 6, 25, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        Cookie cookie=Cookie.getCookie();
+        cookie.checkCookie();
+        //cookie.clearCookie();//자동로그인 방지용
+        cookie.readCookie();
+        String userID = cookie.getID();
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try{
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+                    if(success){
+                        binding.alarmbtn.setImageResource(R.drawable.alarmimg2);
+                    } else {
+                        //Toast.makeText(getApplicationContext(), "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show();//거슬림
+                        return;
+                    }
+                } catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        SeniorHomeRequest seniorHomeAlarmRequest = new SeniorHomeRequest(userID, responseListener);
+        RequestQueue queue = Volley.newRequestQueue(SeniorHomeActivity.this);
+        queue.add(seniorHomeAlarmRequest);
     }
 }

@@ -4,16 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SeniorAlarmActivity"
+    tools:context=".seniorHome.SeniorAlarmActivity"
     android:orientation="vertical">
+
+
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_alarm"
-        app:titleTextColor="#000000"
+        app:titleTextColor="#8FC759"
         android:background="#FFFFFF"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/listtest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -76,5 +94,6 @@
             android:gravity="end"/>
 
     </LinearLayout>
+
 
 </LinearLayout>

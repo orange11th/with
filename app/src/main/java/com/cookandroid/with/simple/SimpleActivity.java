@@ -21,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.confirm.ConfirmActivity;
 import com.cookandroid.with.R;
-import com.cookandroid.with.SeniorHomeActivity;
+import com.cookandroid.with.seniorHome.SeniorHomeActivity;
 import com.cookandroid.with.cookie.Cookie;
 import com.cookandroid.with.databinding.ActivitySimpleBinding;
 import com.cookandroid.with.register.WebViewActivity;

@@ -18,14 +18,11 @@ import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.cookandroid.with.CashHistoryActivity;
 import com.cookandroid.with.R;
-import com.cookandroid.with.SeniorHomeActivity;
+import com.cookandroid.with.seniorHome.SeniorHomeActivity;
 import com.cookandroid.with.SeniorProfileReviseActivity;
 import com.cookandroid.with.SeniorProfileSettingActivity;
 import com.cookandroid.with.cookie.Cookie;
-import com.cookandroid.with.login.HelperLoginActivity;
 import com.cookandroid.with.login.LoginActivity;
-import com.cookandroid.with.topic.GetRequest;
-import com.cookandroid.with.topic.GetTopic;
 
 import org.json.JSONObject;
 
