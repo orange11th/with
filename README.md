@@ -40,3 +40,5 @@
 
 ## 시니어 매칭 알림 & 확인 후 수락
 ![senior_alert](https://github.com/orange11th/with/assets/82896260/68d548c5-7a25-4377-a1b7-80fb8cefe805)
+
+</br>
