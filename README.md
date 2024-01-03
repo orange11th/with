@@ -13,6 +13,11 @@
 
 </br>  
 
+## 프로젝트 기간
+> ### 2022.10.3 ~ 2022.11.13 (6주)
+
+</br>
+
 ## Project Design
 ![design_figma](https://github.com/orange11th/with/assets/82896260/36ff4a09-1e26-4cc2-8291-ede6be9294e3)
 
